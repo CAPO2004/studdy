@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Master - Learn PHP Programming</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Background Code -->
+    <div class="code-background" id="codeBackground"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">
+                    <svg viewBox="0 0 100 100" class="logo-svg">
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <text x="50" y="60" font-size="48" font-weight="bold" fill="url(#logoGradient)" text-anchor="middle">PHP</text>
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#logoGradient)" stroke-width="3"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>PHP Master</h1>
+                    <p class="tagline" data-en="Master PHP Programming" data-ar="أتقن برمجة PHP">Master PHP Programming</p>
+                </div>
+            </div>
+            
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                    <li><a href="#vision" class="nav-link" data-en="Vision & Mission" data-ar="الرؤية والرسالة">Vision & Mission</a></li>
+                    <li><a href="#about" class="nav-link" data-en="About Developer" data-ar="عن المطور">About Developer</a></li>
+                    <li><a href="lessons.html" class="nav-link" data-en="Lessons" data-ar="الدروس">Lessons</a></li>
+                    <li><a href="examples.html" class="nav-link" data-en="Examples" data-ar="الأمثلة">Examples</a></li>
+                    <li><a href="quiz.html" class="nav-link" data-en="Quiz" data-ar="الاختبار">Quiz</a></li>
+                    <li><a href="#contact" class="nav-link" data-en="Contact" data-ar="تواصل">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+                    <span class="lang-text">AR</span>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title animate-fade-in" data-en="Welcome to PHP Master" data-ar="مرحباً بك في PHP Master">
+                    Welcome to PHP Master
+                </h2>
+                <p class="hero-subtitle animate-fade-in-delay" data-en="Your Journey to Mastering PHP Starts Here" data-ar="رحلتك لإتقان PHP تبدأ من هنا">
+                    Your Journey to Mastering PHP Starts Here
+                </p>
+                <div class="hero-buttons animate-fade-in-delay-2">
+                    <a href="lessons.html" class="btn btn-primary" data-en="Start Learning" data-ar="ابدأ التعلم">Start Learning</a>
+                    <a href="#about" class="btn btn-secondary" data-en="Learn More" data-ar="اعرف المزيد">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-illustration">
+                <div class="floating-card card-1">
+                    <i class="fas fa-code"></i>
+                    <span data-en="Clean Code" data-ar="كود نظيف">Clean Code</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-database"></i>
+                    <span data-en="Database" data-ar="قواعد البيانات">Database</span>
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fas fa-server"></i>
+                    <span data-en="Server-Side" data-ar="من جانب الخادم">Server-Side</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section class="vision-mission" id="vision">
+        <div class="container">
+            <h2 class="section-title" data-en="Vision & Mission" data-ar="الرؤية والرسالة">Vision & Mission</h2>
+            <div class="vm-grid">
+                <div class="vm-card vision-card">
+                    <div class="vm-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 data-en="Our Vision" data-ar="رؤيتنا">Our Vision</h3>
+                    <p data-en="To become the leading platform for PHP education, empowering developers worldwide to build powerful web applications with confidence and expertise." 
+                       data-ar="أن نصبح المنصة الرائدة لتعليم PHP، وتمكين المطورين في جميع أنحاء العالم من بناء تطبيقات ويب قوية بثقة وخبرة.">
+                        To become the leading platform for PHP education, empowering developers worldwide to build powerful web applications with confidence and expertise.
+                    </p>
+                </div>
+                <div class="vm-card mission-card">
+                    <div class="vm-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 data-en="Our Mission" data-ar="رسالتنا">Our Mission</h3>
+                    <p data-en="To provide comprehensive, interactive, and accessible PHP training through modern teaching methods, practical examples, and hands-on exercises that transform beginners into proficient PHP developers." 
+                       data-ar="توفير تدريب شامل وتفاعلي وسهل الوصول إلى PHP من خلال أساليب التدريس الحديثة والأمثلة العملية والتمارين العملية التي تحول المبتدئين إلى مطورين PHP ماهرين.">
+                        To provide comprehensive, interactive, and accessible PHP training through modern teaching methods, practical examples, and hands-on exercises that transform beginners into proficient PHP developers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title" data-en="Why Choose PHP Master?" data-ar="لماذا تختار PHP Master؟">Why Choose PHP Master?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 data-en="Comprehensive Lessons" data-ar="دروس شاملة">Comprehensive Lessons</h3>
+                    <p data-en="Step-by-step tutorials covering all PHP fundamentals" data-ar="دروس خطوة بخطوة تغطي جميع أساسيات PHP">
+                        Step-by-step tutorials covering all PHP fundamentals
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 data-en="Practical Examples" data-ar="أمثلة عملية">Practical Examples</h3>
+                    <p data-en="Real-world code examples for every concept" data-ar="أمثلة كود من العالم الحقيقي لكل مفهوم">
+                        Real-world code examples for every concept
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3 data-en="Interactive Quizzes" data-ar="اختبارات تفاعلية">Interactive Quizzes</h3>
+                    <p data-en="Test your knowledge with comprehensive quizzes" data-ar="اختبر معرفتك باختبارات شاملة">
+                        Test your knowledge with comprehensive quizzes
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3 data-en="Dark Mode" data-ar="الوضع الليلي">Dark Mode</h3>
+                    <p data-en="Comfortable learning experience day or night" data-ar="تجربة تعلم مريحة نهاراً أو ليلاً">
+                        Comfortable learning experience day or night
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3 data-en="Bilingual Support" data-ar="دعم ثنائي اللغة">Bilingual Support</h3>
+                    <p data-en="Learn in English or Arabic seamlessly" data-ar="تعلم بالإنجليزية أو العربية بسلاسة">
+                        Learn in English or Arabic seamlessly
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 data-en="Mobile Responsive" data-ar="متوافق مع الجوال">Mobile Responsive</h3>
+                    <p data-en="Learn anywhere on any device" data-ar="تعلم في أي مكان على أي جهاز">
+                        Learn anywhere on any device
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Developer Section -->
+    <section class="about-developer" id="about">
+        <div class="container">
+            <h2 class="section-title" data-en="About the Developer" data-ar="عن المطور">About the Developer</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="profile-placeholder">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Ahmed Adel</h3>
+                    <p class="about-role" data-en="Web Developer & PHP Instructor" data-ar="مطور ويب ومدرب PHP">
+                        Web Developer & PHP Instructor
+                    </p>
+                    <p class="about-description" data-en="Passionate web developer dedicated to creating innovative learning experiences. With expertise in PHP and modern web technologies, I strive to make programming education accessible and engaging for everyone." 
+                       data-ar="مطور ويب شغوف مكرس لإنشاء تجارب تعليمية مبتكرة. مع خبرة في PHP وتقنيات الويب الحديثة، أسعى لجعل تعليم البرمجة سهل الوصول وجذاب للجميع.">
+                        Passionate web developer dedicated to creating innovative learning experiences. With expertise in PHP and modern web technologies, I strive to make programming education accessible and engaging for everyone.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span data-en="Expert PHP Developer" data-ar="مطور PHP خبير">Expert PHP Developer</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-code"></i>
+                            <span data-en="Full-Stack Experience" data-ar="خبرة Full-Stack">Full-Stack Experience</span>
+                        </div>
+                    </div>
+                    <div class="about-links">
+                        <a href="https://capo2004.netlify.app/" target="_blank" class="about-link" data-en="Portfolio" data-ar="المعرض">
+                            <i class="fas fa-briefcase"></i> Portfolio
+                        </a>
+                        <a href="https://www.facebook.com/share/1BdmHNXFo3/" target="_blank" class="about-link" data-en="Facebook" data-ar="فيسبوك">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                        <a href="https://www.instagram.com/capo.2004?igsh=MTBvZm9ldXNoM3p6bA==" target="_blank" class="about-link" data-en="Instagram" data-ar="إنستجرام">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 data-en="Name" data-ar="الاسم">Name</h4>
+                            <p>Ahmed Adel</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 data-en="Phone" data-ar="الهاتف">Phone</h4>
+                            <p dir="ltr">+20 1090204281</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4 data-en="Email" data-ar="البريد الإلكتروني">Email</h4>
+                            <p>capoca2004@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" data-placeholder-en="Your Name" data-placeholder-ar="اسمك" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" data-placeholder-en="Your Email" data-placeholder-ar="بريدك الإلكتروني" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" data-placeholder-en="Your Message" data-placeholder-ar="رسالتك" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-en="Send Message" data-ar="إرسال الرسالة">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-en="PHP Master" data-ar="PHP Master">PHP Master</h4>
+                    <p data-en="Your ultimate destination for learning PHP programming. Master the fundamentals and build amazing web applications." 
+                       data-ar="وجهتك النهائية لتعلم برمجة PHP. أتقن الأساسيات وابني تطبيقات ويب مذهلة.">
+                        Your ultimate destination for learning PHP programming. Master the fundamentals and build amazing web applications.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="lessons.html" data-en="Lessons" data-ar="الدروس">Lessons</a></li>
+                        <li><a href="examples.html" data-en="Examples" data-ar="الأمثلة">Examples</a></li>
+                        <li><a href="quiz.html" data-en="Quiz" data-ar="الاختبار">Quiz</a></li>
+                        <li><a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Connect With Us" data-ar="تواصل معنا">Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/1BdmHNXFo3/" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/capo.2004?igsh=MTBvZm9ldXNoM3p6bA==" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://capo2004.netlify.app/" target="_blank" aria-label="Portfolio">
+                            <i class="fas fa-briefcase"></i>
+                        </a>
+                        <a href="mailto:capoca2004@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PHP Master. <span data-en="All rights reserved." data-ar="جميع الحقوق محفوظة.">All rights reserved.</span> <span data-en="Developed by" data-ar="تطوير">Developed by</span> Ahmed Adel</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
