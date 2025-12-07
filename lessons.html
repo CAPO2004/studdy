@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lessons - PHP Master</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="lessons-page">
+    <!-- Animated Background Code -->
+    <div class="code-background" id="codeBackground"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">
+                    <svg viewBox="0 0 100 100" class="logo-svg">
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <text x="50" y="60" font-size="48" font-weight="bold" fill="url(#logoGradient)" text-anchor="middle">PHP</text>
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#logoGradient)" stroke-width="3"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>PHP Master</h1>
+                    <p class="tagline" data-en="Master PHP Programming" data-ar="أتقن برمجة PHP">Master PHP Programming</p>
+                </div>
+            </div>
+            
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                    <li><a href="index.html#vision" class="nav-link" data-en="Vision & Mission" data-ar="الرؤية والرسالة">Vision & Mission</a></li>
+                    <li><a href="index.html#about" class="nav-link" data-en="About Developer" data-ar="عن المطور">About Developer</a></li>
+                    <li><a href="lessons.html" class="nav-link active" data-en="Lessons" data-ar="الدروس">Lessons</a></li>
+                    <li><a href="examples.html" class="nav-link" data-en="Examples" data-ar="الأمثلة">Examples</a></li>
+                    <li><a href="quiz.html" class="nav-link" data-en="Quiz" data-ar="الاختبار">Quiz</a></li>
+                    <li><a href="index.html#contact" class="nav-link" data-en="Contact" data-ar="تواصل">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+                    <span class="lang-text">AR</span>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Lessons Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h2 class="page-title" data-en="PHP Programming Lessons" data-ar="دروس برمجة PHP">PHP Programming Lessons</h2>
+            <p class="page-subtitle" data-en="Master PHP fundamentals step by step" data-ar="أتقن أساسيات PHP خطوة بخطوة">Master PHP fundamentals step by step</p>
+        </div>
+    </section>
+
+    <!-- Lessons Navigation -->
+    <section class="lessons-nav">
+        <div class="container">
+            <div class="lessons-tabs">
+                <button class="lesson-tab active" data-lesson="input" data-en="Input Data" data-ar="إدخال البيانات">
+                    <i class="fas fa-keyboard"></i>
+                    <span>Input Data</span>
+                </button>
+                <button class="lesson-tab" data-lesson="operators" data-en="Numeric Operators" data-ar="العمليات الحسابية">
+                    <i class="fas fa-calculator"></i>
+                    <span>Numeric Operators</span>
+                </button>
+                <button class="lesson-tab" data-lesson="conditions" data-en="Conditions" data-ar="الشروط">
+                    <i class="fas fa-code-branch"></i>
+                    <span>Conditions</span>
+                </button>
+                <button class="lesson-tab" data-lesson="loops" data-en="Loops" data-ar="الحلقات">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Loops</span>
+                </button>
+                <button class="lesson-tab" data-lesson="output" data-en="Output Data" data-ar="إخراج البيانات">
+                    <i class="fas fa-print"></i>
+                    <span>Output Data</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lesson Content -->
+    <section class="lesson-content">
+        <div class="container">
+            <!-- Input Data Lesson -->
+            <div class="lesson-section active" id="lesson-input">
+                <div class="lesson-header">
+                    <h2 data-en="How to Input Data in PHP" data-ar="كيفية إدخال البيانات في PHP">How to Input Data in PHP</h2>
+                    <p class="lesson-intro" data-en="Learn different methods to receive and process user input in PHP applications." 
+                       data-ar="تعلم طرق مختلفة لاستقبال ومعالجة إدخال المستخدم في تطبيقات PHP.">
+                        Learn different methods to receive and process user input in PHP applications.
+                    </p>
+                </div>
+
+                <div class="lesson-content-wrapper">
+                    <div class="concept-card">
+                        <h3><i class="fas fa-file-alt"></i> <span data-en="1. GET Method" data-ar="1. طريقة GET">1. GET Method</span></h3>
+                        <p data-en="The GET method sends data through URL parameters. It's visible in the URL and suitable for non-sensitive data." 
+                           data-ar="طريقة GET ترسل البيانات من خلال معاملات URL. يمكن رؤيتها في URL ومناسبة للبيانات غير الحساسة.">
+                            The GET method sends data through URL parameters. It's visible in the URL and suitable for non-sensitive data.
+                        </p>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-language">PHP</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>&lt;?php
+// Receiving data from URL: example.php?name=Ahmed&age=20
+$name = $_GET['name'];
+$age = $_GET['age'];
+
+echo "Name: " . $name . "&lt;br&gt;";
+echo "Age: " . $age;
+?&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3><i class="fas fa-lock"></i> <span data-en="2. POST Method" data-ar="2. طريقة POST">2. POST Method</span></h3>
+                        <p data-en="The POST method sends data in the request body. It's more secure and suitable for sensitive information." 
+                           data-ar="طريقة POST ترسل البيانات في جسم الطلب. أكثر أماناً ومناسبة للمعلومات الحساسة.">
+                            The POST method sends data in the request body. It's more secure and suitable for sensitive information.
+                        </p>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-language">PHP</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>&lt;?php
+// Receiving data from form with POST method
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    
+    echo "Username: " . htmlspecialchars($username);
+}
+?&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3><i class="fas fa-edit"></i> <span data-en="3. HTML Form Input" data-ar="3. إدخال نموذج HTML">3. HTML Form Input</span></h3>
+                        <p data-en="HTML forms are the most common way to collect user input in web applications." 
+                           data-ar="نماذج HTML هي الطريقة الأكثر شيوعاً لجمع إدخال المستخدم في تطبيقات الويب.">
+                            HTML forms are the most common way to collect user input in web applications.
+                        </p>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-language">HTML + PHP</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>&lt;!-- HTML Form --&gt;
+&lt;form method="post" action="process.php"&gt;
+    &lt;input type="text" name="email" placeholder="Email"&gt;
+    &lt;input type="text" name="message" placeholder="Message"&gt;
+    &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;?php
+// process.php
+$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+$message = htmlspecialchars($_POST['message']);
+echo "Email: $email&lt;br&gt;Message: $message";
+?&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="lesson-tips">
+                        <h4><i class="fas fa-lightbulb"></i> <span data-en="Key Points" data-ar="نقاط مهمة">Key Points</span></h4>
+                        <ul>
+                            <li data-en="Always validate and sanitize user input to prevent security vulnerabilities" 
+                                data-ar="تحقق دائماً من صحة إدخال المستخدم وقم بتعقيمه لمنع الثغرات الأمنية">
+                                Always validate and sanitize user input to prevent security vulnerabilities
+                            </li>
+                            <li data-en="Use POST for sensitive data like passwords and personal information" 
+                                data-ar="استخدم POST للبيانات الحساسة مثل كلمات المرور والمعلومات الشخصية">
+                                Use POST for sensitive data like passwords and personal information
+                            </li>
+                            <li data-en="GET is suitable for search queries and data that can be bookmarked" 
+                                data-ar="GET مناسب لاستعلامات البحث والبيانات التي يمكن وضع إشارة مرجعية لها">
+                                GET is suitable for search queries and data that can be bookmarked
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operators Lesson -->
+            <div class="lesson-section" id="lesson-operators">
+                <div class="lesson-header">
+                    <h2 data-en="Basic Numeric Operators in PHP" data-ar="العمليات الحسابية الأساسية في PHP">Basic Numeric Operators in PHP</h2>
+                    <p class="lesson-intro" data-en="Master arithmetic operations and mathematical calculations in PHP." 
+                       data-ar="أتقن العمليات الحسابية والحسابات الرياضية في PHP.">
+                        Master arithmetic operations and mathematical calculations in PHP.
+                    </p>
+                </div>
+
+                <div class="lesson-content-wrapper">
+                    <div class="concept-card">
+                        <h3><i class="fas fa-plus"></i> <span data-en="1. Basic Arithmetic Operators" data-ar="1. العمليات الحسابية الأساسية">1. Basic Arithmetic Operators</span></h3>
+                        <p data-en="PHP supports all standard arithmetic operations: addition, subtraction, multiplication, division, and modulus." 
+                           data-ar="PHP يدعم جميع العمليات الحسابية القياسية: الجمع والطرح والضرب والقسمة والباقي.">
+                            PHP supports all standard arithmetic operations: addition, subtraction, multiplication, division, and modulus.
+                        </p>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-language">PHP</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>&lt;?php
+$a = 10;
+$b = 3;
+
+$addition = $a + $b;        // 13
+$subtraction = $a - $b;     // 7
+$multiplication = $a * $b;  // 30
+$division = $a / $b;        // 3.333...
+$modulus = $a % $b;         // 1 (remainder)
+
+echo "Addition: $addition&lt;br&gt;";
+echo "Subtraction: $subtraction&lt;br&gt;";
+echo "Multiplication: $multiplication&lt;br&gt;";
+echo "Division: $division&lt;br&gt;";
+echo "Modulus: $modulus";
+?&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3><i class="fas fa-equals"></i> <span data-en="2. Assignment Operators" data-ar="2. عوامل التعيين">2. Assignment Operators</span></h3>
+                        <p data-en="Assignment operators allow you to assign values and perform operations simultaneously." 
+                           data-ar="عوامل التعيين تسمح لك بتعيين القيم وإجراء العمليات في نفس الوقت.">
+                            Assignment operators allow you to assign values and perform operations simultaneously.
+                        </p>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-language">PHP</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>&lt;?php
+$x = 5;
+
+$x += 3;  // $x = $x + 3; (now $x is 8)
+$x -= 2;  // $x = $x - 2; (now $x is 6)
+$x *= 4;  // $x = $x * 4; (now $x is 24)
+$x /= 3;  // $x = $x / 3; (now $x is 8)
+$x %= 5;  // $x = $x % 5; (now $x is 3)
+
+echo "Final value: $x"; // Output: 3
+?&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3><i class="fas fa-arrow-up"></i> <span data-en="3. Increment and Decrement" data-ar="3. الزيادة والنقصان">3. Increment and Decrement</span></h3>
+                        <p data-en="These operators increase or decrease a variable's value by one." 
+                           data-ar="هذه العوامل تزيد أو تنقص قيمة المتغير بمقدار واحد.">
+                            These operators increase or decrease a variable's value by one.
+                        </p>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-language">PHP</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>&lt;?php
+$counter = 5;
+
+// Pre-increment: increment first, then use
+echo ++$counter; // Output: 6
+
+// Post-increment: use first, then increment
+echo $counter++; // Output: 6 (then becomes 7)
+
+// Pre-decrement: decrement first, then use
+echo --$counter; // Output: 6
+
+// Post-decrement: use first, then decrement
+echo $counter--; // Output: 6 (then becomes 5)
+
+echo $counter; // Output: 5
+?&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="lesson-tips">
+                        <h4><i class="fas fa-lightbulb"></i> <span data-en="Key Points" data-ar="نقاط مهمة">Key Points</span></h4>
+                        <ul>
+                            <li data-en="Division by zero will cause an error, always check before dividing" 
+                                data-ar="القسمة على صفر ستسبب خطأ، تحقق دائماً قبل القسمة">
+                                Division by zero will cause an error, always check before dividing
+                            </li>
+                            <li data-en="Use parentheses to control operation precedence" 
+                                data-ar="استخدم الأقواس للتحكم في أسبقية العمليات">
+                                Use parentheses to control operation precedence
+                            </li>
+                            <li data-en="Modulus (%) is useful for checking even/odd numbers" 
+                                data-ar="الباقي (%) مفيد للتحقق من الأرقام الزوجية/الفردية">
+                                Modulus (%) is useful for checking even/odd numbers
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conditions Lesson -->
+            <div class="lesson-section" id="lesson-conditions">
+                <div class="lesson-header">
+                    <h2 data-en="Conditional Statements in PHP" data-ar="الجمل الشرطية في PHP">Conditional Statements in PHP</h2>
+                    <p class="lesson-intro" data-en="Learn how to make decisions in your code using if, else, and switch statements." 
+                       data-ar="تعلم كيفية اتخاذ القرارات في الكود الخاص بك باستخدام if و else و switch.">
+                        Learn how to make decisions in your code using if, else, and switch statements.
+                    </p>
+                </div>
+
+                <div class="lesson-content-wrapper">
+                    <div class="concept-card">
+                        <h3><i class="fas fa-question"></i> <span data-en="1. If Statement" data-ar="1. جملة If">1. If Statement</span></h3>
+                        <p data-en="The if statement executes code only if a specified condition is true." 
+                           data-ar="جملة if تنفذ الكود فقط إذا كان الشرط المحدد صحيحاً.">
+                            The if statement executes code only if a specified condition is true.
+                        </p>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-language">PHP</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>&lt;?php
+$age = 18;
+
+if ($age >= 18) {
+    echo "You are an adult.";
+}
+
+// With comparison operators
+$score = 85;
+if ($score >= 90) {
+    echo "Excellent!";
+} elseif ($score >= 70) {
+    echo "Good job!";
+} else {
+    echo "Keep trying!";
+}
+?&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3><i class="fas fa-exchange-alt"></i> <span data-en="2. Switch Statement" data-ar="2. جملة Switch">2. Switch Statement</span></h3>
+                        <p data-en="The switch statement is used to perform different actions based on different conditions." 
+                           data-ar="جملة switch تستخدم لتنفيذ إجراءات مختلفة بناءً على شروط مختلفة.">
+                            The switch statement is used to perform different actions based on different conditions.
+                        </p>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-language">PHP</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>&lt;?php
+$day = "Monday";
+
+switch ($day) {
+    case "Monday":
+        echo "Start of the work week!";
+        break;
+    case "Friday":
+        echo "Almost weekend!";
+        break;
+    case "Saturday":
+    case "Sunday":
+        echo "It's the weekend!";
+        break;
+    default:
+        echo "It's a regular day.";
+}
+?&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3><i class="fas fa-arrows-alt-h"></i> <span data-en="3. Ternary Operator" data-ar="3. المعامل الثلاثي">3. Ternary Operator</span></h3>
+                        <p data-en="A shorthand way to write simple if-else statements in one line." 
+                           data-ar="طريقة مختصرة لكتابة جمل if-else البسيطة في سطر واحد.">
+                            A shorthand way to write simple if-else statements in one line.
+                        </p>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-language">PHP</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>&lt;?php
+// Syntax: condition ? value_if_true : value_if_false
+
+$age = 20;
+$status = ($age >= 18) ? "Adult" : "Minor";
+echo $status; // Output: Adult
+
+// Nested ternary
+$score = 75;
+$grade = ($score >= 90) ? "A" : 
+         (($score >= 80) ? "B" : 
+         (($score >= 70) ? "C" : "F"));
+echo "Grade: $grade"; // Output: Grade: C
+?&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="lesson-tips">
+                        <h4><i class="fas fa-lightbulb"></i> <span data-en="Key Points" data-ar="نقاط مهمة">Key Points</span></h4>
+                        <ul>
+                            <li data-en="Use == for value comparison and === for value and type comparison" 
+                                data-ar="استخدم == لمقارنة القيمة و === لمقارنة القيمة والنوع">
+                                Use == for value comparison and === for value and type comparison
+                            </li>
+                            <li data-en="Always include 'break' in switch cases to prevent fall-through" 
+                                data-ar="قم دائماً بتضمين 'break' في حالات switch لمنع الاستمرار">
+                                Always include 'break' in switch cases to prevent fall-through
+                            </li>
+                            <li data-en="Ternary operators are great for simple conditions but can be hard to read when nested" 
+                                data-ar="المعاملات الثلاثية رائعة للشروط البسيطة لكن يصعب قراءتها عند التداخل">
+                                Ternary operators are great for simple conditions but can be hard to read when nested
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loops Lesson -->
+            <div class="lesson-section" id="lesson-loops">
+                <div class="lesson-header">
+                    <h2 data-en="Loops in PHP" data-ar="الحلقات في PHP">Loops in PHP</h2>
+                    <p class="lesson-intro" data-en="Master different types of loops to repeat code execution efficiently." 
+                       data-ar="أتقن أنواع مختلفة من الحلقات لتكرار تنفيذ الكود بكفاءة.">
+                        Master different types of loops to repeat code execution efficiently.
+                    </p>
+                </div>
+
+                <div class="lesson-content-wrapper">
+                    <div class="concept-card">
+                        <h3><i class="fas fa-redo"></i> <span data-en="1. For Loop" data-ar="1. حلقة For">1. For Loop</span></h3>
+                        <p data-en="The for loop is used when you know how many times you want to execute a block of code." 
+                           data-ar="حلقة for تستخدم عندما تعرف عدد المرات التي تريد فيها تنفيذ كتلة من الكود.">
+                            The for loop is used when you know how many times you want to execute a block of code.
+                        </p>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-language">PHP</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>&lt;?php
+// Basic for loop
+for ($i = 1; $i &lt;= 5; $i++) {
+    echo "Number: $i&lt;br&gt;";
+}
+
+// Loop through an array
+$fruits = ["Apple", "Banana", "Orange"];
+for ($i = 0; $i &lt; count($fruits); $i++) {
+    echo "Fruit: " . $fruits[$i] . "&lt;br&gt;";
+}
+
+// Nested for loop (multiplication table)
+for ($i = 1; $i &lt;= 3; $i++) {
+    for ($j = 1; $j &lt;= 3; $j++) {
+        echo "$i x $j = " . ($i * $j) . "&lt;br&gt;";
+    }
+}
+?&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3><i class="fas fa-sync"></i> <span data-en="2. While Loop" data-ar="2. حلقة While">2. While Loop</span></h3>
+                        <p data-en="The while loop executes a block of code as long as a specified condition is true." 
+                           data-ar="حلقة while تنفذ كتلة من الكود طالما أن الشرط المحدد صحيح.">
+                            The while loop executes a block of code as long as a specified condition is true.
+                        </p>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-language">PHP</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>&lt;?php
+// Basic while loop
+$counter = 1;
+while ($counter &lt;= 5) {
+    echo "Count: $counter&lt;br&gt;";
+    $counter++;
+}
+
+// While loop with condition check
+$number = 10;
+while ($number &gt; 0) {
+    if ($number % 2 == 0) {
+        echo "$number is even&lt;br&gt;";
+    }
+    $number--;
+}
+
+// Do-while loop (executes at least once)
+$x = 1;
+do {
+    echo "Value: $x&lt;br&gt;";
+    $x++;
+} while ($x &lt;= 3);
+?&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3><i class="fas fa-list"></i> <span data-en="3. Foreach Loop" data-ar="3. حلقة Foreach">3. Foreach Loop</span></h3>
+                        <p data-en="The foreach loop is specifically designed for iterating through arrays." 
+                           data-ar="حلقة foreach مصممة خصيصاً للتكرار خلال المصفوفات.">
+                            The foreach loop is specifically designed for iterating through arrays.
+                        </p>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-language">PHP</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>&lt;?php
+// Foreach with indexed array
+$colors = ["Red", "Green", "Blue"];
+foreach ($colors as $color) {
+    echo "Color: $color&lt;br&gt;";
+}
+
+// Foreach with associative array
+$student = [
+    "name" =&gt; "Ahmed",
+    "age" =&gt; 20,
+    "grade" =&gt; "A"
+];
+foreach ($student as $key =&gt; $value) {
+    echo "$key: $value&lt;br&gt;";
+}
+
+// Foreach with modification
+$numbers = [1, 2, 3, 4, 5];
+foreach ($numbers as &$num) {
+    $num = $num * 2; // Double each number
+}
+print_r($numbers); // [2, 4, 6, 8, 10]
+?&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="lesson-tips">
+                        <h4><i class="fas fa-lightbulb"></i> <span data-en="Key Points" data-ar="نقاط مهمة">Key Points</span></h4>
+                        <ul>
+                            <li data-en="Use 'break' to exit a loop early and 'continue' to skip to the next iteration" 
+                                data-ar="استخدم 'break' للخروج من الحلقة مبكراً و 'continue' للانتقال إلى التكرار التالي">
+                                Use 'break' to exit a loop early and 'continue' to skip to the next iteration
+                            </li>
+                            <li data-en="Foreach is the most efficient way to iterate through arrays in PHP" 
+                                data-ar="Foreach هي الطريقة الأكثر كفاءة للتكرار خلال المصفوفات في PHP">
+                                Foreach is the most efficient way to iterate through arrays in PHP
+                            </li>
+                            <li data-en="Always ensure your loop has a way to end to avoid infinite loops" 
+                                data-ar="تأكد دائماً من أن حلقتك لديها طريقة للإنهاء لتجنب الحلقات اللانهائية">
+                                Always ensure your loop has a way to end to avoid infinite loops
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Output Lesson -->
+            <div class="lesson-section" id="lesson-output">
+                <div class="lesson-header">
+                    <h2 data-en="How to Display Output in PHP" data-ar="كيفية عرض المخرجات في PHP">How to Display Output in PHP</h2>
+                    <p class="lesson-intro" data-en="Learn different methods to display data and generate output in PHP." 
+                       data-ar="تعلم طرق مختلفة لعرض البيانات وإنشاء المخرجات في PHP.">
+                        Learn different methods to display data and generate output in PHP.
+                    </p>
+                </div>
+
+                <div class="lesson-content-wrapper">
+                    <div class="concept-card">
+                        <h3><i class="fas fa-print"></i> <span data-en="1. Echo Statement" data-ar="1. جملة Echo">1. Echo Statement</span></h3>
+                        <p data-en="Echo is the most commonly used output statement in PHP. It can display multiple strings." 
+                           data-ar="Echo هي جملة الإخراج الأكثر استخداماً في PHP. يمكنها عرض نصوص متعددة.">
+                            Echo is the most commonly used output statement in PHP. It can display multiple strings.
+                        </p>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-language">PHP</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>&lt;?php
+// Simple echo
+echo "Hello, World!";
+
+// Echo with variables
+$name = "Ahmed";
+echo "Hello, " . $name . "!&lt;br&gt;";
+
+// Echo with HTML
+echo "&lt;h2&gt;Welcome to PHP&lt;/h2&gt;";
+echo "&lt;p&gt;This is a paragraph.&lt;/p&gt;";
+
+// Echo multiple values
+echo "Value 1", " Value 2", " Value 3";
+
+// Echo with calculations
+$x = 5;
+$y = 3;
+echo "Sum: " . ($x + $y);
+?&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3><i class="fas fa-file-code"></i> <span data-en="2. Print Statement" data-ar="2. جملة Print">2. Print Statement</span></h3>
+                        <p data-en="Print is similar to echo but can only output one string and returns a value." 
+                           data-ar="Print مشابه لـ echo لكن يمكنه فقط إخراج نص واحد ويعيد قيمة.">
+                            Print is similar to echo but can only output one string and returns a value.
+                        </p>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-language">PHP</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>&lt;?php
+// Basic print
+print "Hello from print!&lt;br&gt;";
+
+// Print with variables
+$age = 20;
+print "Age: $age&lt;br&gt;";
+
+// Print returns 1
+$result = print "This returns 1";
+echo $result; // Output: 1
+
+// Print in expressions
+$condition = true;
+$condition ? print "True" : print "False";
+?&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3><i class="fas fa-table"></i> <span data-en="3. Advanced Output Functions" data-ar="3. دوال الإخراج المتقدمة">3. Advanced Output Functions</span></h3>
+                        <p data-en="PHP provides specialized functions for formatted output and debugging." 
+                           data-ar="PHP يوفر دوال متخصصة للإخراج المنسق والتصحيح.">
+                            PHP provides specialized functions for formatted output and debugging.
+                        </p>
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-language">PHP</span>
+                                <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                            </div>
+                            <pre><code>&lt;?php
+// printf - formatted output
+$name = "Ahmed";
+$age = 20;
+printf("Name: %s, Age: %d&lt;br&gt;", $name, $age);
+
+// print_r - display array structure
+$fruits = ["Apple", "Banana", "Orange"];
+print_r($fruits);
+
+// var_dump - detailed variable information
+$number = 42;
+var_dump($number);
+
+// sprintf - return formatted string
+$formatted = sprintf("Hello, %s! You are %d years old.", "Ahmed", 20);
+echo $formatted;
+?&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="lesson-tips">
+                        <h4><i class="fas fa-lightbulb"></i> <span data-en="Key Points" data-ar="نقاط مهمة">Key Points</span></h4>
+                        <ul>
+                            <li data-en="Echo is faster than print and more commonly used" 
+                                data-ar="Echo أسرع من print وأكثر استخداماً">
+                                Echo is faster than print and more commonly used
+                            </li>
+                            <li data-en="Use print_r() and var_dump() for debugging arrays and objects" 
+                                data-ar="استخدم print_r() و var_dump() لتصحيح المصفوفات والكائنات">
+                                Use print_r() and var_dump() for debugging arrays and objects
+                            </li>
+                            <li data-en="Always escape output when displaying user input to prevent XSS attacks" 
+                                data-ar="قم دائماً بتجنب الإخراج عند عرض إدخال المستخدم لمنع هجمات XSS">
+                                Always escape output when displaying user input to prevent XSS attacks
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-en="PHP Master" data-ar="PHP Master">PHP Master</h4>
+                    <p data-en="Your ultimate destination for learning PHP programming." 
+                       data-ar="وجهتك النهائية لتعلم برمجة PHP.">
+                        Your ultimate destination for learning PHP programming.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                        <li><a href="examples.html" data-en="Examples" data-ar="الأمثلة">Examples</a></li>
+                        <li><a href="quiz.html" data-en="Quiz" data-ar="الاختبار">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Connect With Us" data-ar="تواصل معنا">Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/1BdmHNXFo3/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/capo.2004?igsh=MTBvZm9ldXNoM3p6bA==" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://capo2004.netlify.app/" target="_blank"><i class="fas fa-briefcase"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PHP Master. <span data-en="All rights reserved." data-ar="جميع الحقوق محفوظة.">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="lessons.js"></script>
+</body>
+</html>
