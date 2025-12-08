@@ -221,7 +221,7 @@ header.scrolled {
 }
 
 .logo-container img {
-    height: 40px;
+    height: 50px;
 }
 
 /* FIXED NAV LAYOUT */
@@ -274,34 +274,36 @@ nav a.active {
     align-items: center;
 }
 
-/* NEW: Icon Toggle Buttons */
+/* NEW: Icon Toggle Buttons (Circular Glass Revert) */
 .toggle-btn {
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
+    cursor: pointer;
+    border-radius: 50%;
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    /* Circle */
-    cursor: pointer;
-    font-size: 1.2rem;
     display: flex;
-    align-items: center;
     justify-content: center;
-    transition: all 0.3s var(--transition-bounce);
-    position: relative;
-    overflow: hidden;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(4px);
+    padding: 0;
+    box-shadow: none;
+}
+
+/* SVG Icon Styles in Buttons */
+.toggle-btn svg {
+    width: 24px;
+    height: 24px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .toggle-btn:hover {
     background: rgba(255, 255, 255, 0.3);
     transform: rotate(15deg) scale(1.1);
-    /* Rotate on hover */
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-}
-
-.toggle-btn:active {
-    transform: scale(0.9);
+    border-color: white;
 }
 
 /* Language Content Toggling classes */
@@ -311,40 +313,15 @@ nav a.active {
     /* Hide Arabic by default */
 }
 
-.lang-en {
-    display: unset;
-    /* Allow default display (block/inline) */
-}
-
 /* Arabic State - When HTML has lang="ar" */
 html[lang="ar"] .lang-en {
     display: none !important;
 }
 
 html[lang="ar"] .lang-ar {
-    display: unset !important;
+    display: inline !important;
     /* Show Arabic */
 }
-
-/* Specific handling for block-level vs inline-level if needed, 
-   but 'unset' or specific overrides below help. 
-   Actually, 'display: none' is the key. 
-   The visible one acts as if the class wasn't there.
-*/
-
-/* Force spans to be inline if they are visible */
-span.lang-en,
-span.lang-ar {
-    display: inline;
-}
-
-html[lang="ar"] span.lang-ar {
-    display: inline !important;
-}
-
-/* Block level elements (div, p, h1, etc) will default to block if display is unset/reverted, 
-   but to be safe, let's just use the negation logic above.
-*/
 
 
 /* --- HERO SECTION REVISED --- */
@@ -401,43 +378,25 @@ html[lang="ar"] span.lang-ar {
 
 .card h3 {
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background: var(--gradient-main);
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 1rem;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
-    transition: transform 0.2s var(--transition-bounce), box-shadow 0.2s;
-}
-
-.btn:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
-    background: var(--gradient-hover);
-}
-
-/* Main Content Layout */
-.container {
-    max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
     flex: 1;
 }
 
+/* Main Container */
+.container {
+    max-width: 1100px;
+    /* Constrain width to prevent huge cards */
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
 /* Card Styles */
 .card {
     background: var(--surface-color);
-    padding: 2rem;
+    padding: 1.5rem;
+    /* Reduced from 2rem */
     border-radius: 16px;
     border: 1px solid var(--border-color);
 
@@ -446,6 +405,15 @@ html[lang="ar"] span.lang-ar {
     animation: pulseCardGlow 3s infinite alternate;
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* About Section Grid */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Stack vertically (Full Width) */
+    gap: 3rem;
+    margin-bottom: 5rem;
 }
 
 @keyframes pulseCardGlow {
@@ -464,71 +432,280 @@ html[lang="ar"] span.lang-ar {
     border-color: var(--primary-blue);
 }
 
-/* Lessons Layout */
-.lessons-container {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 2.5rem;
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--gradient-main);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s;
 }
 
-.topic-list {
-    position: sticky;
-    top: 100px;
+.btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+    background: var(--gradient-hover);
 }
 
-.topic-btn {
-    display: block;
+/* --- Module Grid View --- */
+/* --- Module Grid View (Centered with Flex) --- */
+/* --- Module Grid View (Centered with Flex) --- */
+.modules-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
     width: 100%;
-    padding: 16px 20px;
-    margin-bottom: 12px;
+}
+
+.modules-container>.module-card {
+    flex: 1 1 calc(50% - 2rem);
+    max-width: 100%;
+}
+
+.gradient-text {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+}
+
+.module-card {
     background: var(--surface-color);
     border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 2.5rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     text-align: left;
+    height: 100%;
+}
+
+.module-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 40px rgba(34, 211, 238, 0.7);
+    border-color: #22d3ee;
+}
+
+.module-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+    transform: translateX(-100%);
+    transition: 0.6s;
+}
+
+.module-card:hover::before {
+    transform: translateX(100%);
+}
+
+.module-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.5));
+    align-self: flex-start;
+}
+
+.module-content {
+    flex: 1;
+    width: 100%;
+}
+
+.module-title {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.module-desc {
+    color: #94a3b8;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.module-link {
+    color: var(--primary-blue);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: gap 0.3s;
+}
+
+.module-card:hover .module-link {
+    gap: 15px;
+    color: #a5b4fc;
+}
+
+.back-btn {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--primary-blue);
+    transform: translateY(-2px);
+}
+
+/* Lessons Layout (Top Bar Style) */
+.lessons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: stretch;
+    color: var(--primary-blue);
+    width: 100%;
+    margin-bottom: 5rem;
+    /* Added spacing from footer */
+}
+
+/* Sidebar Container (Now Horizontal Top Bar) */
+.topic-list {
+    position: relative;
+    top: 0;
+    width: 100%;
+    background: var(--surface-color);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 1.5rem;
+    height: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-start;
+    /* Or center if preferred */
+}
+
+/* Sidebar Buttons (Horizontal) */
+.topic-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 200px;
+    /* Minimum width 200px, but grows */
+    padding: 14px 18px;
+    margin-bottom: 0px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid transparent;
+    text-align: center;
     cursor: pointer;
     border-radius: 12px;
     color: var(--text-primary);
     font-weight: 600;
-    transition: all 0.2s;
+    transition: all 0.2s ease;
     position: relative;
     overflow: hidden;
 }
 
-.topic-btn::before {
+.topic-btn:hover {
+    background: rgba(14, 165, 233, 0.1);
+    color: var(--primary-blue);
+    transform: translateX(3px);
+}
+
+.topic-btn.active {
+    background: var(--surface-color);
+    border: 1px solid var(--primary-blue);
+    color: var(--primary-blue);
+    box-shadow: 0 4px 15px rgba(14, 165, 233, 0.2);
+}
+
+.topic-btn.active::before {
     content: '';
     position: absolute;
     left: 0;
     top: 0;
     height: 100%;
     width: 4px;
-    background: transparent;
-    transition: width 0.3s ease;
-}
-
-.topic-btn:hover {
-    background: var(--light-blue);
-    transform: translateX(5px);
-}
-
-.topic-btn.active {
-    background: var(--surface-color);
-    border-color: var(--primary-blue);
-    color: var(--primary-blue);
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
-}
-
-.topic-btn.active::before {
     background: var(--primary-blue);
-    width: 4px;
 }
 
-/* Topic Content */
+/* Topic Content (Glass Card) */
 .topic-pane {
     display: none;
     animation: fadeIn 0.4s ease-out;
+    background: var(--surface-color);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.05);
+    min-height: 600px;
 }
 
 .topic-pane.active {
     display: block;
+}
+
+.topic-pane h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.topic-pane p {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.topic-pane ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.topic-pane li {
+    margin-bottom: 0.8rem;
+    color: var(--text-primary);
+    line-height: 1.6;
 }
 
 /* Code Blocks */
@@ -631,6 +808,16 @@ footer {
     position: relative;
     display: inline-block;
     color: white !important;
+    font-weight: 400;
+    /* Reduce to Normal */
+    letter-spacing: 0.5px;
+}
+
+.footer-col p,
+.footer-links li {
+    font-weight: 300;
+    /* Force Light/Thin */
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .footer-col h3::after {
@@ -652,6 +839,8 @@ footer {
     color: rgba(255, 255, 255, 0.7) !important;
     text-decoration: none;
     transition: color 0.2s;
+    font-weight: 300;
+    /* Force Light/Thin */
 }
 
 .footer-links li a:hover {
@@ -749,65 +938,46 @@ footer {
     }
 }
 
-/* Social Media Icons (Reference Design Match) */
+/* Social Media Icons (Modern Glassy Circles) */
 .social-buttons {
     display: flex;
     gap: 15px;
-    margin-top: 2.5rem;
-    /* Increased spacing as requested */
 }
 
 .social-btn {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    /* Richer Gradient: Cyan to Deep Blue */
-    background: linear-gradient(180deg, #22d3ee 0%, #2563eb 100%);
+    /* Transparent Modern Look */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white !important;
+    color: rgba(255, 255, 255, 0.8) !important;
     text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    position: relative;
-    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
 }
 
-/* Glossy Shine Effect */
+/* Remove Old Glossy After */
 .social-btn::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
-    border-radius: 50% 50% 0 0;
-    pointer-events: none;
+    display: none;
 }
 
 .social-btn:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(34, 211, 238, 0.6);
-    border-color: rgba(255, 255, 255, 0.6);
+    background: var(--primary-blue);
+    color: white !important;
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.6);
+    border-color: rgba(255, 255, 255, 0.8);
 }
 
 .social-btn svg {
-    width: 20px;
-    height: 20px;
-    /* fill: white; Removed to allow stroke-based icons */
-    z-index: 1;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-}
-
-/* About Section Grid */
-.about-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 3rem;
-    margin-bottom: 6rem;
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 /* --- Mobile Responsiveness Fixes (Override) --- */
