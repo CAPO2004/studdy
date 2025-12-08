@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 50">
+  <defs>
+    <!-- Luminous Blue Gradient (Visible on Dark) -->
+    <linearGradient id="luminousGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:1" /> <!-- Bright Cyan -->
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" /> <!-- Soft Blue -->
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Logo Icon: Hexagon Shield with Code Brackets -->
+  <g transform="translate(5, 5)">
+    <path d="M20 0 L37.3 10 V30 L20 40 L2.7 30 V10 Z" fill="url(#luminousGrad)" opacity="0.2" />
+    <path d="M20 3 L34.6 11.5 V28.5 L20 37 L5.4 28.5 V11.5 Z" fill="none" stroke="url(#luminousGrad)" stroke-width="2" />
+    <text x="11" y="26" font-family="monospace" font-weight="bold" font-size="18" fill="#ffffff">&lt;/&gt;</text>
+  </g>
+  
+  <!-- Main Title -->
+  <text x="55" y="30" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-weight="900" font-size="24" fill="#ffffff" filter="url(#glow)">PHP <tspan fill="url(#luminousGrad)">Mastery</tspan></text>
+  
+  <!-- Subtitle -->
+  <text x="55" y="46" font-family="'Segoe UI', sans-serif" font-weight="500" font-size="10" fill="#cbd5e1">By Ahmed Adel</text>
+</svg>
