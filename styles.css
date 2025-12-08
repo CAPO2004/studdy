@@ -1024,4 +1024,36 @@ footer {
         min-height: auto !important;
         height: auto !important;
     }
+
+    /* Fix Module Cards (Stack them) */
+    .modules-container {
+        flex-direction: column;
+        /* Stack items vertically */
+        align-items: center;
+        /* Center them */
+        gap: 1.5rem;
+        /* Space between cards */
+    }
+
+    .modules-container>.module-card {
+        flex: 1 1 100%;
+        /* Take full width */
+        width: 100%;
+        max-width: 100%;
+        /* Ensure no overflow */
+        margin-bottom: 0;
+    }
+
+    /* Adjust Container Padding for Mobile */
+    .container {
+        padding: 0 15px;
+        /* Slightly reduced padding */
+    }
+
+    /* Quiz & Example Containers */
+    .quiz-container,
+    .example-container {
+        width: 100%;
+        padding: 1rem;
+    }
 }
