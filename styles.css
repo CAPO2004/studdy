@@ -802,8 +802,24 @@ footer {
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
+/* About Section Grid */
+.about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    margin-bottom: 6rem;
+}
+
 /* --- Mobile Responsiveness Fixes (Override) --- */
 @media (max-width: 768px) {
+
+    /* Fix About Grid (Stacking) */
+    .about-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
 
     /* Fix Hero Text Sizing */
     .hero-text h1 {
