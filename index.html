@@ -187,16 +187,20 @@
                         حاصل على شهادة CCNA من سيسكو، وأتطلع لبناء مسيرة مهنية ناجحة في مجال الأمن السيبراني.
                     </span>
                 </div>
-
                 <ul style="list-style: none; color: var(--text-secondary);">
                     <li
                         style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;">
-                        <span>📞 Phone</span>
-                        <span style="color: var(--text-primary); font-weight: 600;">01090204281</span>
+                        <span data-i18n="label-phone">📞 Phone</span>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <a href="tel:+201090204281"
+                                style="color: var(--text-primary); font-weight: 600; text-decoration: none; transition: color 0.2s;"
+                                onmouseover="this.style.color='var(--primary-blue)'"
+                                onmouseout="this.style.color='var(--text-primary)'">01090204281</a>
+                        </div>
                     </li>
                     <li
                         style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;">
-                        <span>📧 Email</span>
+                        <span data-i18n="label-email">📧 Email</span>
                         <a href="mailto:capoca2004@gmail.com"
                             style="color: var(--primary-blue); text-decoration: none;">capoca2004@gmail.com</a>
                     </li>
@@ -215,55 +219,64 @@
                     <span class="lang-en">Empowering students to master PHP through interactive learning.</span>
                     <span class="lang-ar">تمكين الطلاب من احتراف PHP من خلال التعلم التفاعلي.</span>
                 </p>
-                <div class="social-buttons">
-                    <!-- Facebook (Standard Bold F) -->
-                    <a href="https://www.facebook.com/share/1BdmHNXFo3/" target="_blank" class="social-btn">
-                        <svg viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
-                            <path
-                                d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-1.65 0-2.5 0-2.5 0c-3.5 0-4.5 2.5-4.5 4.5v3h-3v4h3v7.5A9.9 9.9 0 0 0 12 22a9.9 9.9 0 0 0 2.5-.3V13.5z">
-                            </path>
-                        </svg>
-                    </a>
-                    <!-- Instagram (Standard Bold Glyph) -->
-                    <a href="https://www.instagram.com/capo.2004" target="_blank" class="social-btn">
-                        <svg viewBox="0 0 24 24" fill="currentColor" style="width: 22px; height: 22px;">
-                            <path
-                                d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5Z">
-                            </path>
-                        </svg>
-                    </a>
-                    <!-- Website (Standard Bold Globe) -->
-                    <a href="https://capo2004.netlify.app/" target="_blank" class="social-btn">
-                        <svg viewBox="0 0 24 24" fill="currentColor" style="width: 22px; height: 22px;">
-                            <path
-                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z">
-                            </path>
-                        </svg>
-                    </a>
-                </div>
             </div>
             <div class="footer-col">
                 <h3 data-i18n="footer-contact">Contact Us</h3>
                 <ul class="footer-links">
-                    <li>Email: capoca2004@gmail.com</li>
-                    <li>Phone: 01090204281</li>
-                    <li>Location: Cairo, Egypt</li>
+                    <li><span data-i18n="label-email">Email</span>: <a href="mailto:capoca2004@gmail.com"
+                            style="color: inherit; text-decoration: none; transition: color 0.2s;"
+                            onmouseover="this.style.color='#60a5fa'"
+                            onmouseout="this.style.color='inherit'">capoca2004@gmail.com</a></li>
+                    <li><span data-i18n="label-phone">Phone</span>: <a href="tel:+201090204281"
+                            style="color: inherit; text-decoration: none; transition: color 0.2s;"
+                            onmouseover="this.style.color='#60a5fa'"
+                            onmouseout="this.style.color='inherit'">01090204281</a></li>
+                    <li><span data-i18n="label-location">Location</span>: Cairo, Egypt</li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h3>Quick Links</h3>
+                <h3 data-i18n="footer-quick-links">Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="lessons.html" data-i18n="nav-lessons">Lessons Overview</a></li>
+                    <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+                    <li><a href="lessons.html" data-i18n="nav-lessons">Lessons</a></li>
                     <li><a href="examples.html" data-i18n="nav-examples">Code Examples</a></li>
                     <li><a href="quiz.html" data-i18n="nav-quiz">Take Quiz</a></li>
-                    <li><a href="report.html" data-i18n="nav-report">Project Report</a></li>
                 </ul>
             </div>
         </div>
-        <div
-            style="text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; color: rgba(255,255,255,0.6);">
-            &copy; 2025 Ahmed Adel. All rights reserved.
+
+        <!-- Social Icons (Bottom Centered) -->
+        <div class="social-container-bottom"
+            style="display: flex; justify-content: center; gap: 20px; margin-top: 3rem; margin-bottom: 1.5rem;">
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/share/1BdmHNXFo3/" target="_blank" class="social-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-1.65 0-2.5 0-2.5 0c-3.5 0-4.5 2.5-4.5 4.5v3h-3v4h3v7.5A9.9 9.9 0 0 0 12 22a9.9 9.9 0 0 0 2.5-.3V13.5z">
+                    </path>
+                </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/capo.2004" target="_blank" class="social-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5Z">
+                    </path>
+                </svg>
+            </a>
+            <!-- Website -->
+            <a href="https://capo2004.netlify.app/" target="_blank" class="social-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z">
+                    </path>
+                </svg>
+            </a>
         </div>
+
+        <div
+            style="text-align: center; margin-top: 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+            <span data-i18n="footer-copyright">&copy; 2025 Ahmed Adel. All rights reserved.</span>
     </footer>
 
     <script src="script.js"></script>
