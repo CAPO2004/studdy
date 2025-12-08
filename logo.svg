@@ -1,0 +1,21 @@
+<svg width="250" height="60" viewBox="0 0 250 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- Restored Blue-Purple Theme Gradient (The "Very First" Gradient) -->
+        <linearGradient id="textGrad" x1="0" y1="0" x2="100%" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#3b82f6" /> <!-- Blue -->
+            <stop offset="50%" stop-color="#8b5cf6" /> <!-- Purple -->
+            <stop offset="100%" stop-color="#6366f1" /> <!-- Indigo -->
+        </linearGradient>
+    </defs>
+
+    <style>
+        .title { font-family: 'Segoe UI', system-ui, sans-serif; font-weight: 800; font-size: 28px; letter-spacing: 0.5px; }
+        .subtitle { font-family: 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 1.5px; opacity: 0.9; }
+    </style>
+    
+    <!-- Main Title "PHP Mastery" with Blue-Purple Gradient -->
+    <text x="0" y="32" class="title" fill="url(#textGrad)">PHP Mastery</text>
+    
+    <!-- Subtitle "By Ahmed Adel" with matching tone -->
+    <text x="2" y="48" class="subtitle" fill="#94a3b8">BY AHMED ADEL</text>
+</svg>

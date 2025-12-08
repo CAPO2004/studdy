@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Quiz - PHP Mastery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <header class="animate-in">
+        <div class="logo-container">
+            <img src="logo.svg" alt="PHP Mastery Logo">
+            <span style="font-weight: 800; font-size: 1.2rem; margin-left: 10px; color: white;">PHP MASTERY</span>
+        </div>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+                <li><a href="lessons.html" data-i18n="nav-lessons">Lessons</a></li>
+                <li><a href="examples.html" data-i18n="nav-examples">Examples</a></li>
+                <li><a href="quiz.html" class="active" data-i18n="nav-quiz">Quiz</a></li>
+
+            </ul>
+        </nav>
+        <div class="controls">
+            <button id="theme-toggle" class="toggle-btn" title="Toggle Theme">☀️</button>
+            <button id="lang-toggle" class="toggle-btn" title="Switch Language">🌐</button>
+            <button id="mobile-menu-btn" class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <div class="container animate-in">
+        <h1 class="gradient-text" style="margin-bottom: 2rem;">
+            <span class="lang-en">Test Your Knowledge</span>
+            <span class="lang-ar">اختبر معلوماتك</span>
+        </h1>
+
+        <div id="quiz-container" class="card glass">
+            <!-- Questions are rendered via JS in script.js which HANDLES BILINGUAL CONTENT -->
+            <!-- We just need a container -->
+            <form id="quiz-form">
+                <!-- Content injected by JS -->
+            </form>
+
+            <div id="quiz-result"
+                style="display: none; margin-top: 3rem; text-align: center; padding: 2rem; background: var(--bg-color); border-radius: 10px; border: 1px solid var(--border-color);">
+                <h2 id="result-title"></h2>
+                <p id="result-score" style="font-size: 2rem; margin: 1rem 0; font-weight: bold;"></p>
+                <p id="result-msg" style="color: var(--text-secondary);"></p>
+                <button class="btn" onclick="location.reload()" style="margin-top: 1.5rem;">
+                    <span class="lang-en">Try Again</span>
+                    <span class="lang-ar">حاول مرة أخرى</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3 data-i18n="nav-home">PHP Mastery</h3>
+                <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem;">
+                    <span class="lang-en">Empowering students to master PHP through interactive learning.</span>
+                    <span class="lang-ar">تمكين الطلاب من احتراف PHP من خلال التعلم التفاعلي.</span>
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3 data-i18n="footer-contact">Contact Us</h3>
+                <ul class="footer-links">
+                    <li>Email: capoca2004@gmail.com</li>
+                    <li>Phone: 01090204281</li>
+                    <li>Location: Cairo, Egypt</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="lessons.html" data-i18n="nav-lessons">Lessons</a></li>
+                    <li><a href="examples.html" data-i18n="nav-examples">Examples</a></li>
+                    <li><a href="quiz.html" data-i18n="nav-quiz">Quiz</a></li>
+                </ul>
+            </div>
+        </div>
+        <div
+            style="text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+            &copy; 2025 Ahmed Adel. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <style>
+        .question-box {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            transition: background 0.3s;
+            border-radius: 8px;
+        }
+
+        .question-box:last-of-type {
+            border-bottom: none;
+        }
+
+        .question-box p {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .question-box label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 0.8rem;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .question-box label:hover {
+            background: var(--light-blue);
+        }
+
+        input[type="radio"] {
+            transform: scale(1.2);
+        }
+    </style>
+</body>
+
+</html>

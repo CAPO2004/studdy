@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Mastery - The Ultimate Learning Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <svg class="code-draw" viewBox="0 0 100 100" width="150" height="150">
+            <!-- Laptop Screen -->
+            <rect class="draw-path" x="20" y="25" width="60" height="40" rx="3" fill="none" stroke="#6366f1"
+                stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            <!-- Laptop Base -->
+            <path class="draw-path" d="M 15 70 L 85 70 L 80 65 L 20 65 Z" fill="none" stroke="#8b5cf6" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round" />
+            <!-- Code Inside -->
+            <path class="draw-path" d="M 40 40 L 35 45 L 40 50" fill="none" stroke="#22d3ee" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round" />
+            <path class="draw-path" d="M 60 40 L 65 45 L 60 50" fill="none" stroke="#22d3ee" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round" />
+            <path class="draw-path" d="M 45 50 L 55 40" fill="none" stroke="#22d3ee" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <div class="loading-text">Loading PHP Mastery...</div>
+    </div>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <header class="animate-in">
+        <div class="logo-container">
+            <img src="logo.svg" alt="PHP Mastery Logo">
+
+        </div>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="index.html" class="active" data-i18n="nav-home">Home</a></li>
+                <li><a href="lessons.html" data-i18n="nav-lessons">Lessons</a></li>
+                <li><a href="examples.html" data-i18n="nav-examples">Examples</a></li>
+                <li><a href="quiz.html" data-i18n="nav-quiz">Quiz</a></li>
+
+            </ul>
+        </nav>
+        <div class="controls">
+            <!-- New Icon Buttons -->
+            <button id="theme-toggle" class="toggle-btn" title="Toggle Theme">☀️</button>
+            <button id="lang-toggle" class="toggle-btn" title="Switch Language">🌐</button>
+            <button id="mobile-menu-btn" class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <!-- Full Screen Hero Section -->
+    <section class="hero-section">
+        <div class="hero-text animate-in">
+            <span
+                style="background: rgba(99, 102, 241, 0.2); color: #a5b4fc; padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 0.9rem; border: 1px solid #6366f1; display: inline-block; margin-bottom: 1rem;">
+                <!-- Bilingual Content -->
+                <span class="lang-en">🚀 v2.0 - Now Available</span>
+                <span class="lang-ar">🚀 الإصدار الثاني - متاح الآن</span>
+            </span>
+
+            <h1 data-i18n="welcome">Master Modern PHP Development</h1>
+
+            <p
+                style="font-size: 1.25rem; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto; color: #e0e7ff;">
+                <span class="lang-en">The most comprehensive resource for learning server-side programming. Interactive
+                    lessons, real-world examples, and instant feedback quizzes.</span>
+                <span class="lang-ar">المصدر الشامل لتعلم برمجة جانب الخادم. دروس تفاعلية، أمثلة واقعية، واختبارات
+                    فورية.</span>
+            </p>
+
+            <div style="display: flex; gap: 15px; justify-content: center; margin-top: 2rem;">
+                <a href="lessons.html" class="btn" style="padding: 15px 40px; font-size: 1.1rem;"
+                    data-i18n="btn-start">Start Learning Now</a>
+                <a href="examples.html" class="btn"
+                    style="background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.3); color: white; box-shadow: none;">
+                    <span class="lang-en">View Syntax</span>
+                    <span class="lang-ar">عرض الأكواد</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Features Grid -->
+        <section style="margin: 6rem 0;">
+            <h2 style="text-align: center; margin-bottom: 3rem; font-size: 2.5rem; color: var(--text-primary);">
+                <span class="lang-en">Why Choose PHP Mastery?</span>
+                <span class="lang-ar">لماذا تختار PHP Mastery؟</span>
+            </h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                <!-- Feature 1 -->
+                <div class="card glass" style="text-align: left;">
+                    <div class="feature-icon-wrapper">⚡</div>
+                    <h3>
+                        <span class="lang-en">Interactive & Fast</span>
+                        <span class="lang-ar">تفاعلي وسريع</span>
+                    </h3>
+                    <p style="color: var(--text-secondary);">
+                        <span class="lang-en">Experience a highly responsive interface powered by modern glassmorphism
+                            design. No boring static pages—everything feels alive.</span>
+                        <span class="lang-ar">استمتع بواجهة سريعة الاستجابة بتصميم زجاجي حديث. لا مزيد من الصفحات
+                            المملة.</span>
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="card glass" style="text-align: left;">
+                    <div class="feature-icon-wrapper">
+                        🌍
+                    </div>
+                    <h3>
+                        <span class="lang-en">Bilingual Support</span>
+                        <span class="lang-ar">دعم ثنائي اللغة</span>
+                    </h3>
+                    <p style="color: var(--text-secondary);">
+                        <span class="lang-en">Switch between English and Arabic instantly with full RTL support.
+                            Learning programming is now accessible to everyone.</span>
+                        <span class="lang-ar">بدّل بين الإنجليزية والعربية فوراً مع دعم كامل للكتابة من اليمين. البرمجة
+                            الآن للجميع.</span>
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="card glass" style="text-align: left;">
+                    <div class="feature-icon-wrapper">
+                        🧠
+                    </div>
+                    <h3>
+                        <span class="lang-en">Smart Quizzes</span>
+                        <span class="lang-ar">اختبارات ذكية</span>
+                    </h3>
+                    <p style="color: var(--text-secondary);">
+                        <span class="lang-en">Test your knowledge with our adaptive quiz system. Get instant feedback
+                            and see your score in real-time.</span>
+                        <span class="lang-ar">اختبر معلوماتك مع نظام الاختبارات الذكي. احصل على نتائج فورية وملاحظات
+                            مباشرة.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Developer Layout -->
+        <section style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; margin-bottom: 6rem;">
+
+            <div class="card glass">
+                <h2 data-i18n="footer-vision">Our Strategic Vision</h2>
+                <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 1.5rem; line-height: 1.8;">
+                    <span class="lang-en">We aim to revolutionize the way students learn server-side scripting. By
+                        combining theoretical knowledge with practical examples, we bridge the gap between academic
+                        learning and industry requirements.</span>
+                    <span class="lang-ar">نهدف إلى إحداث ثورة في طريقة تعلم البرمجة. من خلال الجمع بين المعرفة النظرية
+                        والأمثلة العملية، نسد الفجوة بين التعلم الأكاديمي ومتطلبات سوق العمل.</span>
+                </p>
+            </div>
+
+            <!-- Instructor Card -->
+            <div class="card glass">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <img src="profile.jpg" alt="Ahmed Adel"
+                        style="width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 1rem; object-fit: cover; border: 4px solid var(--primary-blue); box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                    <h3>Ahmed Adel</h3>
+                    <div style="color: var(--primary-blue); font-weight: 600; margin-bottom: 1rem;">
+                        <span class="lang-en">Cybersecurity Student</span>
+                        <span class="lang-ar">طالب أمن سيبراني</span>
+                    </div>
+                </div>
+
+                <div
+                    style="color: var(--text-secondary); margin-bottom: 1.5rem; text-align: center; font-size: 0.95rem; line-height: 1.6;">
+                    <span class="lang-en">
+                        Cybersecurity student at the Faculty of Computers and Artificial Intelligence, passionate about
+                        IT and data security.
+                        Certified in CCNA, aspiring to build a successful career in cybersecurity.
+                    </span>
+                    <span class="lang-ar">
+                        طالب متخصص في مجال الأمن السيبراني بكلية الحاسبات والمعلومات، شغوف بتكنولوجيا المعلومات وأمن
+                        البيانات.
+                        حاصل على شهادة CCNA من سيسكو، وأتطلع لبناء مسيرة مهنية ناجحة في مجال الأمن السيبراني.
+                    </span>
+                </div>
+
+                <ul style="list-style: none; color: var(--text-secondary);">
+                    <li
+                        style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;">
+                        <span>📞 Phone</span>
+                        <span style="color: var(--text-primary); font-weight: 600;">01090204281</span>
+                    </li>
+                    <li
+                        style="padding: 10px 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;">
+                        <span>📧 Email</span>
+                        <a href="mailto:capoca2004@gmail.com"
+                            style="color: var(--primary-blue); text-decoration: none;">capoca2004@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3 data-i18n="nav-home">PHP Mastery</h3>
+                <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem;">
+                    <span class="lang-en">Empowering students to master PHP through interactive learning.</span>
+                    <span class="lang-ar">تمكين الطلاب من احتراف PHP من خلال التعلم التفاعلي.</span>
+                </p>
+                <div class="social-buttons">
+                    <!-- Facebook (Standard Bold F) -->
+                    <a href="https://www.facebook.com/share/1BdmHNXFo3/" target="_blank" class="social-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
+                            <path
+                                d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-1.65 0-2.5 0-2.5 0c-3.5 0-4.5 2.5-4.5 4.5v3h-3v4h3v7.5A9.9 9.9 0 0 0 12 22a9.9 9.9 0 0 0 2.5-.3V13.5z">
+                            </path>
+                        </svg>
+                    </a>
+                    <!-- Instagram (Standard Bold Glyph) -->
+                    <a href="https://www.instagram.com/capo.2004" target="_blank" class="social-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor" style="width: 22px; height: 22px;">
+                            <path
+                                d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5Z">
+                            </path>
+                        </svg>
+                    </a>
+                    <!-- Website (Standard Bold Globe) -->
+                    <a href="https://capo2004.netlify.app/" target="_blank" class="social-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor" style="width: 22px; height: 22px;">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3 data-i18n="footer-contact">Contact Us</h3>
+                <ul class="footer-links">
+                    <li>Email: capoca2004@gmail.com</li>
+                    <li>Phone: 01090204281</li>
+                    <li>Location: Cairo, Egypt</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="lessons.html" data-i18n="nav-lessons">Lessons Overview</a></li>
+                    <li><a href="examples.html" data-i18n="nav-examples">Code Examples</a></li>
+                    <li><a href="quiz.html" data-i18n="nav-quiz">Take Quiz</a></li>
+                    <li><a href="report.html" data-i18n="nav-report">Project Report</a></li>
+                </ul>
+            </div>
+        </div>
+        <div
+            style="text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+            &copy; 2025 Ahmed Adel. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

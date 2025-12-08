@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Lessons - PHP Mastery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <header class="animate-in">
+        <div class="logo-container">
+            <img src="logo.svg" alt="PHP Mastery Logo">
+            <span style="font-weight: 800; font-size: 1.2rem; margin-left: 10px; color: white;">PHP MASTERY</span>
+        </div>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+                <li><a href="lessons.html" class="active" data-i18n="nav-lessons">Lessons</a></li>
+                <li><a href="examples.html" data-i18n="nav-examples">Examples</a></li>
+                <li><a href="quiz.html" data-i18n="nav-quiz">Quiz</a></li>
+
+            </ul>
+        </nav>
+        <div class="controls">
+            <button id="theme-toggle" class="toggle-btn" title="Toggle Theme">☀️</button>
+            <button id="lang-toggle" class="toggle-btn" title="Switch Language">🌐</button>
+            <button id="mobile-menu-btn" class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <div class="container animate-in">
+        <h1 class="gradient-text" style="margin-bottom: 2rem;">
+            <span class="lang-en">PHP Core Topics</span>
+            <span class="lang-ar">مواضيع PHP الأساسية</span>
+        </h1>
+
+        <div class="lessons-container">
+            <aside class="topic-list card glass" style="padding: 1.5rem; max-height: fit-content; border-bottom: none;">
+                <button class="topic-btn active" data-topic="topic-input">
+                    <span class="lang-en">1. Input</span>
+                    <span class="lang-ar">1. المدخلات</span>
+                </button>
+                <button class="topic-btn" data-topic="topic-operators">
+                    <span class="lang-en">2. Operators</span>
+                    <span class="lang-ar">2. المعاملات</span>
+                </button>
+                <button class="topic-btn" data-topic="topic-conditions">
+                    <span class="lang-en">3. Conditions</span>
+                    <span class="lang-ar">3. الشروط</span>
+                </button>
+                <button class="topic-btn" data-topic="topic-loops">
+                    <span class="lang-en">4. Loops</span>
+                    <span class="lang-ar">4. الحلقات التكرارية</span>
+                </button>
+                <button class="topic-btn" data-topic="topic-output">
+                    <span class="lang-en">5. Output</span>
+                    <span class="lang-ar">5. المخرجات</span>
+                </button>
+            </aside>
+
+            <main class="topic-content card glass">
+                <!-- Topic 1: Input -->
+                <article id="topic-input" class="topic-pane active">
+                    <h2 style="color: var(--primary-blue);">
+                        <span class="lang-en">Handling User Input</span>
+                        <span class="lang-ar">التعامل مع مدخلات المستخدم</span>
+                    </h2>
+                    <p>
+                        <span class="lang-en">PHP provides superglobal arrays to collect data submitted via HTML forms.
+                            The most common methods are <code>$_GET</code> and <code>$_POST</code>.</span>
+                        <span class="lang-ar">يوفر PHP مصفوفات فائقة لجمع البيانات المرسلة عبر نماذج HTML. أشهر الطرق هي
+                            <code>$_GET</code> و <code>$_POST</code>.</span>
+                    </p>
+                    <ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;">
+                            <span class="lang-en"><strong>$_GET:</strong> Data is passed in the URL (visible to
+                                everyone). Useful for search forms.</span>
+                            <span class="lang-ar"><strong>$_GET:</strong> تُمرر البيانات في الرابط (مرئية للجميع). مفيدة
+                                لنماذج البحث.</span>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <span class="lang-en"><strong>$_POST:</strong> Data is passed in the HTTP request body
+                                (invisible to others). Essential for passwords.</span>
+                            <span class="lang-ar"><strong>$_POST:</strong> تُمرر البيانات في جسم طلب HTTP (غير مرئية).
+                                ضرورية لكلمات المرور.</span>
+                        </li>
+                    </ul>
+                    <div
+                        style="margin-top: 2rem; padding: 1.5rem; background: rgba(99, 102, 241, 0.1); border-radius: 12px; border: 1px solid var(--primary-blue);">
+                        <strong>
+                            <span class="lang-en">Want to see code?</span>
+                            <span class="lang-ar">تريد رؤية الكود؟</span>
+                        </strong>
+                        <span class="lang-en">We have 3 practical examples waiting for you.</span>
+                        <span class="lang-ar">لدينا 3 أمثلة عملية بانتظارك.</span>
+                        <br><br>
+                        <a href="examples.html#input" class="btn" style="font-size: 0.9rem; padding: 10px 20px;">
+                            <span class="lang-en">View Examples</span>
+                            <span class="lang-ar">عرض الأمثلة</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Topic 2: Operators -->
+                <article id="topic-operators" class="topic-pane">
+                    <h2 style="color: var(--primary-blue);">
+                        <span class="lang-en">PHP Operators</span>
+                        <span class="lang-ar">معاملات PHP</span>
+                    </h2>
+                    <p>
+                        <span class="lang-en">Operators are used to perform operations on variables and values.</span>
+                        <span class="lang-ar">تستخدم المعاملات لإجراء عمليات على المتغيرات والقيم.</span>
+                    </p>
+                    <ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;">
+                            <span class="lang-en"><strong>Arithmetic:</strong> +, -, *, /, %</span>
+                            <span class="lang-ar"><strong>حسابية:</strong> +, -, *, /, %</span>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <span class="lang-en"><strong>Assignment:</strong> =, +=, -=</span>
+                            <span class="lang-ar"><strong>إسناد:</strong> =, +=, -=</span>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <span class="lang-en"><strong>Comparison:</strong> ==, ===, !=, >, << /span>
+                                    <span class="lang-ar"><strong>مقارنة:</strong> ==, ===, !=, >, << /span>
+                        </li>
+                    </ul>
+                    <div
+                        style="margin-top: 2rem; padding: 1.5rem; background: rgba(99, 102, 241, 0.1); border-radius: 12px; border: 1px solid var(--primary-blue);">
+                        <strong>
+                            <span class="lang-en">Check it out!</span>
+                            <span class="lang-ar">جرب بنفسك!</span>
+                        </strong>
+                        <br><br>
+                        <a href="examples.html#operators" class="btn" style="font-size: 0.9rem; padding: 10px 20px;">
+                            <span class="lang-en">View Examples</span>
+                            <span class="lang-ar">عرض الأمثلة</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Topic 3: Conditions -->
+                <article id="topic-conditions" class="topic-pane">
+                    <h2 style="color: var(--primary-blue);">
+                        <span class="lang-en">Conditional Statements</span>
+                        <span class="lang-ar">الجمل الشرطية</span>
+                    </h2>
+                    <p>
+                        <span class="lang-en">Conditional statements are used to perform different actions based on
+                            different conditions.</span>
+                        <span class="lang-ar">تستخدم الجمل الشرطية لتنفيذ إجراءات مختلفة بناءً على شروط مختلفة.</span>
+                    </p>
+                    <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;"><code>if</code></li>
+                        <li style="margin-bottom: 0.5rem;"><code>if...else</code></li>
+                        <li style="margin-bottom: 0.5rem;"><code>switch</code></li>
+                    </ul>
+                    <div
+                        style="margin-top: 2rem; padding: 1.5rem; background: rgba(99, 102, 241, 0.1); border-radius: 12px; border: 1px solid var(--primary-blue);">
+                        <a href="examples.html#conditions" class="btn" style="font-size: 0.9rem; padding: 10px 20px;">
+                            <span class="lang-en">View Examples</span>
+                            <span class="lang-ar">عرض الأمثلة</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Topic 4: Loops -->
+                <article id="topic-loops" class="topic-pane">
+                    <h2 style="color: var(--primary-blue);">
+                        <span class="lang-en">Loops</span>
+                        <span class="lang-ar">الحلقات التكرارية</span>
+                    </h2>
+                    <p>
+                        <span class="lang-en">Loops are used to execute the same block of code again and again.</span>
+                        <span class="lang-ar">تستخدم الحلقات لتنفيذ نفس كود البرمجة مراراً وتكراراً.</span>
+                    </p>
+                    <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;"><code>while</code></li>
+                        <li style="margin-bottom: 0.5rem;"><code>for</code></li>
+                        <li style="margin-bottom: 0.5rem;"><code>foreach</code></li>
+                    </ul>
+                    <div
+                        style="margin-top: 2rem; padding: 1.5rem; background: rgba(99, 102, 241, 0.1); border-radius: 12px; border: 1px solid var(--primary-blue);">
+                        <a href="examples.html#loops" class="btn" style="font-size: 0.9rem; padding: 10px 20px;">
+                            <span class="lang-en">View Examples</span>
+                            <span class="lang-ar">عرض الأمثلة</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Topic 5: Output -->
+                <article id="topic-output" class="topic-pane">
+                    <h2 style="color: var(--primary-blue);">
+                        <span class="lang-en">Displaying Output</span>
+                        <span class="lang-ar">عرض المخرجات</span>
+                    </h2>
+                    <p>
+                        <span class="lang-en">There are two basic ways to get output in PHP: <code>echo</code> and
+                            <code>print</code>.</span>
+                        <span class="lang-ar">هناك طريقتان أساسيتان للإخراج في PHP: <code>echo</code> و
+                            <code>print</code>.</span>
+                    </p>
+                    <ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;">
+                            <span class="lang-en"><code>echo</code> has no return value. Marginallly faster.</span>
+                            <span class="lang-ar"><code>echo</code> ليس لها قيمة إرجاع. أسرع قليلاً.</span>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <span class="lang-en"><code>print</code> has a return value of 1.</span>
+                            <span class="lang-ar"><code>print</code> لها قيمة إرجاع 1.</span>
+                        </li>
+                    </ul>
+                    <div
+                        style="margin-top: 2rem; padding: 1.5rem; background: rgba(99, 102, 241, 0.1); border-radius: 12px; border: 1px solid var(--primary-blue);">
+                        <a href="examples.html#output" class="btn" style="font-size: 0.9rem; padding: 10px 20px;">
+                            <span class="lang-en">View Examples</span>
+                            <span class="lang-ar">عرض الأمثلة</span>
+                        </a>
+                    </div>
+                </article>
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3 data-i18n="nav-home">PHP Mastery</h3>
+                <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem;">
+                    <span class="lang-en">Empowering students to master PHP through interactive learning.</span>
+                    <span class="lang-ar">تمكين الطلاب من احتراف PHP من خلال التعلم التفاعلي.</span>
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3 data-i18n="footer-contact">Contact Us</h3>
+                <ul class="footer-links">
+                    <li>Email: capoca2004@gmail.com</li>
+                    <li>Phone: 01090204281</li>
+                    <li>Location: Cairo, Egypt</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="lessons.html" data-i18n="nav-lessons">Lessons</a></li>
+                    <li><a href="examples.html" data-i18n="nav-examples">Examples</a></li>
+                    <li><a href="quiz.html" data-i18n="nav-quiz">Quiz</a></li>
+                </ul>
+            </div>
+        </div>
+        <div
+            style="text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+            &copy; 2025 Ahmed Adel. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Simple script to handle tab switching
+        const buttons = document.querySelectorAll('.topic-btn');
+        const panes = document.querySelectorAll('.topic-pane');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all
+                buttons.forEach(b => b.classList.remove('active'));
+                panes.forEach(p => p.classList.remove('active'));
+
+                // Add active to clicked
+                btn.classList.add('active');
+
+                // Show corresponding pane
+                const topicId = btn.getAttribute('data-topic');
+                document.getElementById(topicId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

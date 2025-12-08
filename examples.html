@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Examples - PHP Mastery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <header class="animate-in">
+        <div class="logo-container">
+            <img src="logo.svg" alt="PHP Mastery Logo">
+            <span style="font-weight: 800; font-size: 1.2rem; margin-left: 10px; color: white;">PHP MASTERY</span>
+        </div>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+                <li><a href="lessons.html" data-i18n="nav-lessons">Lessons</a></li>
+                <li><a href="examples.html" class="active" data-i18n="nav-examples">Examples</a></li>
+                <li><a href="quiz.html" data-i18n="nav-quiz">Quiz</a></li>
+
+            </ul>
+        </nav>
+        <div class="controls">
+            <button id="theme-toggle" class="toggle-btn" title="Toggle Theme">☀️</button>
+            <button id="lang-toggle" class="toggle-btn" title="Switch Language">🌐</button>
+            <button id="mobile-menu-btn" class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <div class="container animate-in">
+        <h1 class="gradient-text" style="margin-bottom: 1rem;">
+            <span class="lang-en">PHP Code Examples</span>
+            <span class="lang-ar">أمثلة أكواد PHP</span>
+        </h1>
+        <p style="margin-bottom: 3rem; color: var(--text-secondary); font-size: 1.1rem;">
+            <span class="lang-en">Explore practical examples for each topic. 3 examples per category.</span>
+            <span class="lang-ar">استكشف أمثلة عملية لكل موضوع. 3 أمثلة لكل فئة.</span>
+        </p>
+
+        <!-- Topic 1: Input -->
+        <section id="input" style="margin-bottom: 4rem;">
+            <h2
+                style="border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 2rem; color: var(--text-primary);">
+                <span class="lang-en">1. Input Logic</span>
+                <span class="lang-ar">1. منطق المدخلات</span>
+            </h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="card glass">
+                    <h3 style="color: var(--primary-blue);">
+                        <span class="lang-en">Example 1: Basic $_GET</span>
+                        <span class="lang-ar">مثال 1: أساسيات $_GET</span>
+                    </h3>
+                    <pre><code><span class="kwd">&lt;?php</span>
+<span class="cmt">// Accessing URL parameters</span>
+<span class="var">$name</span> = <span class="var">$_GET</span>[<span class="str">'name'</span>];
+<span class="kwd">echo</span> <span class="str">"Hello, "</span> . <span class="var">$name</span>;
+<span class="kwd">?&gt;</span></code></pre>
+                </div>
+
+                <div class="card glass">
+                    <h3 style="color: var(--primary-blue);">
+                        <span class="lang-en">Example 2: Form Check</span>
+                        <span class="lang-ar">مثال 2: فحص النموذج</span>
+                    </h3>
+                    <pre><code><span class="kwd">&lt;?php</span>
+<span class="cmt">// Checking POST method</span>
+<span class="kwd">if</span> (<span class="var">$_SERVER</span>[<span class="str">"REQUEST_METHOD"</span>] == <span class="str">"POST"</span>) {
+    <span class="var">$email</span> = <span class="var">$_POST</span>[<span class="str">'email'</span>];
+    <span class="kwd">echo</span> <span class="str">"Received: "</span> . <span class="var">$email</span>;
+}
+<span class="kwd">?&gt;</span></code></pre>
+                </div>
+
+                <div class="card glass">
+                    <h3 style="color: var(--primary-blue);">
+                        <span class="lang-en">Example 3: Secure Input</span>
+                        <span class="lang-ar">مثال 3: مدخلات آمنة</span>
+                    </h3>
+                    <pre><code><span class="kwd">&lt;?php</span>
+<span class="cmt">// Sanitizing input</span>
+<span class="var">$input</span> = <span class="str">"&lt;script&gt;alert('hack')&lt;/script&gt;"</span>;
+<span class="var">$safe</span> = <span class="func">htmlspecialchars</span>(<span class="var">$input</span>);
+<span class="kwd">echo</span> <span class="var">$safe</span>;
+<span class="kwd">?&gt;</span></code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topic 2: Operators -->
+        <section id="operators" style="margin-bottom: 4rem;">
+            <h2
+                style="border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 2rem; color: var(--text-primary);">
+                <span class="lang-en">2. Operators Logic</span>
+                <span class="lang-ar">2. منطق المعاملات</span>
+            </h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="card glass">
+                    <h3 style="color: var(--primary-blue);">
+                        <span class="lang-en">Example 1: Arithmetic</span>
+                        <span class="lang-ar">مثال 1: حسابية</span>
+                    </h3>
+                    <pre><code><span class="kwd">&lt;?php</span>
+<span class="var">$x</span> = <span class="num">10</span>;
+<span class="var">$y</span> = <span class="num">4</span>;
+<span class="kwd">echo</span> <span class="var">$x</span> + <span class="var">$y</span>; <span class="cmt">// 14</span>
+<span class="kwd">echo</span> <span class="var">$x</span> % <span class="var">$y</span>; <span class="cmt">// 2</span>
+<span class="kwd">?&gt;</span></code></pre>
+                </div>
+
+                <div class="card glass">
+                    <h3 style="color: var(--primary-blue);">
+                        <span class="lang-en">Example 2: Comparison</span>
+                        <span class="lang-ar">مثال 2: مقارنة</span>
+                    </h3>
+                    <pre><code><span class="kwd">&lt;?php</span>
+<span class="var">$a</span> = <span class="num">5</span>;
+<span class="var">$b</span> = <span class="str">"5"</span>;
+<span class="cmt">// Checks value AND type</span>
+<span class="var">$res</span> = (<span class="var">$a</span> === <span class="var">$b</span>); 
+<span class="kwd">echo</span> <span class="var">$res</span> ? <span class="str">'True'</span> : <span class="str">'False'</span>;
+<span class="kwd">?&gt;</span></code></pre>
+                </div>
+
+                <div class="card glass">
+                    <h3 style="color: var(--primary-blue);">
+                        <span class="lang-en">Example 3: Logical</span>
+                        <span class="lang-ar">مثال 3: منطقية</span>
+                    </h3>
+                    <pre><code><span class="kwd">&lt;?php</span>
+<span class="var">$age</span> = <span class="num">20</span>;
+<span class="var">$hasID</span> = <span class="kwd">true</span>;
+<span class="kwd">if</span> (<span class="var">$age</span> >= <span class="num">18</span> && <span class="var">$hasID</span>) {
+    <span class="kwd">echo</span> <span class="str">"Access Granted"</span>;
+}
+<span class="kwd">?&gt;</span></code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topic 3: Conditions -->
+        <section id="conditions" style="margin-bottom: 4rem;">
+            <h2
+                style="border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 2rem; color: var(--text-primary);">
+                <span class="lang-en">3. Conditions Logic</span>
+                <span class="lang-ar">3. منطق الشروط</span>
+            </h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="card glass">
+                    <h3 style="color: var(--primary-blue);">
+                        <span class="lang-en">Example 1: If-Else</span>
+                        <span class="lang-ar">مثال 1: If-Else</span>
+                    </h3>
+                    <pre><code><span class="kwd">&lt;?php</span>
+<span class="var">$t</span> = <span class="func">date</span>(<span class="str">"H"</span>);
+<span class="kwd">if</span> (<span class="var">$t</span> < <span class="num">20</span>) {
+    <span class="kwd">echo</span> <span class="str">"Day time!"</span>;
+} <span class="kwd">else</span> {
+    <span class="kwd">echo</span> <span class="str">"Night time!"</span>;
+}
+<span class="kwd">?&gt;</span></code></pre>
+                </div>
+
+                <div class="card glass">
+                    <h3 style="color: var(--primary-blue);">
+                        <span class="lang-en">Example 2: Elseif</span>
+                        <span class="lang-ar">مثال 2: Elseif</span>
+                    </h3>
+                    <pre><code><span class="kwd">&lt;?php</span>
+<span class="var">$score</span> = <span class="num">85</span>;
+<span class="kwd">if</span> (<span class="var">$score</span> > <span class="num">90</span>) {
+    <span class="kwd">echo</span> <span class="str">"A+"</span>;
+} <span class="kwd">elseif</span> (<span class="var">$score</span> > <span class="num">80</span>) {
+    <span class="kwd">echo</span> <span class="str">"A"</span>;
+} <span class="kwd">else</span> {
+    <span class="kwd">echo</span> <span class="str">"B"</span>;
+}
+<span class="kwd">?&gt;</span></code></pre>
+                </div>
+
+                <div class="card glass">
+                    <h3 style="color: var(--primary-blue);">
+                        <span class="lang-en">Example 3: Switch</span>
+                        <span class="lang-ar">مثال 3: Switch</span>
+                    </h3>
+                    <pre><code><span class="kwd">&lt;?php</span>
+<span class="var">$color</span> = <span class="str">"red"</span>;
+<span class="kwd">switch</span> (<span class="var">$color</span>) {
+    <span class="kwd">case</span> <span class="str">"red"</span>:
+        <span class="kwd">echo</span> <span class="str">"Red chosen"</span>;
+        <span class="kwd">break</span>;
+    <span class="kwd">default</span>:
+        <span class="kwd">echo</span> <span class="str">"None"</span>;
+}
+<span class="kwd">?&gt;</span></code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topic 4: Loops -->
+        <section id="loops" style="margin-bottom: 4rem;">
+            <h2
+                style="border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 2rem; color: var(--text-primary);">
+                <span class="lang-en">4. Loops Logic</span>
+                <span class="lang-ar">4. منطق الحلقات</span>
+            </h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="card glass">
+                    <h3 style="color: var(--primary-blue);">
+                        <span class="lang-en">Example 1: While Loop</span>
+                        <span class="lang-ar">مثال 1: While</span>
+                    </h3>
+                    <pre><code><span class="kwd">&lt;?php</span>
+<span class="var">$x</span> = <span class="num">1</span>;
+<span class="kwd">while</span>(<span class="var">$x</span> <= <span class="num">5</span>) {
+    <span class="kwd">echo</span> <span class="str">"Num: $x &lt;br&gt;"</span>;
+    <span class="var">$x</span>++;
+}
+<span class="kwd">?&gt;</span></code></pre>
+                </div>
+
+                <div class="card glass">
+                    <h3 style="color: var(--primary-blue);">
+                        <span class="lang-en">Example 2: For Loop</span>
+                        <span class="lang-ar">مثال 2: For</span>
+                    </h3>
+                    <pre><code><span class="kwd">&lt;?php</span>
+<span class="kwd">for</span> (<span class="var">$i</span> = <span class="num">0</span>; <span class="var">$i</span> < <span class="num">5</span>; <span class="var">$i</span>++) {
+    <span class="kwd">echo</span> <span class="str">"Num: $i &lt;br&gt;"</span>;
+}
+<span class="kwd">?&gt;</span></code></pre>
+                </div>
+
+                <div class="card glass">
+                    <h3 style="color: var(--primary-blue);">
+                        <span class="lang-en">Example 3: Foreach</span>
+                        <span class="lang-ar">مثال 3: Foreach</span>
+                    </h3>
+                    <pre><code><span class="kwd">&lt;?php</span>
+<span class="var">$arr</span> = <span class="kwd">array</span>(<span class="str">"A"</span>, <span class="str">"B"</span>, <span class="str">"C"</span>);
+<span class="kwd">foreach</span> (<span class="var">$arr</span> <span class="kwd">as</span> <span class="var">$val</span>) {
+    <span class="kwd">echo</span> <span class="str">"$val &lt;br&gt;"</span>;
+}
+<span class="kwd">?&gt;</span></code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topic 5: Output -->
+        <section id="output">
+            <h2
+                style="border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 2rem; color: var(--text-primary);">
+                <span class="lang-en">5. Output Logic</span>
+                <span class="lang-ar">5. منطق المخرجات</span>
+            </h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="card glass">
+                    <h3 style="color: var(--primary-blue);">
+                        <span class="lang-en">Example 1: Echo String</span>
+                        <span class="lang-ar">مثال 1: طباعة نص</span>
+                    </h3>
+                    <pre><code><span class="kwd">&lt;?php</span>
+<span class="kwd">echo</span> <span class="str">"&lt;h1&gt;Header&lt;/h1&gt;"</span>;
+<span class="kwd">echo</span> <span class="str">"Hello World!"</span>;
+<span class="kwd">?&gt;</span></code></pre>
+                </div>
+
+                <div class="card glass">
+                    <h3 style="color: var(--primary-blue);">
+                        <span class="lang-en">Example 2: Echo Vars</span>
+                        <span class="lang-ar">مثال 2: طباعة متغيرات</span>
+                    </h3>
+                    <pre><code><span class="kwd">&lt;?php</span>
+<span class="var">$txt</span> = <span class="str">"PHP"</span>;
+<span class="kwd">echo</span> <span class="str">"I love "</span> . <span class="var">$txt</span>;
+<span class="kwd">?&gt;</span></code></pre>
+                </div>
+
+                <div class="card glass">
+                    <h3 style="color: var(--primary-blue);">
+                        <span class="lang-en">Example 3: Print</span>
+                        <span class="lang-ar">مثال 3: استخدام Print</span>
+                    </h3>
+                    <pre><code><span class="kwd">&lt;?php</span>
+<span class="var">$ret</span> = <span class="kwd">print</span> <span class="str">"Hi"</span>;
+<span class="kwd">echo</span> <span class="str">" (Return: $ret)"</span>;
+<span class="kwd">?&gt;</span></code></pre>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <!-- Footer matches other pages -->
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3 data-i18n="nav-home">PHP Mastery</h3>
+                <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem;">
+                    <span class="lang-en">Empowering students to master PHP through interactive learning.</span>
+                    <span class="lang-ar">تمكين الطلاب من احتراف PHP من خلال التعلم التفاعلي.</span>
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3 data-i18n="footer-contact">Contact Us</h3>
+                <ul class="footer-links">
+                    <li>Email: capoca2004@gmail.com</li>
+                    <li>Phone: 01090204281</li>
+                    <li>Location: Cairo, Egypt</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="lessons.html" data-i18n="nav-lessons">Lessons</a></li>
+                    <li><a href="examples.html" data-i18n="nav-examples">Examples</a></li>
+                    <li><a href="quiz.html" data-i18n="nav-quiz">Quiz</a></li>
+                </ul>
+            </div>
+        </div>
+        <div
+            style="text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+            &copy; 2025 Ahmed Adel. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
