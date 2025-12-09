@@ -4,52 +4,45 @@
 */
 
 :root {
-    /* ✨ Sky Blue / Cyan Palette */
-    --primary-blue: #0ea5e9;
-    /* Sky 500 */
-    --dark-blue: #0284c7;
-    /* Sky 600 */
-    --light-blue: #e0f2fe;
-    /* Sky 100 */
-    --accent-cyan: #06b6d4;
-    /* Cyan 500 */
-    --accent-light: #67e8f9;
-    /* Cyan 300 */
+    /* ✨ Light Mode: Fresh Sky Blue Palette */
+    --primary-blue: #3b82f6;
+    /* Bright Blue */
+    --dark-blue: #1d4ed8;
+    /* Strong Blue */
+    --light-blue: #dbeafe;
+    /* Very Light Blue */
+    --accent-cyan: #0ea5e9;
+    /* Sky Blue */
+    --accent-light: #bae6fd;
+    /* Pale Sky */
 
-    /* 🌈 Sky Blue Gradients */
-    --gradient-main: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 50%, #22d3ee 100%);
-    /* Sky → Cyan → Cyan Light */
-    --gradient-hover: linear-gradient(135deg, #38bdf8 0%, #22d3ee 50%, #67e8f9 100%);
-    --gradient-text: linear-gradient(90deg, #0284c7, #0ea5e9, #06b6d4);
-    --gradient-accent: linear-gradient(135deg, #0ea5e9 0%, #67e8f9 100%);
+    /* 🌈 Light Gradients: Smooth Blue Transitions */
+    --gradient-main: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 100%);
+    --gradient-hover: linear-gradient(135deg, #60a5fa 0%, #38bdf8 100%);
+    --gradient-text: linear-gradient(90deg, #1d4ed8, #2563eb, #0ea5e9);
+    --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
 
-    /* 🎨 Header/Footer - Sky Blue to Cyan */
-    --header-bg: linear-gradient(90deg, #0369a1 0%, #0284c7 25%, #0ea5e9 50%, #06b6d4 75%, #14b8a6 100%);
-    /* Sky Dark → Cyan → Teal */
-    --footer-bg: linear-gradient(90deg, #14b8a6 0%, #06b6d4 25%, #0ea5e9 50%, #0284c7 75%, #0369a1 100%);
+    /* 🎨 Header/Footer: Light Blue Gradient */
+    --header-bg: linear-gradient(90deg, #1e3a8a 0%, #1d4ed8 50%, #2563eb 100%);
+    --footer-bg: linear-gradient(90deg, #1e40af 0%, #1e3a8a 50%, #172554 100%);
 
-    /* 🌅 Background - Light Sky Gradient */
-    --bg-gradient: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 25%, #cffafe 50%, #ecfeff 75%, #ffffff 100%);
-    /* Sky 50 → Cyan 50 → White */
+    /* 🌅 Background: Clean Light Blue */
+    --bg-gradient: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%);
 
-    /* 💎 Enhanced Glassmorphism */
-    --glass-bg: rgba(255, 255, 255, 0.8);
-    --glass-border: rgba(14, 165, 233, 0.2);
-    /* Sky tint */
-    --glass-shadow: 0 8px 32px 0 rgba(14, 165, 233, 0.12), 0 4px 16px rgba(6, 182, 212, 0.08);
+    /* 💎 Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(59, 130, 246, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(37, 99, 235, 0.1), 0 4px 16px rgba(59, 130, 246, 0.05);
 
     /* Light Mode Neutrals */
-    --bg-color: #f0f9ff;
-    /* Sky 50 */
+    --bg-color: #eff6ff;
     --surface-color: #ffffff;
-    --text-primary: #0c4a6e;
-    /* Sky 900 */
-    --text-secondary: #64748b;
-    /* Slate 500 */
-    --border-color: #7dd3fc;
-    /* Sky 300 */
-    --code-bg: #ecfeff;
-    /* Cyan 50 */
+    --text-primary: #1e3a8a;
+    /* Dark Blue Text */
+    --text-secondary: #475569;
+    /* Slate Gray */
+    --border-color: #93c5fd;
+    --code-bg: #f0f9ff;
 
     /* Fonts */
     --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -60,47 +53,42 @@
     --transition-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* 🌙 Dark Mode Variables - Deep Ocean */
+/* 🌙 Dark Mode: Deep Navy / Midnight Blue */
 [data-theme="dark"] {
-    --primary-blue: #38bdf8;
-    /* Sky 400 */
-    --dark-blue: #0ea5e9;
-    --light-blue: #0c4a6e;
-    /* Sky 900 */
-    --accent-cyan: #22d3ee;
-    /* Cyan 400 */
-    --accent-light: #67e8f9;
+    --primary-blue: #60a5fa;
+    /* Lighter Blue for contrast */
+    --dark-blue: #3b82f6;
+    --light-blue: #1e3a8a;
+    /* Navy */
+    --accent-cyan: #38bdf8;
+    --accent-light: #7dd3fc;
 
-    /* 🔮 Dark Mode Gradients (Ocean Depth) */
-    --gradient-main: linear-gradient(135deg, #0369a1 0%, #0891b2 50%, #14b8a6 100%);
-    /* Sky → Cyan → Teal */
-    --gradient-hover: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 50%, #2dd4bf 100%);
-    --gradient-text: linear-gradient(90deg, #38bdf8, #22d3ee, #2dd4bf);
+    /* 🔮 Dark Gradients: Deep Ocean/Cosmic Blue */
+    --gradient-main: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+    --gradient-hover: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+    --gradient-text: linear-gradient(90deg, #60a5fa, #93c5fd, #bae6fd);
 
-    /* 🌌 Dark Mode Header/Footer (Deep Ocean) */
-    --header-bg: linear-gradient(90deg, #042f2e 0%, #0f172a 25%, #0c4a6e 50%, #164e63 75%, #134e4a 100%);
-    /* Teal Dark → Sky Dark → Cyan Dark */
-    --footer-bg: linear-gradient(90deg, #134e4a 0%, #164e63 25%, #0c4a6e 50%, #0f172a 75%, #042f2e 100%);
+    /* 🌌 Dark Header/Footer: Midnight Navy */
+    --header-bg: linear-gradient(90deg, #020617 0%, #0f172a 50%, #172554 100%);
+    --footer-bg: linear-gradient(90deg, #020617 0%, #0f172a 50%, #172554 100%);
 
-    /* 🎆 Dark Mode Page Gradient */
-    --bg-gradient: linear-gradient(135deg, #020617 0%, #0c4a6e 30%, #164e63 60%, #0f172a 100%);
+    /* 🎆 Background: Deepest Navy */
+    --bg-gradient: linear-gradient(135deg, #020617 0%, #0f172a 40%, #172554 100%);
 
-    /* 💫 Enhanced Dark Glassmorphism */
-    --glass-bg: rgba(15, 23, 42, 0.8);
-    --glass-border: rgba(56, 189, 248, 0.2);
-    /* Sky glow border */
-    --glass-shadow: 0 8px 32px rgba(14, 165, 233, 0.15), 0 4px 16px rgba(6, 182, 212, 0.1);
+    /* 💫 Dark Glassmorphism */
+    --glass-bg: rgba(15, 23, 42, 0.7);
+    --glass-border: rgba(96, 165, 250, 0.2);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.2);
 
-    --bg-color: #0f172a;
-    /* Slate 900 */
-    --surface-color: #1e293b;
-    /* Slate 800 */
+    --bg-color: #020617;
+    /* Almost Black Blue */
+    --surface-color: #0f172a;
+    /* Dark Slate Blue */
     --text-primary: #f0f9ff;
+    /* Very Pale Blue */
     --text-secondary: #94a3b8;
-    /* Slate 400 */
-    --border-color: #334155;
-    /* Slate 700 */
-    --code-bg: #1e293b;
+    --border-color: #1e40af;
+    --code-bg: #0f172a;
 }
 
 /* ☀️ Light Mode Header Override */
