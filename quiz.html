@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +7,8 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <canvas id="bg-canvas"></canvas>
-
     <header class="animate-in">
         <div class="logo-container">
             <a href="index.html" class="logo-link">
@@ -27,7 +24,6 @@
             </ul>
         </nav>
         <div class="controls">
-            <!-- Theme Toggle Switch -->
             <label class="theme-switch" title="Toggle Theme">
                 <input type="checkbox" id="theme-toggle">
                 <span class="slider">
@@ -46,8 +42,6 @@
                     </svg>
                 </span>
             </label>
-
-            <!-- Language Dropdown with Flags -->
             <div class="lang-dropdown">
                 <button id="lang-toggle" class="lang-btn" title="Switch Language">
                     <img src="https://flagcdn.com/w40/us.png" alt="EN" class="flag-icon" id="current-flag">
@@ -73,18 +67,13 @@
             </button>
         </div>
     </header>
-
     <div class="container animate-in">
         <h1 class="gradient-text" style="margin-bottom: 2rem;">
             <span class="lang-en">Test Your Knowledge</span>
             <span class="lang-ar">اختبر معلوماتك</span>
         </h1>
-
-        <!-- TABS CONTAINER -->
         <div class="tabs-container">
-            <!-- Tab Navigation -->
             <div class="tab-nav">
-                <!-- Mobile Toggle Button -->
                 <button class="mobile-tab-toggle" onclick="toggleMobileMenu()">
                     <span class="toggle-text">
                         <span class="tab-icon">⌨️</span>
@@ -93,7 +82,6 @@
                     </span>
                     <span class="toggle-arrow">▼</span>
                 </button>
-
                 <div class="tab-indicator"></div>
                 <div class="tabs-list">
                     <button class="tab-btn active" data-tab="input">
@@ -123,8 +111,6 @@
                     </button>
                 </div>
             </div>
-
-            <!-- Tab Content: INPUT -->
             <div class="tab-content active" id="tab-input">
                 <div class="sub-lessons-grid">
                     <div class="sub-lesson-card" onclick="showQuiz('quiz-get')">
@@ -143,8 +129,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Tab Content: OPERATORS -->
             <div class="tab-content" id="tab-operators">
                 <div class="sub-lessons-grid">
                     <div class="sub-lesson-card" onclick="showQuiz('quiz-arithmetic')">
@@ -163,8 +147,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Tab Content: CONDITIONS -->
             <div class="tab-content" id="tab-conditions">
                 <div class="sub-lessons-grid">
                     <div class="sub-lesson-card" onclick="showQuiz('quiz-if')">
@@ -183,8 +165,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Tab Content: LOOPS -->
             <div class="tab-content" id="tab-loops">
                 <div class="sub-lessons-grid">
                     <div class="sub-lesson-card" onclick="showQuiz('quiz-for')">
@@ -203,8 +183,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Tab Content: OUTPUT -->
             <div class="tab-content" id="tab-output">
                 <div class="sub-lessons-grid">
                     <div class="sub-lesson-card" onclick="showQuiz('quiz-echo')">
@@ -216,18 +194,14 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Quiz Content Area (Shows when quiz selected) -->
             <div id="quiz-content" class="lesson-content-area" style="display: none;">
                 <button class="back-to-tabs" onclick="hideQuiz()">
                     <span class="lang-en">← Back to Topics</span>
                     <span class="lang-ar">→ العودة للمواضيع</span>
                 </button>
-
                 <div id="quiz-dynamic-content">
                     <h2 id="quiz-topic-title" style="margin-bottom: 2rem;"></h2>
                     <form id="quiz-form">
-                        <!-- Questions will be loaded here -->
                     </form>
                     <div id="quiz-result"
                         style="display: none; margin-top: 2rem; text-align: center; padding: 2rem; background: var(--glass-bg); border-radius: 12px; border: 1px solid var(--glass-border);">
@@ -236,7 +210,6 @@
             </div>
         </div>
     </div>
-
     <footer>
         <div class="footer-content">
             <div class="footer-col">
@@ -270,8 +243,6 @@
                 </ul>
             </div>
         </div>
-
-        <!-- Social Icons -->
         <div class="social-container-bottom"
             style="display: flex; justify-content: center; gap: 20px; margin-top: 3rem; margin-bottom: 1.5rem;">
             <a href="https://www.facebook.com/share/1BdmHNXFo3/" target="_blank" class="social-btn">
@@ -284,32 +255,25 @@
             <a href="https://www.instagram.com/capo.2004" target="_blank" class="social-btn">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                     <path
-                        d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z">
+                        d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5Z">
                     </path>
                 </svg>
             </a>
-            <a href="https://wa.me/+201090204281" target="_blank" class="social-btn">
+            <a href="https://capo2004.netlify.app/" target="_blank" class="social-btn">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                     <path
-                        d="M17.5 14.4l-2-1c-.3-.1-.5-.1-.7.2l-.9 1.1c-.1.2-.3.2-.6.1-1.5-.8-2.8-1.8-3.8-3.2-.3-.4-.2-.6 0-.8l.6-.7c.2-.2.2-.4.1-.6l-1-2c-.2-.5-.4-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.9.9-1.4 2-1.4 3.2-.1 1.7.6 3.4 1.9 4.7 2.4 2.5 5.5 4.1 9 4.2 1.2 0 2.3-.5 3.1-1.4.2-.3.3-.6.3-.9V15c0-.3-.1-.5-.4-.6z" />
-                    <path
-                        d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.4 5L2 22l5.2-1.3c1.5.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3c-.8-1.4-1.3-3-1.3-4.6 0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z" />
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z">
+                    </path>
                 </svg>
             </a>
         </div>
-
-        <p class="copyright" style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8;">
-            <span class="lang-en">© 2024 PHP Mastery. Created by Abdelrahman Muhammed.</span>
-            <span class="lang-ar">© 2024 PHP Mastery. إنشاء عبدالرحمن محمد.</span>
-        </p>
+        <div
+            style="text-align: center; margin-top: 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+            <span data-i18n="footer-copyright">&copy; 2025 Ahmed Adel. All rights reserved.</span>
     </footer>
-
     <script src="script.js"></script>
     <script>
-        // Init Background
         if (typeof initMatrixBackground === 'function') initMatrixBackground();
-
-        // ========== TABS WITH SLIDING INDICATOR ==========
         const tabNav = document.querySelector('.tab-nav');
         const tabIndicator = document.querySelector('.tab-indicator');
         const tabBtns = document.querySelectorAll('.tab-btn');
@@ -317,16 +281,12 @@
         const quizContent = document.getElementById('quiz-content');
         const tabsList = document.querySelector('.tabs-list');
         const mobileToggle = document.querySelector('.mobile-tab-toggle');
-
-        // Mobile Menu Toggle
         function toggleMobileMenu() {
             if (tabsList && mobileToggle) {
                 tabsList.classList.toggle('open');
                 mobileToggle.classList.toggle('open');
             }
         }
-
-        // Update mobile toggle text when tab changes
         function updateMobileToggleText(btn) {
             if (!mobileToggle) return;
             const toggleText = mobileToggle.querySelector('.toggle-text');
@@ -341,66 +301,45 @@
                 `;
             }
         }
-
-        // Move indicator to active tab
         function moveIndicator(btn) {
             if (!tabIndicator || !btn) return;
             tabIndicator.style.width = btn.offsetWidth + 'px';
             tabIndicator.style.left = btn.offsetLeft + 'px';
         }
-
-        // Initialize indicator position
         window.addEventListener('load', () => {
             const activeBtn = document.querySelector('.tab-btn.active');
             if (activeBtn) {
                 setTimeout(() => moveIndicator(activeBtn), 100);
             }
         });
-
         window.addEventListener('resize', () => {
             const activeBtn = document.querySelector('.tab-btn.active');
             if (activeBtn) moveIndicator(activeBtn);
         });
-
-        // Close quiz accordion
         function closeQuizArea(callback) {
             const isOpen = quizContent.offsetHeight > 0 && quizContent.style.display !== 'none';
-
             if (!isOpen) {
                 if (callback) callback();
                 return;
             }
-
             quizContent.style.transition = 'max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease';
             quizContent.style.maxHeight = '0';
             quizContent.style.opacity = '0';
-
             setTimeout(() => {
                 quizContent.style.display = 'none';
                 quizContent.style.overflow = '';
                 if (callback) callback();
             }, 600);
         }
-
-        // Tab click handler
         tabBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const tabId = btn.dataset.tab;
-
-                // Close quiz if open, then switch tab
                 closeQuizArea(() => {
-                    // Remove active class from all
                     tabBtns.forEach(b => b.classList.remove('active'));
                     tabContents.forEach(c => c.classList.remove('active'));
-
-                    // Add active to clicked
                     btn.classList.add('active');
                     document.getElementById(`tab-${tabId}`).classList.add('active');
-
-                    // Move indicator
                     moveIndicator(btn);
-
-                    // Close mobile dropdown and update text
                     if (tabsList && mobileToggle) {
                         tabsList.classList.remove('open');
                         mobileToggle.classList.remove('open');
@@ -409,43 +348,28 @@
                 });
             });
         });
-
-        // Show quiz with animation
         function showQuiz(quizId) {
-            // Hide active tab content
             tabContents.forEach(c => c.classList.remove('active'));
-
-            // Show quiz content area
             quizContent.style.display = 'block';
             quizContent.style.overflow = 'hidden';
             quizContent.style.maxHeight = '0';
             quizContent.style.opacity = '0';
-
-            // Load quiz content
             if (typeof loadQuizTopic === 'function') {
                 loadQuizTopic(quizId);
             }
-
-            // Animate open
             requestAnimationFrame(() => {
                 quizContent.style.transition = 'max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease';
                 quizContent.style.maxHeight = quizContent.scrollHeight + 2000 + 'px';
                 quizContent.style.opacity = '1';
-
-                // After animation completes, remove max-height restriction
                 setTimeout(() => {
                     quizContent.style.maxHeight = 'none';
                     quizContent.style.overflow = 'visible';
                 }, 850);
-
-                // Scroll to content after animation
                 setTimeout(() => {
                     quizContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }, 800);
             });
         }
-
-        // Hide quiz and return to tabs
         function hideQuiz() {
             closeQuizArea(() => {
                 const activeTabBtn = document.querySelector('.tab-btn.active');
@@ -454,12 +378,10 @@
                     const tabContent = document.getElementById(`tab-${tabId}`);
                     if (tabContent) tabContent.classList.add('active');
                 }
-                // Reset quiz result
                 document.getElementById('quiz-result').style.display = 'none';
                 document.getElementById('quiz-form').innerHTML = '';
             });
         }
     </script>
 </body>
-
 </html>
