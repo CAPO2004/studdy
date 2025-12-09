@@ -4,95 +4,93 @@
 */
 
 :root {
-    /* ✨ Light Mode: Fresh Sky Blue Palette */
+    /* ✨ Light Mode: Blue & Violet Palette */
     --primary-blue: #3b82f6;
     /* Bright Blue */
-    --dark-blue: #1d4ed8;
-    /* Strong Blue */
-    --light-blue: #dbeafe;
-    /* Very Light Blue */
-    --accent-cyan: #0ea5e9;
-    /* Sky Blue */
-    --accent-light: #bae6fd;
-    /* Pale Sky */
+    --dark-blue: #4f46e5;
+    /* Indigo/Purple Blue */
+    --light-blue: #e0e7ff;
+    /* Very Light Indigo */
+    --accent-cyan: #8b5cf6;
+    /* Violet Accent */
+    --accent-light: #ddd6fe;
+    /* Pale Violet */
 
-    /* 🌈 Light Gradients: Smooth Blue Transitions */
-    --gradient-main: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 100%);
-    --gradient-hover: linear-gradient(135deg, #60a5fa 0%, #38bdf8 100%);
-    --gradient-text: linear-gradient(90deg, #1d4ed8, #2563eb, #0ea5e9);
-    --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+    /* 🌈 Light Gradients: Blue to Purple */
+    --gradient-main: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    /* Blue -> Violet */
+    --gradient-hover: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+    --gradient-text: linear-gradient(90deg, #2563eb, #7c3aed, #9333ea);
+    --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
 
-    /* 🎨 Header/Footer: Light Blue Gradient */
-    --header-bg: linear-gradient(90deg, #0ea5e9 0%, #2563eb 50%, #3b82f6 100%);
-    --footer-bg: linear-gradient(90deg, #3b82f6 0%, #2563eb 50%, #0ea5e9 100%);
+    /* 🎨 Header/Footer: Blue-Purple Gradient */
+    --header-bg: linear-gradient(90deg, #1e40af 0%, #4f46e5 50%, #7c3aed 100%);
+    --footer-bg: linear-gradient(90deg, #7c3aed 0%, #4f46e5 50%, #1e40af 100%);
 
-    /* 🌅 Background: Enhanced Gradual Blue */
-    --bg-gradient: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%);
-    /* Clearer Blue Gradient */
+    /* 🌅 Background: Soft Blue-Violet */
+    --bg-gradient: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 50%, #f3e8ff 100%);
+    /* Blue -> Indigo -> Purple */
 
     /* 💎 Glassmorphism */
-    --glass-bg: rgba(255, 255, 255, 0.65);
-    /* More transparent to show gradient */
-    --glass-border: rgba(255, 255, 255, 0.4);
-    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(139, 92, 246, 0.25);
+    --glass-shadow: 0 8px 32px 0 rgba(79, 70, 229, 0.15);
 
     /* Light Mode Neutrals */
     --bg-color: #eff6ff;
     --surface-color: #ffffff;
-    --text-primary: #1e3a8a;
-    /* Dark Blue Text */
+    --text-primary: #1e1b4b;
+    /* Dark Indigo Text */
     --text-secondary: #475569;
-    /* Slate Gray */
-    --border-color: #93c5fd;
-    --code-bg: #f0f9ff;
+    --border-color: #c7d2fe;
+    --code-bg: #f5f3ff;
+    /* Very Light Purple tint */
 
-    /* Fonts */
+    /* Fonts & Transitions */
     --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
     --font-code: 'Consolas', 'Monaco', monospace;
-
-    /* Transitions */
     --transition-speed: 0.3s;
     --transition-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* 🌙 Dark Mode: Deep Navy / Midnight Blue */
+/* 🌙 Dark Mode: Deep Navy / Midnight Purple */
 [data-theme="dark"] {
-    --primary-blue: #60a5fa;
-    /* Lighter Blue for contrast */
-    --dark-blue: #3b82f6;
-    --light-blue: #1e3a8a;
-    /* Navy */
-    --accent-cyan: #38bdf8;
-    --accent-light: #7dd3fc;
+    --primary-blue: #8b5cf6;
+    /* Violet/Purple */
+    --dark-blue: #6366f1;
+    /* Indigo */
+    --light-blue: #312e81;
+    /* Deep Indigo */
+    --accent-cyan: #a78bfa;
+    /* Light Violet */
+    --accent-light: #c4b5fd;
 
-    /* 🔮 Dark Gradients: Deep Ocean/Cosmic Blue */
-    --gradient-main: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
-    --gradient-hover: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
-    --gradient-text: linear-gradient(90deg, #60a5fa, #93c5fd, #bae6fd);
+    /* 🔮 Dark Gradients: Cosmic Purple/Blue */
+    --gradient-main: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    --gradient-hover: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    --gradient-text: linear-gradient(90deg, #a78bfa, #818cf8, #60a5fa);
 
-    /* 🌌 Dark Header/Footer: Midnight Navy */
-    --header-bg: linear-gradient(90deg, #020617 0%, #0f172a 50%, #172554 100%);
-    --footer-bg: linear-gradient(90deg, #020617 0%, #0f172a 50%, #172554 100%);
+    /* 🌌 Dark Header/Footer: Galactic Theme */
+    --header-bg: linear-gradient(90deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+    --footer-bg: linear-gradient(90deg, #4c1d95 0%, #312e81 50%, #1e1b4b 100%);
 
-    /* 🎆 Background: Gradual Deep Ocean */
-    --bg-gradient: linear-gradient(135deg, #020617 0%, #111827 40%, #1e3a8a 100%);
-    /* Deep Navy to Blue */
+    /* 🎆 Background: Deep Space */
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #2e1065 100%);
+    /* Navy -> Deep Purple */
 
     /* 💫 Dark Glassmorphism */
     --glass-bg: rgba(15, 23, 42, 0.6);
-    /* More transparent */
-    --glass-border: rgba(56, 189, 248, 0.1);
+    --glass-border: rgba(139, 92, 246, 0.2);
     --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 
-    --bg-color: #020617;
-    /* Almost Black Blue */
-    --surface-color: #0f172a;
-    /* Dark Slate Blue */
-    --text-primary: #f0f9ff;
-    /* Very Pale Blue */
+    --bg-color: #0f172a;
+    --surface-color: #1e1b4b;
+    /* Very Dark Indigo */
+    --text-primary: #e0e7ff;
+    /* Pale Indigo */
     --text-secondary: #94a3b8;
-    --border-color: #1e40af;
-    --code-bg: #0f172a;
+    --border-color: #4338ca;
+    --code-bg: #1e1b4b;
 }
 
 
