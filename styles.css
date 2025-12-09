@@ -1297,6 +1297,43 @@ body {
 }
 
 @media (max-width: 768px) {
+
+    /* Mobile Header Fixes */
+    header {
+        padding: 0.5rem !important;
+        /* Tight padding */
+    }
+
+    .logo-container img {
+        height: 35px !important;
+        /* Smaller logo */
+    }
+
+    .controls {
+        gap: 0.5rem !important;
+        /* Tighter controls */
+    }
+
+    .theme-switch {
+        transform: scale(0.85);
+        /* Smaller switch */
+    }
+
+    .lang-btn {
+        padding: 4px 8px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .flag-icon {
+        width: 16px !important;
+        height: 12px !important;
+    }
+
+    .mobile-menu-btn {
+        width: 35px;
+        height: 35px;
+    }
+
     .hero-text h1 {
         font-size: 2.5rem;
     }
