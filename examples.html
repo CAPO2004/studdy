@@ -14,7 +14,9 @@
 
     <header class="animate-in">
         <div class="logo-container">
-            <img src="logo.svg" alt="PHP Mastery Logo">
+            <a href="index.html" class="logo-link">
+                <img src="logo.svg" alt="PHP Mastery Logo">
+            </a>
         </div>
         <nav>
             <ul id="nav-list">
@@ -25,9 +27,50 @@
             </ul>
         </nav>
         <div class="controls">
-            <button id="theme-toggle" class="toggle-btn" title="Toggle Theme">☀️</button>
-            <button id="lang-toggle" class="toggle-btn" title="Switch Language">🌐</button>
-            <button id="mobile-menu-btn" class="mobile-menu-btn">☰</button>
+            <!-- Theme Toggle Switch -->
+            <label class="theme-switch" title="Toggle Theme">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider">
+                    <svg class="icon sun" viewBox="0 0 24 24" width="14" height="14">
+                        <circle cx="12" cy="12" r="4" fill="#fcd34d" />
+                        <g stroke="#fcd34d" stroke-width="2" stroke-linecap="round">
+                            <line x1="12" y1="2" x2="12" y2="4" />
+                            <line x1="12" y1="20" x2="12" y2="22" />
+                            <line x1="4" y1="12" x2="2" y2="12" />
+                            <line x1="22" y1="12" x2="20" y2="12" />
+                        </g>
+                    </svg>
+                    <svg class="icon moon" viewBox="0 0 24 24" width="14" height="14">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#e9d5ff" stroke="#c4b5fd"
+                            stroke-width="1" />
+                    </svg>
+                </span>
+            </label>
+
+            <!-- Language Dropdown with Flags -->
+            <div class="lang-dropdown">
+                <button id="lang-toggle" class="lang-btn" title="Switch Language">
+                    <img src="https://flagcdn.com/w40/us.png" alt="EN" class="flag-icon" id="current-flag">
+                    <span class="lang-arrow">▼</span>
+                </button>
+                <div class="lang-menu" id="lang-menu">
+                    <button class="lang-option" data-lang="en">
+                        <img src="https://flagcdn.com/w40/us.png" alt="EN" class="flag-icon">
+                        <span>English</span>
+                    </button>
+                    <button class="lang-option" data-lang="ar">
+                        <img src="https://flagcdn.com/w40/sa.png" alt="AR" class="flag-icon">
+                        <span>العربية</span>
+                    </button>
+                </div>
+            </div>
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle Menu">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
         </div>
     </header>
 
@@ -37,408 +80,422 @@
             <span class="lang-ar">أمثلة أكواد PHP</span>
         </h1>
 
-        <!-- 1. MODULES GRID VIEW (Level 1: Main Selection) -->
-        <div id="modules-grid" class="modules-container animate-in">
-            <!-- 1. Input -->
-            <div class="module-card" onclick="openCategory('input')">
-                <div class="module-icon">⌨️</div>
-                <div class="module-content">
-                    <h2 class="module-title">
-                        <span class="lang-en">Input Data</span>
-                        <span class="lang-ar">إدخال البيانات</span>
-                    </h2>
-                    <p class="module-desc">
-                        <span class="lang-en">Examples: $_GET, $_POST, Form Handling.</span>
-                        <span class="lang-ar">أمثلة: استقبال البيانات والنماذج.</span>
-                    </p>
-                    <div class="module-link">
-                        <span class="lang-en">View Usage &gt;</span>
-                        <span class="lang-ar">عرض الاستخدام &lt;</span>
-                    </div>
-                </div>
-            </div>
+        <!-- Tabs Container - Same design as Lessons -->
+        <div class="tabs-container">
+            <!-- Tab Navigation -->
+            <nav class="tab-nav">
+                <!-- Mobile Toggle Button -->
+                <button class="mobile-tab-toggle" onclick="toggleMobileMenu()">
+                    <span class="toggle-text">
+                        <span class="tab-icon">⌨️</span>
+                        <span class="lang-en">Select Topic</span>
+                        <span class="lang-ar">اختر الموضوع</span>
+                    </span>
+                    <span class="toggle-arrow">▼</span>
+                </button>
 
-            <!-- 2. Operators -->
-            <div class="module-card" onclick="openCategory('operators')">
-                <div class="module-icon">➕</div>
-                <div class="module-content">
-                    <h2 class="module-title">
+                <div class="tab-indicator"></div>
+                <div class="tabs-list">
+                    <button class="tab-btn active" data-tab="input">
+                        <span class="tab-icon">⌨️</span>
+                        <span class="lang-en">Input</span>
+                        <span class="lang-ar">الإدخال</span>
+                    </button>
+                    <button class="tab-btn" data-tab="operators">
+                        <span class="tab-icon">➕</span>
                         <span class="lang-en">Operators</span>
                         <span class="lang-ar">العمليات</span>
-                    </h2>
-                    <p class="module-desc">
-                        <span class="lang-en">Examples: Arithmetic, Comparison logic.</span>
-                        <span class="lang-ar">أمثلة: العمليات الحسابية والمقارنات.</span>
-                    </p>
-                    <div class="module-link">
-                        <span class="lang-en">View Usage &gt;</span>
-                        <span class="lang-ar">عرض الاستخدام &lt;</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3. Conditions -->
-            <div class="module-card" onclick="openCategory('conditions')">
-                <div class="module-icon">❓</div>
-                <div class="module-content">
-                    <h2 class="module-title">
+                    </button>
+                    <button class="tab-btn" data-tab="conditions">
+                        <span class="tab-icon">❓</span>
                         <span class="lang-en">Conditions</span>
                         <span class="lang-ar">الشروط</span>
-                    </h2>
-                    <p class="module-desc">
-                        <span class="lang-en">Examples: If statements, Switch cases.</span>
-                        <span class="lang-ar">أمثلة: الجمل الشرطية وحالات التبديل.</span>
-                    </p>
-                    <div class="module-link">
-                        <span class="lang-en">View Usage &gt;</span>
-                        <span class="lang-ar">عرض الاستخدام &lt;</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4. Loops -->
-            <div class="module-card" onclick="openCategory('loops')">
-                <div class="module-icon">🔄</div>
-                <div class="module-content">
-                    <h2 class="module-title">
+                    </button>
+                    <button class="tab-btn" data-tab="loops">
+                        <span class="tab-icon">🔄</span>
                         <span class="lang-en">Loops</span>
                         <span class="lang-ar">الحلقات</span>
-                    </h2>
-                    <p class="module-desc">
-                        <span class="lang-en">Examples: For loop, While loop iteration.</span>
-                        <span class="lang-ar">أمثلة: تكرار الكود باستخدام الحلقات.</span>
-                    </p>
-                    <div class="module-link">
-                        <span class="lang-en">View Usage &gt;</span>
-                        <span class="lang-ar">عرض الاستخدام &lt;</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 5. Output -->
-            <div class="module-card" onclick="openCategory('output')">
-                <div class="module-icon">📢</div>
-                <div class="module-content">
-                    <h2 class="module-title">
+                    </button>
+                    <button class="tab-btn" data-tab="output">
+                        <span class="tab-icon">📢</span>
                         <span class="lang-en">Output</span>
                         <span class="lang-ar">الإخراج</span>
-                    </h2>
-                    <p class="module-desc">
-                        <span class="lang-en">Examples: Echo vs Print usage.</span>
-                        <span class="lang-ar">أمثلة: استخدام أوامر الطباعة والعرض.</span>
-                    </p>
-                    <div class="module-link">
-                        <span class="lang-en">View Usage &gt;</span>
-                        <span class="lang-ar">عرض الاستخدام &lt;</span>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Tab Content: Input -->
+            <div class="tab-content active" id="tab-input">
+                <div class="sub-lessons-grid">
+                    <div class="sub-lesson-card" onclick="showExample('ex-get')">
+                        <h3>📥 $_GET</h3>
+                        <p class="lang-en">URL Parameters & Query Strings</p>
+                        <p class="lang-ar">معاملات الرابط واستعلامات URL</p>
+                        <span class="card-arrow lang-en">View Examples →</span>
+                        <span class="card-arrow lang-ar">← عرض الأمثلة</span>
+                    </div>
+                    <div class="sub-lesson-card" onclick="showExample('ex-post')">
+                        <h3>🔒 $_POST</h3>
+                        <p class="lang-en">Secure Form Data Handling</p>
+                        <p class="lang-ar">معالجة بيانات النماذج الآمنة</p>
+                        <span class="card-arrow lang-en">View Examples →</span>
+                        <span class="card-arrow lang-ar">← عرض الأمثلة</span>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- 2. SUB-GRIDS (Level 2: Drill Down) -->
-
-        <!-- Input Sub-grid -->
-        <div id="grid-input" class="modules-container animate-in" style="display: none;">
-            <button onclick="backToMain()" class="back-btn" style="width: 100%; flex: 1 1 100%; margin-bottom: 2rem;">
-                <span class="lang-en">← Back to Topics</span>
-                <span class="lang-ar">→ العودة للمواضيع</span>
-            </button>
-            <div class="module-card" onclick="openExampleSet('sub-get')">
-                <div class="module-icon">📥</div>
-                <div class="module-content">
-                    <h2 class="module-title">$_GET</h2>
-                    <p class="module-desc"><span class="lang-en">URL Parameters</span><span class="lang-ar">معاملات
-                            الرابط</span></p>
+            <!-- Tab Content: Operators -->
+            <div class="tab-content" id="tab-operators">
+                <div class="sub-lessons-grid">
+                    <div class="sub-lesson-card" onclick="showExample('ex-arithmetic')">
+                        <h3>➕ Arithmetic</h3>
+                        <p class="lang-en">Math operations: +, -, *, /, %</p>
+                        <p class="lang-ar">العمليات الحسابية: +، -، *، /، %</p>
+                        <span class="card-arrow lang-en">View Examples →</span>
+                        <span class="card-arrow lang-ar">← عرض الأمثلة</span>
+                    </div>
+                    <div class="sub-lesson-card" onclick="showExample('ex-comparison')">
+                        <h3>⚖️ Comparison</h3>
+                        <p class="lang-en">Compare values: ==, ===, !=, >, << /p>
+                                <p class="lang-ar">مقارنة القيم: ==، ===، !=، >، << /p>
+                                        <span class="card-arrow lang-en">View Examples →</span>
+                                        <span class="card-arrow lang-ar">← عرض الأمثلة</span>
+                    </div>
                 </div>
             </div>
-            <div class="module-card" onclick="openExampleSet('sub-post')">
-                <div class="module-icon">🔒</div>
-                <div class="module-content">
-                    <h2 class="module-title">$_POST</h2>
-                    <p class="module-desc"><span class="lang-en">Secure Form Data</span><span class="lang-ar">بيانات
-                            النموذج الآمنة</span></p>
+
+            <!-- Tab Content: Conditions -->
+            <div class="tab-content" id="tab-conditions">
+                <div class="sub-lessons-grid">
+                    <div class="sub-lesson-card" onclick="showExample('ex-if')">
+                        <h3>❓ If...Else</h3>
+                        <p class="lang-en">Conditional branching logic</p>
+                        <p class="lang-ar">منطق التفرع الشرطي</p>
+                        <span class="card-arrow lang-en">View Examples →</span>
+                        <span class="card-arrow lang-ar">← عرض الأمثلة</span>
+                    </div>
+                    <div class="sub-lesson-card" onclick="showExample('ex-switch')">
+                        <h3>🔀 Switch</h3>
+                        <p class="lang-en">Multiple case selection</p>
+                        <p class="lang-ar">اختيار الحالات المتعددة</p>
+                        <span class="card-arrow lang-en">View Examples →</span>
+                        <span class="card-arrow lang-ar">← عرض الأمثلة</span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Operators Sub-grid -->
-        <div id="grid-operators" class="modules-container animate-in" style="display: none;">
-            <button onclick="backToMain()" class="back-btn" style="width: 100%; flex: 1 1 100%; margin-bottom: 2rem;">
-                <span class="lang-en">← Back to Topics</span>
-                <span class="lang-ar">→ العودة للمواضيع</span>
-            </button>
-            <div class="module-card" onclick="openExampleSet('sub-arithmetic')">
-                <div class="module-icon">➕</div>
-                <div class="module-content">
-                    <h2 class="module-title"><span class="lang-en">Arithmetic</span><span
-                            class="lang-ar">الحسابية</span></h2>
+            <!-- Tab Content: Loops -->
+            <div class="tab-content" id="tab-loops">
+                <div class="sub-lessons-grid">
+                    <div class="sub-lesson-card" onclick="showExample('ex-for')">
+                        <h3>🔄 For Loop</h3>
+                        <p class="lang-en">Count-controlled iteration</p>
+                        <p class="lang-ar">تكرار محدد العدد</p>
+                        <span class="card-arrow lang-en">View Examples →</span>
+                        <span class="card-arrow lang-ar">← عرض الأمثلة</span>
+                    </div>
+                    <div class="sub-lesson-card" onclick="showExample('ex-while')">
+                        <h3>⏳ While Loop</h3>
+                        <p class="lang-en">Condition-controlled iteration</p>
+                        <p class="lang-ar">تكرار محدد بشرط</p>
+                        <span class="card-arrow lang-en">View Examples →</span>
+                        <span class="card-arrow lang-ar">← عرض الأمثلة</span>
+                    </div>
                 </div>
             </div>
-            <div class="module-card" onclick="openExampleSet('sub-comparison')">
-                <div class="module-icon">⚖️</div>
-                <div class="module-content">
-                    <h2 class="module-title"><span class="lang-en">Comparison</span><span
-                            class="lang-ar">المقارنة</span></h2>
+
+            <!-- Tab Content: Output -->
+            <div class="tab-content" id="tab-output">
+                <div class="sub-lessons-grid">
+                    <div class="sub-lesson-card" onclick="showExample('ex-echo')">
+                        <h3>📢 Echo & Print</h3>
+                        <p class="lang-en">Display output to browser</p>
+                        <p class="lang-ar">عرض المخرجات في المتصفح</p>
+                        <span class="card-arrow lang-en">View Examples →</span>
+                        <span class="card-arrow lang-ar">← عرض الأمثلة</span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Conditions Sub-grid -->
-        <div id="grid-conditions" class="modules-container animate-in" style="display: none;">
-            <button onclick="backToMain()" class="back-btn" style="width: 100%; flex: 1 1 100%; margin-bottom: 2rem;">
-                <span class="lang-en">← Back to Topics</span>
-                <span class="lang-ar">→ العودة للمواضيع</span>
-            </button>
-            <div class="module-card" onclick="openExampleSet('sub-if')">
-                <div class="module-icon">❓</div>
-                <div class="module-content">
-                    <h2 class="module-title"><span class="lang-en">If Statements</span><span class="lang-ar">If
-                            الشرطية</span></h2>
-                </div>
-            </div>
-            <div class="module-card" onclick="openExampleSet('sub-switch')">
-                <div class="module-icon">🔀</div>
-                <div class="module-content">
-                    <h2 class="module-title"><span class="lang-en">Switch Case</span><span class="lang-ar">Switch</span>
-                    </h2>
-                </div>
-            </div>
-        </div>
-
-        <!-- Loops Sub-grid -->
-        <div id="grid-loops" class="modules-container animate-in" style="display: none;">
-            <button onclick="backToMain()" class="back-btn" style="width: 100%; flex: 1 1 100%; margin-bottom: 2rem;">
-                <span class="lang-en">← Back to Topics</span>
-                <span class="lang-ar">→ العودة للمواضيع</span>
-            </button>
-            <div class="module-card" onclick="openExampleSet('sub-for')">
-                <div class="module-icon">🔄</div>
-                <div class="module-content">
-                    <h2 class="module-title"><span class="lang-en">For Loop</span><span class="lang-ar">For حلقة</span>
-                    </h2>
-                </div>
-            </div>
-            <div class="module-card" onclick="openExampleSet('sub-while')">
-                <div class="module-icon">⏳</div>
-                <div class="module-content">
-                    <h2 class="module-title"><span class="lang-en">While Loop</span><span class="lang-ar">While
-                            حلقة</span></h2>
-                </div>
-            </div>
-        </div>
-
-        <!-- Output Sub-grid -->
-        <div id="grid-output" class="modules-container animate-in" style="display: none;">
-            <button onclick="backToMain()" class="back-btn" style="width: 100%; flex: 1 1 100%; margin-bottom: 2rem;">
-                <span class="lang-en">← Back to Topics</span>
-                <span class="lang-ar">→ العودة للمواضيع</span>
-            </button>
-            <div class="module-card" onclick="openExampleSet('sub-echo')">
-                <div class="module-icon">📢</div>
-                <div class="module-content">
-                    <h2 class="module-title"><span class="lang-en">Echo & Print</span><span
-                            class="lang-ar">الطباعة</span></h2>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- 3. VIEWER (Level 3: Top Bar + Examples Content) -->
-        <div id="example-viewer" class="lessons-container animate-in" style="display: none; padding-bottom: 5rem;">
-            <!-- Top Bar Navigation Box -->
-            <div class="topic-list"
-                style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: flex-start; margin-bottom: 2rem; gap: 1rem; width: 100%; border-bottom: none;">
-                <!-- Back Button (To Level 2) -->
-                <button onclick="backToSub()" class="back-btn"
-                    style="flex: 0 0 auto; width: auto; margin: 0; padding: 0.5rem 1rem;">
-                    <span class="lang-en">← Back</span><span class="lang-ar">→ عودة</span>
+            <!-- Example Content Area (Shows when example clicked) -->
+            <div id="example-content" class="lesson-content-area" style="display: none;">
+                <button class="back-to-tabs" onclick="hideExample()">
+                    <span class="lang-en">← Back to Topics</span>
+                    <span class="lang-ar">→ العودة للمواضيع</span>
                 </button>
-
-                <!-- Vertical Divider -->
-                <div style="width: 1px; height: 30px; background: rgba(255,255,255,0.2); margin: 0 0.5rem;"></div>
-
-                <!-- Dynamic Category Title -->
-                <h3 id="category-title" class="gradient-text"
-                    style="font-size: 1.5rem; margin: 0; margin-right: 1.5rem;">
-                    <span class="lang-en" id="cat-title-en">Examples</span>
-                    <span class="lang-ar" id="cat-title-ar">أمثلة</span>
-                </h3>
-
-                <!-- Input Sub-Topics -->
-                <button class="topic-btn" data-topic="sub-get" data-category="input"
-                    onclick="openExampleSet('sub-get')">
-                    <span class="lang-en">$_GET</span><span class="lang-ar">$_GET</span>
-                </button>
-                <button class="topic-btn" data-topic="sub-post" data-category="input"
-                    onclick="openExampleSet('sub-post')">
-                    <span class="lang-en">$_POST</span><span class="lang-ar">$_POST</span>
-                </button>
-
-                <!-- Operators Sub-Topics -->
-                <button class="topic-btn" data-topic="sub-arithmetic" data-category="operators"
-                    onclick="openExampleSet('sub-arithmetic')">
-                    <span class="lang-en">Arithmetic</span><span class="lang-ar">الحسابية</span>
-                </button>
-                <button class="topic-btn" data-topic="sub-comparison" data-category="operators"
-                    onclick="openExampleSet('sub-comparison')">
-                    <span class="lang-en">Comparison</span><span class="lang-ar">المقارنة</span>
-                </button>
-
-                <!-- Conditions Sub-Topics -->
-                <button class="topic-btn" data-topic="sub-if" data-category="conditions"
-                    onclick="openExampleSet('sub-if')">
-                    <span class="lang-en">If Statements</span><span class="lang-ar">If الشرطية</span>
-                </button>
-                <button class="topic-btn" data-topic="sub-switch" data-category="conditions"
-                    onclick="openExampleSet('sub-switch')">
-                    <span class="lang-en">Switch Case</span><span class="lang-ar">Switch</span>
-                </button>
-
-                <!-- Loops Sub-Topics -->
-                <button class="topic-btn" data-topic="sub-for" data-category="loops"
-                    onclick="openExampleSet('sub-for')">
-                    <span class="lang-en">For Loop</span><span class="lang-ar">For</span>
-                </button>
-                <button class="topic-btn" data-topic="sub-while" data-category="loops"
-                    onclick="openExampleSet('sub-while')">
-                    <span class="lang-en">While Loop</span><span class="lang-ar">While</span>
-                </button>
-
-                <!-- Output Sub-Topics -->
-                <button class="topic-btn" data-topic="sub-echo" data-category="output"
-                    onclick="openExampleSet('sub-echo')">
-                    <span class="lang-en">Echo</span><span class="lang-ar">الطباعة</span>
-                </button>
-            </div>
-
-            <!-- Example Content Area -->
-            <main id="content-area" style="width: 100%;">
-
-                <!-- Welcome State -->
-                <article class="topic-pane active" id="topic-welcome" style="text-align: center; padding: 4rem 2rem;">
-                    <div style="font-size: 4rem; margin-bottom: 1rem;">👈</div>
-                    <h2 style="color: var(--primary-blue); margin-bottom: 1rem;">
-                        <span class="lang-en">Select an Example</span>
-                        <span class="lang-ar">اختر مثالاً للعرض</span>
-                    </h2>
-                    <p style="font-size: 1.1rem; color: var(--text-secondary);">
-                        <span class="lang-en">Click on a topic above to view practical code examples.</span>
-                        <span class="lang-ar">اضغط على زر الموضوع في الأعلى لعرض أمثلة الكود العملية.</span>
-                    </p>
-                </article>
 
                 <!-- $_GET Examples -->
-                <article id="sub-get" class="topic-pane">
+                <article id="example-ex-get" class="lesson-article" style="display: none;">
                     <h2>$_GET Examples</h2>
-                    <div class="card glass" style="margin-bottom: 2rem;">
-                        <h3>1. Basic URL Variable</h3>
-                        <p>Receiving a name from the URL (e.g., page.php?name=Ahmed).</p>
-                        <pre><code><span class="kwd">&lt;?php</span>
+
+                    <!-- Example 1 -->
+                    <div class="card glass" style="margin-bottom: 1.5rem;">
+                        <h3>1. Basic URL Parameter</h3>
+                        <pre><code><span class="cmt">// URL: page.php?name=Ahmed</span>
+<span class="kwd">&lt;?php</span>
 <span class="var">$name</span> = <span class="var">$_GET</span>[<span class="str">'name'</span>];
 <span class="kwd">echo</span> <span class="str">"Welcome, "</span> . <span class="var">$name</span>;
+<span class="cmt">// Output: Welcome, Ahmed</span>
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
-                    <div class="card glass" style="margin-bottom: 2rem;">
-                        <h3>2. Handling Missing Data</h3>
-                        <p>Using <code>isset()</code> to prevent errors if the parameter is missing.</p>
+
+                    <div class="card glass" style="margin-bottom: 1.5rem;">
+                        <h3>2. Check If Parameter Exists</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
 <span class="kwd">if</span> (<span class="func">isset</span>(<span class="var">$_GET</span>[<span class="str">'id'</span>])) {
-    <span class="kwd">echo</span> <span class="str">"Product ID: "</span> . <span class="var">$_GET</span>[<span class="str">'id'</span>];
+    <span class="var">$id</span> = <span class="var">$_GET</span>[<span class="str">'id'</span>];
+    <span class="kwd">echo</span> <span class="str">"Product ID: $id"</span>;
 } <span class="kwd">else</span> {
-    <span class="kwd">echo</span> <span class="str">"No ID provided."</span>;
+    <span class="kwd">echo</span> <span class="str">"No ID provided"</span>;
 }
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
-                    <div class="card glass">
+
+                    <div class="card glass" style="margin-bottom: 1.5rem;">
                         <h3>3. Multiple Parameters</h3>
-                        <p>Reading multiple values (e.g., ?category=books&page=2).</p>
-                        <pre><code><span class="kwd">&lt;?php</span>
-<span class="var">$cat</span> = <span class="var">$_GET</span>[<span class="str">'category'</span>];
+                        <pre><code><span class="cmt">// URL: shop.php?category=electronics&amp;page=2&amp;sort=price</span>
+<span class="kwd">&lt;?php</span>
+<span class="var">$category</span> = <span class="var">$_GET</span>[<span class="str">'category'</span>];
 <span class="var">$page</span> = <span class="var">$_GET</span>[<span class="str">'page'</span>];
-<span class="kwd">echo</span> <span class="str">"Category: $cat, Page: $page"</span>;
+<span class="var">$sort</span> = <span class="var">$_GET</span>[<span class="str">'sort'</span>];
+<span class="kwd">echo</span> <span class="str">"Showing $category sorted by $sort (Page $page)"</span>;
+<span class="cmt">// Output: Showing electronics sorted by price (Page 2)</span>
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
-                    <div class="nav-actions" style="margin-top: 3rem; display: flex; justify-content: flex-end;">
-                        <button onclick="openExampleSet('sub-post')" class="btn"
-                            style="display: flex; align-items: center; gap: 10px;">
+
+                    <div class="card glass" style="margin-bottom: 1.5rem;">
+                        <h3>4. Default Value If Missing</h3>
+                        <pre><code><span class="kwd">&lt;?php</span>
+<span class="var">$page</span> = <span class="var">$_GET</span>[<span class="str">'page'</span>] ?? <span class="num">1</span>;
+<span class="var">$limit</span> = <span class="var">$_GET</span>[<span class="str">'limit'</span>] ?? <span class="num">10</span>;
+<span class="kwd">echo</span> <span class="str">"Page: $page, Items per page: $limit"</span>;
+<span class="cmt">// If no params: Page: 1, Items per page: 10</span>
+<span class="kwd">?&gt;</span></code></pre>
+                    </div>
+
+                    <div class="card glass" style="margin-bottom: 1.5rem;">
+                        <h3>5. Sanitize Input (Security)</h3>
+                        <pre><code><span class="kwd">&lt;?php</span>
+<span class="var">$search</span> = <span class="var">$_GET</span>[<span class="str">'q'</span>] ?? <span class="str">''</span>;
+<span class="var">$safe</span> = <span class="func">htmlspecialchars</span>(<span class="var">$search</span>, ENT_QUOTES, <span class="str">'UTF-8'</span>);
+<span class="kwd">echo</span> <span class="str">"You searched for: $safe"</span>;
+<span class="cmt">// Prevents XSS attacks</span>
+<span class="kwd">?&gt;</span></code></pre>
+                    </div>
+
+                    <div class="card glass">
+                        <h3>6. Build Dynamic Links</h3>
+                        <pre><code><span class="kwd">&lt;?php</span>
+<span class="var">$current</span> = <span class="var">$_GET</span>[<span class="str">'page'</span>] ?? <span class="num">1</span>;
+<span class="var">$next</span> = <span class="var">$current</span> + <span class="num">1</span>;
+<span class="var">$prev</span> = <span class="func">max</span>(<span class="num">1</span>, <span class="var">$current</span> - <span class="num">1</span>);
+<span class="kwd">echo</span> <span class="str">"&lt;a href='?page=$prev'&gt;Prev&lt;/a&gt;"</span>;
+<span class="kwd">echo</span> <span class="str">" | Page $current | "</span>;
+<span class="kwd">echo</span> <span class="str">"&lt;a href='?page=$next'&gt;Next&lt;/a&gt;"</span>;
+<span class="kwd">?&gt;</span></code></pre>
+                    </div>
+
+                    <!-- Navigation -->
+                    <div class="lesson-nav"
+                        style="display: flex; justify-content: flex-end; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                        <button onclick="showExample('ex-post')" class="btn"
+                            style="display: flex; align-items: center; gap: 8px;">
                             <span class="lang-en">Next: $_POST →</span>
-                            <span class="lang-ar">التالي: $_POST ←</span>
+                            <span class="lang-ar">← التالي: $_POST</span>
                         </button>
                     </div>
                 </article>
 
                 <!-- $_POST Examples -->
-                <article id="sub-post" class="topic-pane">
+                <article id="example-ex-post" class="lesson-article" style="display: none;">
                     <h2>$_POST Examples</h2>
-                    <div class="card glass" style="margin-bottom: 2rem;">
-                        <h3>1. Simple Login Form</h3>
+
+                    <div class="card glass" style="margin-bottom: 1.5rem;">
+                        <h3>1. Basic Form Data</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
-<span class="var">$user</span> = <span class="var">$_POST</span>[<span class="str">'username'</span>];
-<span class="var">$pass</span> = <span class="var">$_POST</span>[<span class="str">'password'</span>];
-<span class="kwd">echo</span> <span class="str">"Logging in user: "</span> . <span class="var">$user</span>;
+<span class="var">$username</span> = <span class="var">$_POST</span>[<span class="str">'username'</span>];
+<span class="var">$password</span> = <span class="var">$_POST</span>[<span class="str">'password'</span>];
+<span class="kwd">echo</span> <span class="str">"Welcome, $username"</span>;
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
-                    <div class="card glass" style="margin-bottom: 2rem;">
-                        <h3>2. Checking Request Method</h3>
+
+                    <div class="card glass" style="margin-bottom: 1.5rem;">
+                        <h3>2. Check Request Method</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
 <span class="kwd">if</span> (<span class="var">$_SERVER</span>[<span class="str">'REQUEST_METHOD'</span>] == <span class="str">'POST'</span>) {
-    <span class="kwd">echo</span> <span class="str">"Form submitted!"</span>;
+    <span class="var">$name</span> = <span class="var">$_POST</span>[<span class="str">'name'</span>];
+    <span class="kwd">echo</span> <span class="str">"Form submitted by: $name"</span>;
+} <span class="kwd">else</span> {
+    <span class="kwd">echo</span> <span class="str">"Please submit the form"</span>;
 }
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
-                    <div class="card glass">
-                        <h3>3. Secure Input</h3>
+
+                    <div class="card glass" style="margin-bottom: 1.5rem;">
+                        <h3>3. Complete Contact Form</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
-<span class="var">$email</span> = <span class="func">htmlspecialchars</span>(<span class="var">$_POST</span>[<span class="str">'email'</span>]);
-<span class="kwd">echo</span> <span class="str">"Safe email: "</span> . <span class="var">$email</span>;
+<span class="kwd">if</span> (<span class="var">$_SERVER</span>[<span class="str">'REQUEST_METHOD'</span>] == <span class="str">'POST'</span>) {
+    <span class="var">$name</span> = <span class="func">htmlspecialchars</span>(<span class="var">$_POST</span>[<span class="str">'name'</span>]);
+    <span class="var">$email</span> = <span class="func">filter_var</span>(<span class="var">$_POST</span>[<span class="str">'email'</span>], FILTER_SANITIZE_EMAIL);
+    <span class="var">$message</span> = <span class="func">htmlspecialchars</span>(<span class="var">$_POST</span>[<span class="str">'message'</span>]);
+    
+    <span class="kwd">echo</span> <span class="str">"Name: $name&lt;br&gt;"</span>;
+    <span class="kwd">echo</span> <span class="str">"Email: $email&lt;br&gt;"</span>;
+    <span class="kwd">echo</span> <span class="str">"Message: $message"</span>;
+}
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
-                    <div class="nav-actions" style="margin-top: 3rem; display: flex; justify-content: flex-end;">
-                        <button onclick="openExampleSet('sub-arithmetic')" class="btn"
-                            style="display: flex; align-items: center; gap: 10px;">
-                            <span class="lang-en">Next: Arithmetic →</span>
-                            <span class="lang-ar">التالي: الحسابية ←</span>
+
+                    <div class="card glass" style="margin-bottom: 1.5rem;">
+                        <h3>4. Validate Email</h3>
+                        <pre><code><span class="kwd">&lt;?php</span>
+<span class="var">$email</span> = <span class="var">$_POST</span>[<span class="str">'email'</span>];
+<span class="kwd">if</span> (<span class="func">filter_var</span>(<span class="var">$email</span>, FILTER_VALIDATE_EMAIL)) {
+    <span class="kwd">echo</span> <span class="str">"Valid email: $email"</span>;
+} <span class="kwd">else</span> {
+    <span class="kwd">echo</span> <span class="str">"Invalid email address"</span>;
+}
+<span class="kwd">?&gt;</span></code></pre>
+                    </div>
+
+                    <div class="card glass" style="margin-bottom: 1.5rem;">
+                        <h3>5. Password Hashing</h3>
+                        <pre><code><span class="kwd">&lt;?php</span>
+<span class="var">$password</span> = <span class="var">$_POST</span>[<span class="str">'password'</span>];
+<span class="var">$hashed</span> = <span class="func">password_hash</span>(<span class="var">$password</span>, PASSWORD_DEFAULT);
+<span class="kwd">echo</span> <span class="str">"Hashed: $hashed"</span>;
+
+<span class="cmt">// To verify later:</span>
+<span class="kwd">if</span> (<span class="func">password_verify</span>(<span class="var">$password</span>, <span class="var">$hashed</span>)) {
+    <span class="kwd">echo</span> <span class="str">"Password correct!"</span>;
+}
+<span class="kwd">?&gt;</span></code></pre>
+                    </div>
+
+                    <div class="card glass">
+                        <h3>6. Multiple Checkboxes</h3>
+                        <pre><code><span class="cmt">// HTML: &lt;input type="checkbox" name="skills[]" value="PHP"&gt;</span>
+<span class="kwd">&lt;?php</span>
+<span class="var">$skills</span> = <span class="var">$_POST</span>[<span class="str">'skills'</span>] ?? [];
+<span class="kwd">foreach</span> (<span class="var">$skills</span> <span class="kwd">as</span> <span class="var">$skill</span>) {
+    <span class="kwd">echo</span> <span class="str">"Selected: $skill&lt;br&gt;"</span>;
+}
+<span class="cmt">// Output: Selected: PHP, Selected: JS, etc.</span>
+<span class="kwd">?&gt;</span></code></pre>
+                    </div>
+
+                    <!-- Navigation -->
+                    <div class="lesson-nav"
+                        style="display: flex; justify-content: flex-start; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                        <button onclick="showExample('ex-get')" class="btn btn-secondary"
+                            style="display: flex; align-items: center; gap: 8px;">
+                            <span class="lang-en">← Previous: $_GET</span>
+                            <span class="lang-ar">السابق: $_GET →</span>
                         </button>
                     </div>
                 </article>
 
                 <!-- Arithmetic Examples -->
-                <article id="sub-arithmetic" class="topic-pane">
+                <article id="example-ex-arithmetic" class="lesson-article" style="display: none;">
                     <h2>Arithmetic Examples</h2>
-                    <div class="card glass" style="margin-bottom: 2rem;">
-                        <h3>1. Basic Calculation</h3>
+
+                    <div class="card glass" style="margin-bottom: 1.5rem;">
+                        <h3>1. All Basic Operators</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
-<span class="var">$total</span> = 100 + 50;
-<span class="kwd">echo</span> <span class="str">"Total: "</span> . <span class="var">$total</span>; <span class="cmt">// 150</span>
+<span class="var">$a</span> = 10;
+<span class="var">$b</span> = 3;
+
+<span class="kwd">echo</span> <span class="var">$a</span> + <span class="var">$b</span>;  <span class="cmt">// Addition: 13</span>
+<span class="kwd">echo</span> <span class="var">$a</span> - <span class="var">$b</span>;  <span class="cmt">// Subtraction: 7</span>
+<span class="kwd">echo</span> <span class="var">$a</span> * <span class="var">$b</span>;  <span class="cmt">// Multiplication: 30</span>
+<span class="kwd">echo</span> <span class="var">$a</span> / <span class="var">$b</span>;  <span class="cmt">// Division: 3.333...</span>
+<span class="kwd">echo</span> <span class="var">$a</span> % <span class="var">$b</span>;  <span class="cmt">// Modulus: 1</span>
+<span class="kwd">echo</span> <span class="var">$a</span> ** <span class="var">$b</span>; <span class="cmt">// Exponent: 1000</span>
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
-                    <div class="card glass" style="margin-bottom: 2rem;">
-                        <h3>2. Modulus (Remainder)</h3>
+
+                    <div class="card glass" style="margin-bottom: 1.5rem;">
+                        <h3>2. Calculate Total Price</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
-<span class="var">$rem</span> = 10 % 3;
-<span class="kwd">echo</span> <span class="str">"Remainder: "</span> . <span class="var">$rem</span>; <span class="cmt">// 1</span>
+<span class="var">$price</span> = 99.99;
+<span class="var">$quantity</span> = 3;
+<span class="var">$tax</span> = 0.15;
+
+<span class="var">$subtotal</span> = <span class="var">$price</span> * <span class="var">$quantity</span>;
+<span class="var">$total</span> = <span class="var">$subtotal</span> + (<span class="var">$subtotal</span> * <span class="var">$tax</span>);
+<span class="kwd">echo</span> <span class="str">"Total: $"</span> . <span class="func">number_format</span>(<span class="var">$total</span>, 2);
+<span class="cmt">// Output: Total: $344.97</span>
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
+
+                    <div class="card glass" style="margin-bottom: 1.5rem;">
+                        <h3>3. Check Even/Odd (Modulus)</h3>
+                        <pre><code><span class="kwd">&lt;?php</span>
+<span class="var">$num</span> = 7;
+
+<span class="kwd">if</span> (<span class="var">$num</span> % 2 == 0) {
+    <span class="kwd">echo</span> <span class="str">"$num is Even"</span>;
+} <span class="kwd">else</span> {
+    <span class="kwd">echo</span> <span class="str">"$num is Odd"</span>;
+}
+<span class="cmt">// Output: 7 is Odd</span>
+<span class="kwd">?&gt;</span></code></pre>
+                    </div>
+
+                    <div class="card glass" style="margin-bottom: 1.5rem;">
+                        <h3>4. Increment & Decrement</h3>
+                        <pre><code><span class="kwd">&lt;?php</span>
+<span class="var">$x</span> = 5;
+
+<span class="kwd">echo</span> ++<span class="var">$x</span>; <span class="cmt">// Pre-increment: 6</span>
+<span class="kwd">echo</span> <span class="var">$x</span>++; <span class="cmt">// Post-increment: 6 (then x=7)</span>
+<span class="kwd">echo</span> --<span class="var">$x</span>; <span class="cmt">// Pre-decrement: 6</span>
+<span class="kwd">echo</span> <span class="var">$x</span>--; <span class="cmt">// Post-decrement: 6 (then x=5)</span>
+<span class="kwd">?&gt;</span></code></pre>
+                    </div>
+
+                    <div class="card glass" style="margin-bottom: 1.5rem;">
+                        <h3>5. Calculate Average</h3>
+                        <pre><code><span class="kwd">&lt;?php</span>
+<span class="var">$scores</span> = [85, 90, 78, 92, 88];
+<span class="var">$sum</span> = <span class="func">array_sum</span>(<span class="var">$scores</span>);
+<span class="var">$count</span> = <span class="func">count</span>(<span class="var">$scores</span>);
+<span class="var">$average</span> = <span class="var">$sum</span> / <span class="var">$count</span>;
+
+<span class="kwd">echo</span> <span class="str">"Average: $average"</span>;
+<span class="cmt">// Output: Average: 86.6</span>
+<span class="kwd">?&gt;</span></code></pre>
+                    </div>
+
                     <div class="card glass">
-                        <h3>3. Increment Operator</h3>
+                        <h3>6. Compound Assignment</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
-<span class="var">$count</span> = 0;
-<span class="var">$count</span>++;
-<span class="kwd">echo</span> <span class="var">$count</span>; <span class="cmt">// 1</span>
+<span class="var">$x</span> = 10;
+
+<span class="var">$x</span> += 5;  <span class="cmt">// Same as: $x = $x + 5 → 15</span>
+<span class="var">$x</span> -= 3;  <span class="cmt">// Same as: $x = $x - 3 → 12</span>
+<span class="var">$x</span> *= 2;  <span class="cmt">// Same as: $x = $x * 2 → 24</span>
+<span class="var">$x</span> /= 4;  <span class="cmt">// Same as: $x = $x / 4 → 6</span>
+
+<span class="kwd">echo</span> <span class="var">$x</span>; <span class="cmt">// 6</span>
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
-                    <div class="nav-actions" style="margin-top: 3rem; display: flex; justify-content: flex-end;">
-                        <button onclick="openExampleSet('sub-comparison')" class="btn"
-                            style="display: flex; align-items: center; gap: 10px;">
+
+                    <!-- Navigation -->
+                    <div class="lesson-nav"
+                        style="display: flex; justify-content: flex-end; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                        <button onclick="showExample('ex-comparison')" class="btn"
+                            style="display: flex; align-items: center; gap: 8px;">
                             <span class="lang-en">Next: Comparison →</span>
-                            <span class="lang-ar">التالي: المقارنة ←</span>
+                            <span class="lang-ar">← التالي: المقارنة</span>
                         </button>
                     </div>
                 </article>
 
                 <!-- Comparison Examples -->
-                <article id="sub-comparison" class="topic-pane">
-                    <h2>Comparison Examples</h2>
+                <article id="example-ex-comparison" class="lesson-article" style="display: none;">
+                    <h2><span class="lang-en">Comparison Examples</span><span class="lang-ar">أمثلة المقارنة</span></h2>
+
                     <div class="card glass" style="margin-bottom: 2rem;">
                         <h3>1. Equal (==)</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
@@ -447,6 +504,7 @@
 }
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
+
                     <div class="card glass" style="margin-bottom: 2rem;">
                         <h3>2. Identical (===)</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
@@ -455,6 +513,7 @@
 }
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
+
                     <div class="card glass">
                         <h3>3. Greater/Less Than</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
@@ -464,18 +523,22 @@
 }
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
-                    <div class="nav-actions" style="margin-top: 3rem; display: flex; justify-content: flex-end;">
-                        <button onclick="openExampleSet('sub-if')" class="btn"
-                            style="display: flex; align-items: center; gap: 10px;">
-                            <span class="lang-en">Next: Conditions →</span>
-                            <span class="lang-ar">التالي: الشروط ←</span>
+
+                    <!-- Navigation -->
+                    <div class="lesson-nav"
+                        style="display: flex; justify-content: flex-start; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                        <button onclick="showExample('ex-arithmetic')" class="btn btn-secondary"
+                            style="display: flex; align-items: center; gap: 8px;">
+                            <span class="lang-en">← Previous: Arithmetic</span>
+                            <span class="lang-ar">السابق: الحسابية →</span>
                         </button>
                     </div>
                 </article>
 
                 <!-- If Examples -->
-                <article id="sub-if" class="topic-pane">
-                    <h2>If/Else Examples</h2>
+                <article id="example-ex-if" class="lesson-article" style="display: none;">
+                    <h2><span class="lang-en">If/Else Examples</span><span class="lang-ar">أمثلة If/Else</span></h2>
+
                     <div class="card glass" style="margin-bottom: 2rem;">
                         <h3>1. Simple If</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
@@ -485,6 +548,7 @@
 }
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
+
                     <div class="card glass" style="margin-bottom: 2rem;">
                         <h3>2. If...Else</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
@@ -496,6 +560,7 @@
 }
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
+
                     <div class="card glass">
                         <h3>3. Elseif Chain</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
@@ -509,18 +574,22 @@
 }
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
-                    <div class="nav-actions" style="margin-top: 3rem; display: flex; justify-content: flex-end;">
-                        <button onclick="openExampleSet('sub-switch')" class="btn"
-                            style="display: flex; align-items: center; gap: 10px;">
+
+                    <!-- Navigation -->
+                    <div class="lesson-nav"
+                        style="display: flex; justify-content: flex-end; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                        <button onclick="showExample('ex-switch')" class="btn"
+                            style="display: flex; align-items: center; gap: 8px;">
                             <span class="lang-en">Next: Switch →</span>
-                            <span class="lang-ar">التالي: Switch ←</span>
+                            <span class="lang-ar">← التالي: Switch</span>
                         </button>
                     </div>
                 </article>
 
                 <!-- Switch Examples -->
-                <article id="sub-switch" class="topic-pane">
-                    <h2>Switch Examples</h2>
+                <article id="example-ex-switch" class="lesson-article" style="display: none;">
+                    <h2><span class="lang-en">Switch Examples</span><span class="lang-ar">أمثلة Switch</span></h2>
+
                     <div class="card glass" style="margin-bottom: 2rem;">
                         <h3>1. Basic Switch</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
@@ -535,6 +604,7 @@
 }
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
+
                     <div class="card glass" style="margin-bottom: 2rem;">
                         <h3>2. Default Case</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
@@ -547,6 +617,7 @@
 }
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
+
                     <div class="card glass">
                         <h3>3. Multiple Cases</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
@@ -558,26 +629,31 @@
 }
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
-                    <div class="nav-actions" style="margin-top: 3rem; display: flex; justify-content: flex-end;">
-                        <button onclick="openExampleSet('sub-for')" class="btn"
-                            style="display: flex; align-items: center; gap: 10px;">
-                            <span class="lang-en">Next: For Loop →</span>
-                            <span class="lang-ar">التالي: حلقة For ←</span>
+
+                    <!-- Navigation -->
+                    <div class="lesson-nav"
+                        style="display: flex; justify-content: flex-start; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                        <button onclick="showExample('ex-if')" class="btn btn-secondary"
+                            style="display: flex; align-items: center; gap: 8px;">
+                            <span class="lang-en">← Previous: If</span>
+                            <span class="lang-ar">السابق: If →</span>
                         </button>
                     </div>
                 </article>
 
-                <!-- For Examples -->
-                <article id="sub-for" class="topic-pane">
-                    <h2>For Loop Examples</h2>
+                <!-- For Loop Examples -->
+                <article id="example-ex-for" class="lesson-article" style="display: none;">
+                    <h2><span class="lang-en">For Loop Examples</span><span class="lang-ar">أمثلة حلقة For</span></h2>
+
                     <div class="card glass" style="margin-bottom: 2rem;">
                         <h3>1. Count to 5</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
 <span class="kwd">for</span> (<span class="var">$i</span>=1; <span class="var">$i</span><=5; <span class="var">$i</span>++) {
-    <span class="kwd">echo</span> <span class="str">"Valid: $i <br>"</span>;
+    <span class="kwd">echo</span> <span class="str">"Number: $i &lt;br&gt;"</span>;
 }
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
+
                     <div class="card glass" style="margin-bottom: 2rem;">
                         <h3>2. Count Down</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
@@ -586,6 +662,7 @@
 }
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
+
                     <div class="card glass">
                         <h3>3. Array Loop</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
@@ -595,18 +672,23 @@
 }
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
-                    <div class="nav-actions" style="margin-top: 3rem; display: flex; justify-content: flex-end;">
-                        <button onclick="openExampleSet('sub-while')" class="btn"
-                            style="display: flex; align-items: center; gap: 10px;">
+
+                    <!-- Navigation -->
+                    <div class="lesson-nav"
+                        style="display: flex; justify-content: flex-end; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                        <button onclick="showExample('ex-while')" class="btn"
+                            style="display: flex; align-items: center; gap: 8px;">
                             <span class="lang-en">Next: While Loop →</span>
-                            <span class="lang-ar">التالي: حلقة While ←</span>
+                            <span class="lang-ar">← التالي: حلقة While</span>
                         </button>
                     </div>
                 </article>
 
-                <!-- While Examples -->
-                <article id="sub-while" class="topic-pane">
-                    <h2>While Loop Examples</h2>
+                <!-- While Loop Examples -->
+                <article id="example-ex-while" class="lesson-article" style="display: none;">
+                    <h2><span class="lang-en">While Loop Examples</span><span class="lang-ar">أمثلة حلقة While</span>
+                    </h2>
+
                     <div class="card glass" style="margin-bottom: 2rem;">
                         <h3>1. Basic While</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
@@ -616,6 +698,7 @@
 }
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
+
                     <div class="card glass" style="margin-bottom: 2rem;">
                         <h3>2. Do...While</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
@@ -625,6 +708,7 @@
 } <span class="kwd">while</span> (<span class="var">$x</span> < 5);
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
+
                     <div class="card glass">
                         <h3>3. Break Condition</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
@@ -635,216 +719,223 @@
 }
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
-                    <div class="nav-actions" style="margin-top: 3rem; display: flex; justify-content: flex-end;">
-                        <button onclick="openExampleSet('sub-echo')" class="btn"
-                            style="display: flex; align-items: center; gap: 10px;">
-                            <span class="lang-en">Next: Echo & Print →</span>
-                            <span class="lang-ar">التالي: الطباعة ←</span>
+
+                    <!-- Navigation -->
+                    <div class="lesson-nav"
+                        style="display: flex; justify-content: flex-start; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                        <button onclick="showExample('ex-for')" class="btn btn-secondary"
+                            style="display: flex; align-items: center; gap: 8px;">
+                            <span class="lang-en">← Previous: For Loop</span>
+                            <span class="lang-ar">السابق: حلقة For →</span>
                         </button>
                     </div>
                 </article>
 
                 <!-- Echo Examples -->
-                <article id="sub-echo" class="topic-pane">
-                    <h2>Echo Examples</h2>
+                <article id="example-ex-echo" class="lesson-article" style="display: none;">
+                    <h2><span class="lang-en">Echo & Print Examples</span><span class="lang-ar">أمثلة الطباعة</span>
+                    </h2>
+
                     <div class="card glass" style="margin-bottom: 2rem;">
                         <h3>1. Echo Strings</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
 <span class="kwd">echo</span> <span class="str">"Hello World!"</span>;
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
+
                     <div class="card glass" style="margin-bottom: 2rem;">
                         <h3>2. Echo Variables</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
-<span class="var">$txt</span> = <span class="str">"PHP"</span>;
-<span class="kwd">echo</span> <span class="str">"I love "</span> . <span class="var">$txt</span>;
+<span class="var">$name</span> = <span class="str">"PHP"</span>;
+<span class="kwd">echo</span> <span class="str">"Learn "</span> . <span class="var">$name</span>;
 <span class="kwd">?&gt;</span></code></pre>
                     </div>
+
                     <div class="card glass">
-                        <h3>3. Echo HTML</h3>
+                        <h3>3. Print Statement</h3>
                         <pre><code><span class="kwd">&lt;?php</span>
-<span class="kwd">echo</span> <span class="str">"&lt;h1&gt;Title&lt;/h1&gt;"</span>;
+<span class="kwd">print</span> <span class="str">"Hello"</span>;
+<span class="cmt">// Returns 1, unlike echo</span>
 <span class="kwd">?&gt;</span></code></pre>
-                    </div>
-                    <div class="nav-actions" style="margin-top: 3rem; display: flex; justify-content: flex-end;">
-                        <button onclick="window.location.href='quiz.html'" class="btn"
-                            style="display: flex; align-items: center; gap: 10px; background: var(--primary-blue); box-shadow: 0 0 15px var(--primary-blue);">
-                            <span class="lang-en">Take Quiz 🏆</span>
-                            <span class="lang-ar">ابدأ الاختبار 🏆</span>
-                        </button>
                     </div>
                 </article>
-
-            </main>
+            </div>
         </div>
-
-    </div><!-- Closing container -->
+    </div>
 
     <footer>
         <div class="footer-content">
             <div class="footer-col">
                 <h3 data-i18n="nav-home">PHP Mastery</h3>
-                <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem;">
-                    <span class="lang-en">Empowering students to master PHP through interactive learning.</span>
-                    <span class="lang-ar">تمكين الطلاب من احتراف PHP من خلال التعلم التفاعلي.</span>
-                </p>
+                <p><span class="lang-en">Learn PHP the right way</span><span class="lang-ar">تعلم PHP بالطريقة
+                        الصحيحة</span></p>
             </div>
             <div class="footer-col">
-                <h3 data-i18n="footer-contact">Contact Us</h3>
-                <ul class="footer-links">
-                    <li><span data-i18n="label-email">Email</span>: <a href="mailto:capoca2004@gmail.com"
-                            style="color: inherit; text-decoration: none; transition: color 0.2s;"
-                            onmouseover="this.style.color='#60a5fa'"
-                            onmouseout="this.style.color='inherit'">capoca2004@gmail.com</a></li>
-                    <li><span data-i18n="label-phone">Phone</span>: <a href="tel:+201090204281"
-                            style="color: inherit; text-decoration: none; transition: color 0.2s;"
-                            onmouseover="this.style.color='#60a5fa'"
-                            onmouseout="this.style.color='inherit'">01090204281</a></li>
-                    <li><span data-i18n="label-location">Location</span>: Cairo, Egypt</li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3 data-i18n="footer-quick-links">Quick Links</h3>
-                <ul class="footer-links">
+                <h3><span class="lang-en">Quick Links</span><span class="lang-ar">روابط سريعة</span></h3>
+                <ul>
                     <li><a href="index.html" data-i18n="nav-home">Home</a></li>
                     <li><a href="lessons.html" data-i18n="nav-lessons">Lessons</a></li>
-                    <li><a href="examples.html" data-i18n="nav-examples">Code Examples</a></li>
-                    <li><a href="quiz.html" data-i18n="nav-quiz">Take Quiz</a></li>
+                    <li><a href="examples.html" data-i18n="nav-examples">Examples</a></li>
+                    <li><a href="quiz.html" data-i18n="nav-quiz">Quiz</a></li>
                 </ul>
             </div>
+            <div class="footer-col">
+                <h3><span class="lang-en">Developer</span><span class="lang-ar">المطور</span></h3>
+                <p>Ahmad Ma'moun Habashneh</p>
+                <p>ID: B9231559</p>
+                <p>TT284 - TMA</p>
+            </div>
         </div>
-
-        <!-- Social Icons (Bottom Centered) -->
-        <div class="social-container-bottom"
-            style="display: flex; justify-content: center; gap: 20px; margin-top: 3rem; margin-bottom: 1.5rem;">
-            <!-- Facebook -->
-            <a href="https://www.facebook.com/share/1BdmHNXFo3/" target="_blank" class="social-btn">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                        d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-1.65 0-2.5 0-2.5 0c-3.5 0-4.5 2.5-4.5 4.5v3h-3v4h3v7.5A9.9 9.9 0 0 0 12 22a9.9 9.9 0 0 0 2.5-.3V13.5z">
-                    </path>
-                </svg>
-            </a>
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/capo.2004" target="_blank" class="social-btn">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                        d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5Z">
-                    </path>
-                </svg>
-            </a>
-            <!-- Website -->
-            <a href="https://capo2004.netlify.app/" target="_blank" class="social-btn">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z">
-                    </path>
-                </svg>
-            </a>
-        </div>
-        <div
-            style="text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; color: rgba(255,255,255,0.6);">
-            <p data-i18n="copyright">© 2025 PHP Mastery. All rights reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2024 PHP Mastery CBT. <span class="lang-en">All rights reserved.</span><span class="lang-ar">جميع
+                    الحقوق محفوظة.</span></p>
         </div>
     </footer>
 
     <script src="script.js"></script>
     <script>
-        // Init Background
-        if (typeof initMatrixBackground === 'function') initMatrixBackground();
+        // Tab switching functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        const tabIndicator = document.querySelector('.tab-indicator');
+        const exampleContent = document.getElementById('example-content');
+        const tabsList = document.querySelector('.tabs-list');
+        const mobileToggle = document.querySelector('.mobile-tab-toggle');
 
-        // --- Navigation Logic --- (Three Level Navigation Matches Lessons.html)
-
-        // Category Data for dynamic updates
-        const categoryData = {
-            'input': { en: 'Input Data', ar: 'إدخال البيانات' },
-            'operators': { en: 'Operators', ar: 'العمليات' },
-            'conditions': { en: 'Conditions', ar: 'الشروط' },
-            'loops': { en: 'Loops', ar: 'الحلقات' },
-            'output': { en: 'Output', ar: 'الإخراج' }
-        };
-
-        let currentCategory = null;
-
-        function openCategory(category) {
-            currentCategory = category;
-
-            // Hide Main Grid
-            document.getElementById('modules-grid').style.display = 'none';
-
-            // Show Relevant Sub-Grid
-            document.querySelectorAll('[id^=grid-]').forEach(el => el.style.display = 'none');
-            const subGrid = document.getElementById(`grid-${category}`);
-            if (subGrid) subGrid.style.display = 'flex';
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            if (tabsList && mobileToggle) {
+                tabsList.classList.toggle('open');
+                mobileToggle.classList.toggle('open');
+            }
         }
 
-        function openExampleSet(topicId) {
-            // Find the button for this topic to get its category
-            const targetBtn = document.querySelector(`.topic-btn[data-topic="${topicId}"]`);
+        // Update mobile toggle text when tab changes
+        function updateMobileToggleText(btn) {
+            if (!mobileToggle) return;
+            const toggleText = mobileToggle.querySelector('.toggle-text');
+            if (toggleText) {
+                const icon = btn.querySelector('.tab-icon').textContent;
+                const enText = btn.querySelector('.lang-en').textContent;
+                const arText = btn.querySelector('.lang-ar').textContent;
+                toggleText.innerHTML = `
+                    <span class="tab-icon">${icon}</span>
+                    <span class="lang-en">${enText}</span>
+                    <span class="lang-ar">${arText}</span>
+                `;
+            }
+        }
 
-            if (targetBtn) {
-                const newCategory = targetBtn.dataset.category;
+        // Move indicator to active tab
+        function moveIndicator(btn) {
+            if (!tabIndicator || !btn) return;
+            tabIndicator.style.width = btn.offsetWidth + 'px';
+            tabIndicator.style.left = btn.offsetLeft + 'px';
+        }
 
-                // If category changed (e.g. via Next button across modules) or not set, update UI
-                if (newCategory && newCategory !== currentCategory) {
-                    currentCategory = newCategory;
+        // Initialize indicator position
+        window.addEventListener('load', () => {
+            const activeBtn = document.querySelector('.tab-btn.active');
+            if (activeBtn) {
+                setTimeout(() => moveIndicator(activeBtn), 100);
+            }
+        });
 
-                    // Update Header Titles
-                    if (categoryData[newCategory]) {
-                        const titleEn = document.getElementById('cat-title-en');
-                        const titleAr = document.getElementById('cat-title-ar');
-                        if (titleEn) titleEn.innerText = categoryData[newCategory].en;
-                        if (titleAr) titleAr.innerText = categoryData[newCategory].ar;
-                    }
-                }
+        window.addEventListener('resize', () => {
+            const activeBtn = document.querySelector('.tab-btn.active');
+            if (activeBtn) moveIndicator(activeBtn);
+        });
+
+        // Close example accordion
+        function closeAccordion(callback) {
+            const isOpen = exampleContent.offsetHeight > 0 && exampleContent.style.display !== 'none';
+
+            if (!isOpen) {
+                if (callback) callback();
+                return;
             }
 
-            // Hide Sub-Grids
-            document.querySelectorAll('[id^=grid-]').forEach(el => el.style.display = 'none');
+            exampleContent.style.transition = 'max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease';
+            exampleContent.style.maxHeight = '0';
+            exampleContent.style.opacity = '0';
 
-            // Show Viewer
-            document.getElementById('example-viewer').style.display = 'flex';
+            setTimeout(() => {
+                exampleContent.style.display = 'none';
+                exampleContent.style.overflow = '';
+                document.querySelectorAll('.lesson-article').forEach(a => a.style.display = 'none');
+                if (callback) callback();
+            }, 600);
+        }
 
-            // Update visible buttons based on CURRENT category (which might have just been updated)
-            document.querySelectorAll('.topic-btn').forEach(btn => {
-                if (btn.dataset.category === currentCategory) {
-                    btn.style.display = 'flex';
-                } else {
-                    btn.style.display = 'none';
+        // Tab click handler
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.dataset.tab;
+
+                // Close example if open, then switch tab
+                closeAccordion(() => {
+                    // Remove active class from all
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+
+                    // Add active to clicked
+                    btn.classList.add('active');
+                    document.getElementById(`tab-${tabId}`).classList.add('active');
+
+                    // Move indicator
+                    moveIndicator(btn);
+
+                    // Close mobile dropdown and update text
+                    if (tabsList && mobileToggle) {
+                        tabsList.classList.remove('open');
+                        mobileToggle.classList.remove('open');
+                        updateMobileToggleText(btn);
+                    }
+                });
+            });
+        });
+
+        // Show example with animation
+        function showExample(exampleId) {
+            // Hide active tab content
+            tabContents.forEach(c => c.classList.remove('active'));
+
+            // Show example content area
+            exampleContent.style.display = 'block';
+            exampleContent.style.overflow = 'hidden';
+            exampleContent.style.maxHeight = '0';
+            exampleContent.style.opacity = '0';
+
+            // Hide all examples, show selected
+            document.querySelectorAll('.lesson-article').forEach(a => a.style.display = 'none');
+            const targetExample = document.getElementById(`example-${exampleId}`);
+            if (targetExample) {
+                targetExample.style.display = 'block';
+            }
+
+            // Animate open
+            requestAnimationFrame(() => {
+                exampleContent.style.transition = 'max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease';
+                exampleContent.style.maxHeight = exampleContent.scrollHeight + 200 + 'px';
+                exampleContent.style.opacity = '1';
+
+                // Scroll to content after animation
+                setTimeout(() => {
+                    exampleContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 800);
+            });
+        }
+
+        // Hide example and return to tabs
+        function hideExample() {
+            closeAccordion(() => {
+                const activeTabBtn = document.querySelector('.tab-btn.active');
+                if (activeTabBtn) {
+                    const tabId = activeTabBtn.dataset.tab;
+                    const tabContent = document.getElementById(`tab-${tabId}`);
+                    if (tabContent) tabContent.classList.add('active');
                 }
             });
-
-            // Activate Content Pane
-            document.querySelectorAll('.topic-pane').forEach(el => el.classList.remove('active'));
-            const target = document.getElementById(topicId);
-            if (target) target.classList.add('active');
-
-            // Highlight Active Button
-            document.querySelectorAll('.topic-btn').forEach(btn => btn.classList.remove('active'));
-            if (targetBtn) targetBtn.classList.add('active');
-
-            // Reset Scroll
-            window.scrollTo(0, 0);
-        }
-
-        function backToMain() {
-            // Hide Viewer & Sub-grids
-            document.getElementById('example-viewer').style.display = 'none';
-            document.querySelectorAll('[id^=grid-]').forEach(el => el.style.display = 'none');
-            // Show Main
-            document.getElementById('modules-grid').style.display = 'flex';
-            currentCategory = null;
-        }
-
-        function backToSub() {
-            // Hide Viewer
-            document.getElementById('example-viewer').style.display = 'none';
-            // Show current Sub-grid
-            if (currentCategory) {
-                document.getElementById(`grid-${currentCategory}`).style.display = 'flex';
-            } else {
-                backToMain();
-            }
         }
     </script>
 </body>
