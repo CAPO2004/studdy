@@ -23,16 +23,18 @@
     --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
 
     /* 🎨 Header/Footer: Light Blue Gradient */
-    --header-bg: linear-gradient(90deg, #1e3a8a 0%, #1d4ed8 50%, #2563eb 100%);
-    --footer-bg: linear-gradient(90deg, #1e40af 0%, #1e3a8a 50%, #172554 100%);
+    --header-bg: linear-gradient(90deg, #0ea5e9 0%, #2563eb 50%, #3b82f6 100%);
+    --footer-bg: linear-gradient(90deg, #3b82f6 0%, #2563eb 50%, #0ea5e9 100%);
 
-    /* 🌅 Background: Clean Light Blue */
-    --bg-gradient: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%);
+    /* 🌅 Background: Enhanced Gradual Blue */
+    --bg-gradient: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%);
+    /* Clearer Blue Gradient */
 
     /* 💎 Glassmorphism */
-    --glass-bg: rgba(255, 255, 255, 0.75);
-    --glass-border: rgba(59, 130, 246, 0.2);
-    --glass-shadow: 0 8px 32px 0 rgba(37, 99, 235, 0.1), 0 4px 16px rgba(59, 130, 246, 0.05);
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    /* More transparent to show gradient */
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
 
     /* Light Mode Neutrals */
     --bg-color: #eff6ff;
@@ -72,13 +74,15 @@
     --header-bg: linear-gradient(90deg, #020617 0%, #0f172a 50%, #172554 100%);
     --footer-bg: linear-gradient(90deg, #020617 0%, #0f172a 50%, #172554 100%);
 
-    /* 🎆 Background: Deepest Navy */
-    --bg-gradient: linear-gradient(135deg, #020617 0%, #0f172a 40%, #172554 100%);
+    /* 🎆 Background: Gradual Deep Ocean */
+    --bg-gradient: linear-gradient(135deg, #020617 0%, #111827 40%, #1e3a8a 100%);
+    /* Deep Navy to Blue */
 
     /* 💫 Dark Glassmorphism */
-    --glass-bg: rgba(15, 23, 42, 0.7);
-    --glass-border: rgba(96, 165, 250, 0.2);
-    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.2);
+    --glass-bg: rgba(15, 23, 42, 0.6);
+    /* More transparent */
+    --glass-border: rgba(56, 189, 248, 0.1);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 
     --bg-color: #020617;
     /* Almost Black Blue */
@@ -91,11 +95,10 @@
     --code-bg: #0f172a;
 }
 
-/* ☀️ Light Mode Header Override */
-html[data-theme="light"] {
-    --header-bg: linear-gradient(90deg, #0369a1 0%, #0284c7 25%, #0ea5e9 50%, #06b6d4 75%, #14b8a6 100%);
-    --footer-bg: linear-gradient(90deg, #14b8a6 0%, #06b6d4 25%, #0ea5e9 50%, #0284c7 75%, #0369a1 100%);
-}
+
+/* ☀️ Light Mode Header Override (Removed - now handled in :root) */
+/* html[data-theme="light"] block removed */
+
 
 /* Global Reset & Base */
 * {
