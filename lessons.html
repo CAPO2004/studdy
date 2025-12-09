@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +7,8 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <canvas id="bg-canvas"></canvas>
-
     <header class="animate-in">
         <div class="logo-container">
             <a href="index.html" class="logo-link">
@@ -70,18 +67,13 @@
             </button>
         </div>
     </header>
-
     <div class="container animate-in">
         <h1 class="gradient-text" style="margin-bottom: 2rem;">
             <span class="lang-en">PHP Core Topics</span>
             <span class="lang-ar">مواضيع PHP الأساسية</span>
         </h1>
-
-        <!-- ========== TABS LAYOUT ========== -->
         <div class="tabs-container">
-            <!-- Tab Navigation -->
             <div class="tab-nav">
-                <!-- Mobile Toggle Button -->
                 <button class="mobile-tab-toggle" onclick="toggleMobileMenu()">
                     <span class="toggle-text">
                         <span class="tab-icon">⌨️</span>
@@ -90,10 +82,7 @@
                     </span>
                     <span class="toggle-arrow">▼</span>
                 </button>
-
-                <!-- Sliding Indicator -->
                 <div class="tab-indicator"></div>
-
                 <div class="tabs-list">
                     <button class="tab-btn active" data-tab="input">
                         <span class="tab-icon">⌨️</span>
@@ -122,8 +111,6 @@
                     </button>
                 </div>
             </div>
-
-            <!-- Tab Content: INPUT -->
             <div class="tab-content active" id="tab-input">
                 <div class="sub-lessons-grid">
                     <div class="sub-lesson-card" onclick="showLesson('sub-get')">
@@ -142,8 +129,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Tab Content: OPERATORS -->
             <div class="tab-content" id="tab-operators">
                 <div class="sub-lessons-grid">
                     <div class="sub-lesson-card" onclick="showLesson('sub-arithmetic')">
@@ -162,8 +147,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Tab Content: CONDITIONS -->
             <div class="tab-content" id="tab-conditions">
                 <div class="sub-lessons-grid">
                     <div class="sub-lesson-card" onclick="showLesson('sub-if')">
@@ -182,8 +165,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Tab Content: LOOPS -->
             <div class="tab-content" id="tab-loops">
                 <div class="sub-lessons-grid">
                     <div class="sub-lesson-card" onclick="showLesson('sub-for')">
@@ -202,8 +183,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Tab Content: OUTPUT -->
             <div class="tab-content" id="tab-output">
                 <div class="sub-lessons-grid">
                     <div class="sub-lesson-card" onclick="showLesson('sub-echo')">
@@ -215,19 +194,13 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Lesson Content Area (Shows when sub-lesson clicked) -->
             <div id="lesson-content" class="lesson-content-area" style="display: none;">
                 <button class="back-to-tabs" onclick="hideLesson()">
                     <span class="lang-en">← Back to Topics</span>
                     <span class="lang-ar">→ العودة للمواضيع</span>
                 </button>
-
-                <!-- $_GET Lesson -->
                 <article id="lesson-sub-get" class="lesson-article" style="display: none;">
                     <h2>$_GET Method</h2>
-
-                    <!-- Introduction -->
                     <div class="lesson-section">
                         <h3><span class="lang-en">📚 What is $_GET?</span><span class="lang-ar">📚 ما هو $_GET؟</span>
                         </h3>
@@ -242,8 +215,6 @@
                                 عبر <code>$_GET</code>.</span>
                         </p>
                     </div>
-
-                    <!-- Key Characteristics -->
                     <div class="lesson-section">
                         <h3><span class="lang-en">🔑 Key Characteristics</span><span class="lang-ar">🔑 الخصائص
                                 الرئيسية</span></h3>
@@ -274,8 +245,6 @@
                             </li>
                         </ul>
                     </div>
-
-                    <!-- Common Uses -->
                     <div class="lesson-section">
                         <h3><span class="lang-en">✅ When to Use $_GET</span><span class="lang-ar">✅ متى تستخدم
                                 $_GET</span></h3>
@@ -291,8 +260,6 @@
                                     class="lang-ar">مشاركة محتوى معين عبر الرابط</span></li>
                         </ul>
                     </div>
-
-                    <!-- Security Warning -->
                     <div class="lesson-section"
                         style="background: rgba(239, 68, 68, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #ef4444;">
                         <h3 style="color: #ef4444;"><span class="lang-en">⚠️ Security Warning</span><span
@@ -305,8 +272,6 @@
                                 <code>filter_input()</code> لمنع هجمات XSS. لا تثق أبداً بمدخلات المستخدم مباشرة!</span>
                         </p>
                     </div>
-
-                    <!-- Navigation -->
                     <div class="lesson-nav"
                         style="display: flex; justify-content: flex-end; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
                         <button onclick="showLesson('sub-post')" class="btn"
@@ -316,12 +281,8 @@
                         </button>
                     </div>
                 </article>
-
-                <!-- $_POST Lesson -->
                 <article id="lesson-sub-post" class="lesson-article" style="display: none;">
                     <h2>$_POST Method</h2>
-
-                    <!-- Introduction -->
                     <div class="lesson-section">
                         <h3><span class="lang-en">📚 What is $_POST?</span><span class="lang-ar">📚 ما هو $_POST؟</span>
                         </h3>
@@ -334,8 +295,6 @@
                                 الرابط.</span>
                         </p>
                     </div>
-
-                    <!-- Key Characteristics -->
                     <div class="lesson-section">
                         <h3><span class="lang-en">🔑 Key Characteristics</span><span class="lang-ar">🔑 الخصائص
                                 الرئيسية</span></h3>
@@ -366,8 +325,6 @@
                             </li>
                         </ul>
                     </div>
-
-                    <!-- When to Use -->
                     <div class="lesson-section">
                         <h3><span class="lang-en">✅ When to Use $_POST</span><span class="lang-ar">✅ متى تستخدم
                                 $_POST</span></h3>
@@ -381,8 +338,6 @@
                                     class="lang-ar">أي نموذج يحتوي على بيانات حساسة أو كبيرة</span></li>
                         </ul>
                     </div>
-
-                    <!-- Best Practice -->
                     <div class="lesson-section"
                         style="background: rgba(34, 197, 94, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #22c55e;">
                         <h3 style="color: #22c55e;"><span class="lang-en">💡 Best Practice</span><span
@@ -396,8 +351,6 @@
                                 <code>password_hash()</code> و <code>password_verify()</code> لكلمات المرور!</span>
                         </p>
                     </div>
-
-                    <!-- Navigation -->
                     <div class="lesson-nav"
                         style="display: flex; justify-content: flex-start; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
                         <button onclick="showLesson('sub-get')" class="btn btn-secondary"
@@ -407,12 +360,9 @@
                         </button>
                     </div>
                 </article>
-
-                <!-- Arithmetic Lesson -->
                 <article id="lesson-sub-arithmetic" class="lesson-article" style="display: none;">
                     <h2><span class="lang-en">Arithmetic Operators</span><span class="lang-ar">المعاملات الحسابية</span>
                     </h2>
-
                     <div class="lesson-section">
                         <h3><span class="lang-en">📚 Introduction</span><span class="lang-ar">📚 مقدمة</span></h3>
                         <p>
@@ -422,85 +372,97 @@
                                 مع الأعداد الصحيحة والأعداد العشرية.</span>
                         </p>
                     </div>
-
                     <div class="lesson-section">
                         <h3><span class="lang-en">🔢 All Operators</span><span class="lang-ar">🔢 جميع المعاملات</span>
                         </h3>
-                        <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
-                            <tr style="background: var(--glass-bg);">
-                                <th style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Operator</span><span class="lang-ar">المعامل</span></th>
-                                <th style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Name</span><span class="lang-ar">الاسم</span></th>
-                                <th style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Example</span><span class="lang-ar">مثال</span></th>
-                                <th style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Result</span><span class="lang-ar">النتيجة</span></th>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
-                                    <code>+</code>
-                                </td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Addition</span><span class="lang-ar">الجمع</span></td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><code>$x + $y</code>
-                                </td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);">10 + 5 = 15</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
-                                    <code>-</code>
-                                </td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Subtraction</span><span class="lang-ar">الطرح</span></td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><code>$x - $y</code>
-                                </td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);">10 - 5 = 5</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
-                                    <code>*</code>
-                                </td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Multiplication</span><span class="lang-ar">الضرب</span></td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><code>$x * $y</code>
-                                </td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);">10 * 5 = 50</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
-                                    <code>/</code>
-                                </td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Division</span><span class="lang-ar">القسمة</span></td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><code>$x / $y</code>
-                                </td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);">10 / 5 = 2</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
-                                    <code>%</code>
-                                </td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Modulus</span><span class="lang-ar">باقي القسمة</span></td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><code>$x % $y</code>
-                                </td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);">10 % 3 = 1</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
-                                    <code>**</code>
-                                </td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Exponentiation</span><span class="lang-ar">الأس</span></td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><code>$x ** $y</code>
-                                </td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);">2 ** 3 = 8</td>
-                            </tr>
-                        </table>
+                        <div
+                            style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 1rem; border-radius: 8px;">
+                            <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
+                                <tr style="background: var(--glass-bg);">
+                                    <th style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Operator</span><span class="lang-ar">المعامل</span></th>
+                                    <th style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Name</span><span class="lang-ar">الاسم</span></th>
+                                    <th style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Example</span><span class="lang-ar">مثال</span></th>
+                                    <th style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Result</span><span class="lang-ar">النتيجة</span></th>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
+                                        <code>+</code>
+                                    </td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Addition</span><span class="lang-ar">الجمع</span></td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);">
+                                        <code>$x + $y</code>
+                                    </td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);">10 + 5 = 15</td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
+                                        <code>-</code>
+                                    </td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Subtraction</span><span class="lang-ar">الطرح</span></td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);">
+                                        <code>$x - $y</code>
+                                    </td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);">10 - 5 = 5</td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
+                                        <code>*</code>
+                                    </td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Multiplication</span><span class="lang-ar">الضرب</span></td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);">
+                                        <code>$x * $y</code>
+                                    </td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);">10 * 5 = 50</td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
+                                        <code>/</code>
+                                    </td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Division</span><span class="lang-ar">القسمة</span></td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);">
+                                        <code>$x / $y</code>
+                                    </td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);">10 / 5 = 2</td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
+                                        <code>%</code>
+                                    </td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Modulus</span><span class="lang-ar">باقي القسمة</span></td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);">
+                                        <code>$x % $y</code>
+                                    </td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);">10 % 3 = 1</td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
+                                        <code>**</code>
+                                    </td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Exponentiation</span><span class="lang-ar">الأس</span></td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);">
+                                        <code>$x ** $y</code>
+                                    </td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);">2 ** 3 = 8</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-
-                    <!-- Navigation -->
                     <div class="lesson-nav"
                         style="display: flex; justify-content: flex-end; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
                         <button onclick="showLesson('sub-comparison')" class="btn"
@@ -510,12 +472,9 @@
                         </button>
                     </div>
                 </article>
-
-                <!-- Comparison Lesson -->
                 <article id="lesson-sub-comparison" class="lesson-article" style="display: none;">
                     <h2><span class="lang-en">Comparison Operators</span><span class="lang-ar">معاملات المقارنة</span>
                     </h2>
-
                     <div class="lesson-section">
                         <h3><span class="lang-en">📚 Introduction</span><span class="lang-ar">📚 مقدمة</span></h3>
                         <p>
@@ -526,87 +485,103 @@
                                 أو <code>false</code>). هي أساسية لاتخاذ القرارات في الكود.</span>
                         </p>
                     </div>
-
                     <div class="lesson-section">
                         <h3><span class="lang-en">⚖️ All Operators</span><span class="lang-ar">⚖️ جميع المعاملات</span>
                         </h3>
-                        <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
-                            <tr style="background: var(--glass-bg);">
-                                <th style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Operator</span><span class="lang-ar">المعامل</span></th>
-                                <th style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Name</span><span class="lang-ar">الاسم</span></th>
-                                <th style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Example</span><span class="lang-ar">مثال</span></th>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
-                                    <code>==</code>
-                                </td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Equal</span><span class="lang-ar">يساوي</span></td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><code>$x == $y</code>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
-                                    <code>===</code>
-                                </td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Identical</span><span class="lang-ar">متطابق</span></td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><code>$x === $y</code>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
-                                    <code>!=</code>
-                                </td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Not Equal</span><span class="lang-ar">لا يساوي</span></td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><code>$x != $y</code>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
-                                    <code>&gt;</code>
-                                </td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Greater Than</span><span class="lang-ar">أكبر من</span></td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><code>$x > $y</code>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
-                                    <code>&lt;</code>
-                                </td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Less Than</span><span class="lang-ar">أصغر من</span></td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><code>$x < $y</code>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
-                                    <code>&gt;=</code>
-                                </td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Greater or Equal</span><span class="lang-ar">أكبر أو
-                                        يساوي</span></td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><code>$x >= $y</code>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
-                                    <code>&lt;=</code>
-                                </td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Less or Equal</span><span class="lang-ar">أصغر أو يساوي</span>
-                                </td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><code>$x <= $y</code>
-                                </td>
-                            </tr>
-                        </table>
+                        <div
+                            style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 1rem; border-radius: 8px;">
+                            <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
+                                <tr style="background: var(--glass-bg);">
+                                    <th style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Operator</span><span class="lang-ar">المعامل</span></th>
+                                    <th style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Name</span><span class="lang-ar">الاسم</span></th>
+                                    <th style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Example</span><span class="lang-ar">مثال</span></th>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
+                                        <code>==</code>
+                                    </td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Equal</span><span class="lang-ar">يساوي</span></td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);">
+                                        <code>$x == $y</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
+                                        <code>===</code>
+                                    </td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Identical</span><span class="lang-ar">متطابق</span></td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);">
+                                        <code>$x === $y</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
+                                        <code>!=</code>
+                                    </td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Not Equal</span><span class="lang-ar">لا يساوي</span></td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);">
+                                        <code>$x != $y</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
+                                        <code>&gt;</code>
+                                    </td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Greater Than</span><span class="lang-ar">أكبر من</span></td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);">
+                                        <code>$x > $y</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
+                                        <code>&lt;</code>
+                                    </td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Less Than</span><span class="lang-ar">أصغر من</span></td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);">
+                                        <code>$x < $y</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
+                                        <code>&gt;=</code>
+                                    </td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Greater or Equal</span><span class="lang-ar">أكبر أو
+                                            يساوي</span></td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);">
+                                        <code>$x >= $y</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding: 10px; border: 1px solid var(--border-color); text-align: center;">
+                                        <code>&lt;=</code>
+                                    </td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Less or Equal</span><span class="lang-ar">أصغر أو
+                                            يساوي</span>
+                                    </td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);">
+                                        <code>$x <= $y</code>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-
                     <div class="lesson-section"
                         style="background: rgba(59, 130, 246, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #3b82f6;">
                         <h3 style="color: #3b82f6;"><span class="lang-en">💡 Important: == vs ===</span><span
@@ -618,8 +593,6 @@
                                 والنوع معاً. دائماً استخدم <code>===</code> عندما تحتاج مقارنة صارمة!</span>
                         </p>
                     </div>
-
-                    <!-- Navigation -->
                     <div class="lesson-nav"
                         style="display: flex; justify-content: flex-start; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
                         <button onclick="showLesson('sub-arithmetic')" class="btn btn-secondary"
@@ -629,12 +602,9 @@
                         </button>
                     </div>
                 </article>
-
-                <!-- If Lesson -->
                 <article id="lesson-sub-if" class="lesson-article" style="display: none;">
                     <h2><span class="lang-en">If...Else Statements</span><span class="lang-ar">جمل If...Else
                             الشرطية</span></h2>
-
                     <div class="lesson-section">
                         <h3><span class="lang-en">📚 What are Conditional Statements?</span><span class="lang-ar">📚 ما
                                 هي الجمل الشرطية؟</span></h3>
@@ -646,7 +616,6 @@
                                 ما إذا كان الشرط صحيحاً أو خاطئاً. هي أساس المنطق في البرمجة.</span>
                         </p>
                     </div>
-
                     <div class="lesson-section">
                         <h3><span class="lang-en">🔀 Types of If Statements</span><span class="lang-ar">🔀 أنواع جمل
                                 If</span></h3>
@@ -669,7 +638,6 @@
                             </li>
                         </ul>
                     </div>
-
                     <div class="lesson-section">
                         <h3><span class="lang-en">💡 How It Works</span><span class="lang-ar">💡 كيف تعمل</span></h3>
                         <ol>
@@ -684,7 +652,6 @@
                                     if-elseif-else</span></li>
                         </ol>
                     </div>
-
                     <div class="lesson-section"
                         style="background: rgba(59, 130, 246, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #3b82f6;">
                         <h3 style="color: #3b82f6;"><span class="lang-en">💡 Best Practice</span><span
@@ -696,8 +663,6 @@
                                 الأخطاء وتحسين القراءة.</span>
                         </p>
                     </div>
-
-                    <!-- Navigation -->
                     <div class="lesson-nav"
                         style="display: flex; justify-content: flex-end; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
                         <button onclick="showLesson('sub-switch')" class="btn"
@@ -707,11 +672,8 @@
                         </button>
                     </div>
                 </article>
-
-                <!-- Switch Lesson -->
                 <article id="lesson-sub-switch" class="lesson-article" style="display: none;">
                     <h2><span class="lang-en">Switch Statement</span><span class="lang-ar">جملة Switch</span></h2>
-
                     <div class="lesson-section">
                         <h3><span class="lang-en">📚 What is Switch?</span><span class="lang-ar">📚 ما هي Switch؟</span>
                         </h3>
@@ -723,7 +685,6 @@
                                 أنظف لكتابة عدة جمل if...elseif عند مقارنة متغير واحد بعدة قيم.</span>
                         </p>
                     </div>
-
                     <div class="lesson-section">
                         <h3><span class="lang-en">🔧 Key Components</span><span class="lang-ar">🔧 المكونات
                                 الأساسية</span></h3>
@@ -754,7 +715,6 @@
                             </li>
                         </ul>
                     </div>
-
                     <div class="lesson-section"
                         style="background: rgba(245, 158, 11, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #f59e0b;">
                         <h3 style="color: #f59e0b;"><span class="lang-en">⚠️ Don't Forget break!</span><span
@@ -766,8 +726,6 @@
                                 break!</span>
                         </p>
                     </div>
-
-                    <!-- Navigation -->
                     <div class="lesson-nav"
                         style="display: flex; justify-content: flex-start; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
                         <button onclick="showLesson('sub-if')" class="btn btn-secondary"
@@ -777,11 +735,8 @@
                         </button>
                     </div>
                 </article>
-
-                <!-- For Loop Lesson -->
                 <article id="lesson-sub-for" class="lesson-article" style="display: none;">
                     <h2><span class="lang-en">For Loop</span><span class="lang-ar">حلقة For</span></h2>
-
                     <div class="lesson-section">
                         <h3><span class="lang-en">📚 What is a For Loop?</span><span class="lang-ar">📚 ما هي حلقة
                                 For؟</span></h3>
@@ -794,7 +749,6 @@
                                 التكرارات.</span>
                         </p>
                     </div>
-
                     <div class="lesson-section">
                         <h3><span class="lang-en">🔧 Three Parts of For Loop</span><span class="lang-ar">🔧 أجزاء حلقة
                                 For الثلاثة</span></h3>
@@ -819,7 +773,6 @@
                             </li>
                         </ul>
                     </div>
-
                     <div class="lesson-section">
                         <h3><span class="lang-en">🔄 Execution Flow</span><span class="lang-ar">🔄 تدفق التنفيذ</span>
                         </h3>
@@ -836,8 +789,6 @@
                                     2</span></li>
                         </ol>
                     </div>
-
-                    <!-- Navigation -->
                     <div class="lesson-nav"
                         style="display: flex; justify-content: flex-end; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
                         <button onclick="showLesson('sub-while')" class="btn"
@@ -847,11 +798,8 @@
                         </button>
                     </div>
                 </article>
-
-                <!-- While Loop Lesson -->
                 <article id="lesson-sub-while" class="lesson-article" style="display: none;">
                     <h2><span class="lang-en">While Loop</span><span class="lang-ar">حلقة While</span></h2>
-
                     <div class="lesson-section">
                         <h3><span class="lang-en">📚 What is a While Loop?</span><span class="lang-ar">📚 ما هي حلقة
                                 While؟</span></h3>
@@ -863,7 +811,6 @@
                                 على عكس حلقات for، حلقات while أفضل عندما لا تعرف بالضبط كم تكرار تحتاج.</span>
                         </p>
                     </div>
-
                     <div class="lesson-section">
                         <h3><span class="lang-en">🔧 While vs Do-While</span><span class="lang-ar">🔧 While مقابل
                                 Do-While</span></h3>
@@ -882,7 +829,6 @@
                             </li>
                         </ul>
                     </div>
-
                     <div class="lesson-section"
                         style="background: rgba(239, 68, 68, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #ef4444;">
                         <h3 style="color: #ef4444;"><span class="lang-en">⚠️ Beware of Infinite Loops!</span><span
@@ -895,8 +841,6 @@
                                 السكريبت أو السيرفر! دائماً حدّث المتغير في الشرط داخل الحلقة.</span>
                         </p>
                     </div>
-
-                    <!-- Navigation -->
                     <div class="lesson-nav"
                         style="display: flex; justify-content: flex-start; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
                         <button onclick="showLesson('sub-for')" class="btn btn-secondary"
@@ -906,11 +850,8 @@
                         </button>
                     </div>
                 </article>
-
-                <!-- Echo Lesson -->
                 <article id="lesson-sub-echo" class="lesson-article" style="display: none;">
                     <h2><span class="lang-en">Echo & Print</span><span class="lang-ar">Echo و Print</span></h2>
-
                     <div class="lesson-section">
                         <h3><span class="lang-en">📚 What are Echo and Print?</span><span class="lang-ar">📚 ما هما Echo
                                 و Print؟</span></h3>
@@ -921,53 +862,56 @@
                                 كلاهما يستخدم لعرض النصوص أو HTML أو قيم المتغيرات.</span>
                         </p>
                     </div>
-
                     <div class="lesson-section">
                         <h3><span class="lang-en">⚖️ Echo vs Print Differences</span><span class="lang-ar">⚖️ الفرق بين
                                 Echo و Print</span></h3>
-                        <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
-                            <tr style="background: var(--glass-bg);">
-                                <th style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Feature</span><span class="lang-ar">الميزة</span></th>
-                                <th style="padding: 10px; border: 1px solid var(--border-color);">echo</th>
-                                <th style="padding: 10px; border: 1px solid var(--border-color);">print</th>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Return Value</span><span class="lang-ar">قيمة الإرجاع</span>
-                                </td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">None</span><span class="lang-ar">لا شيء</span></td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);">1</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Parameters</span><span class="lang-ar">المعاملات</span></td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Multiple</span><span class="lang-ar">متعددة</span></td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">One only</span><span class="lang-ar">واحد فقط</span></td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Speed</span><span class="lang-ar">السرعة</span></td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Slightly faster</span><span class="lang-ar">أسرع قليلاً</span>
-                                </td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Marginally slower</span><span class="lang-ar">أبطأ بقليل</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);"><span
-                                        class="lang-en">Use in expressions</span><span class="lang-ar">الاستخدام في
-                                        التعبيرات</span></td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);">❌</td>
-                                <td style="padding: 10px; border: 1px solid var(--border-color);">✅</td>
-                            </tr>
-                        </table>
+                        <div
+                            style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 1rem; border-radius: 8px;">
+                            <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
+                                <tr style="background: var(--glass-bg);">
+                                    <th style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Feature</span><span class="lang-ar">الميزة</span></th>
+                                    <th style="padding: 10px; border: 1px solid var(--border-color);">echo</th>
+                                    <th style="padding: 10px; border: 1px solid var(--border-color);">print</th>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Return Value</span><span class="lang-ar">قيمة الإرجاع</span>
+                                    </td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">None</span><span class="lang-ar">لا شيء</span></td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);">1</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Parameters</span><span class="lang-ar">المعاملات</span></td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Multiple</span><span class="lang-ar">متعددة</span></td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">One only</span><span class="lang-ar">واحد فقط</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Speed</span><span class="lang-ar">السرعة</span></td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Slightly faster</span><span class="lang-ar">أسرع
+                                            قليلاً</span>
+                                    </td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Marginally slower</span><span class="lang-ar">أبطأ
+                                            بقليل</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);"><span
+                                            class="lang-en">Use in expressions</span><span class="lang-ar">الاستخدام في
+                                            التعبيرات</span></td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);">❌</td>
+                                    <td style="padding: 10px; border: 1px solid var(--border-color);">✅</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-
                     <div class="lesson-section"
                         style="background: rgba(34, 197, 94, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #22c55e;">
                         <h3 style="color: #22c55e;"><span class="lang-en">💡 Recommendation</span><span
@@ -985,7 +929,6 @@
             </div>
         </div>
     </div>
-
     <footer>
         <div class="footer-content">
             <div class="footer-col">
@@ -999,9 +942,13 @@
                 <h3 data-i18n="footer-contact">Contact Us</h3>
                 <ul class="footer-links">
                     <li><span data-i18n="label-email">Email</span>: <a href="mailto:capoca2004@gmail.com"
-                            style="color: inherit; text-decoration: none;">capoca2004@gmail.com</a></li>
+                            style="color: inherit; text-decoration: none; transition: color 0.2s;"
+                            onmouseover="this.style.color='#60a5fa'"
+                            onmouseout="this.style.color='inherit'">capoca2004@gmail.com</a></li>
                     <li><span data-i18n="label-phone">Phone</span>: <a href="tel:+201090204281"
-                            style="color: inherit; text-decoration: none;">01090204281</a></li>
+                            style="color: inherit; text-decoration: none; transition: color 0.2s;"
+                            onmouseover="this.style.color='#60a5fa'"
+                            onmouseout="this.style.color='inherit'">01090204281</a></li>
                     <li><span data-i18n="label-location">Location</span>: Cairo, Egypt</li>
                 </ul>
             </div>
@@ -1040,17 +987,12 @@
             </a>
         </div>
         <div
-            style="text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; color: rgba(255,255,255,0.6);">
-            <p data-i18n="copyright">© 2025 PHP Mastery. All rights reserved.</p>
-        </div>
+            style="text-align: center; margin-top: 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+            <span data-i18n="footer-copyright">&copy; 2025 Ahmed Adel. All rights reserved.</span>
     </footer>
-
     <script src="script.js"></script>
     <script>
-        // Init Background
         if (typeof initMatrixBackground === 'function') initMatrixBackground();
-
-        // ========== TABS WITH SLIDING INDICATOR ==========
         const tabNav = document.querySelector('.tab-nav');
         const tabIndicator = document.querySelector('.tab-indicator');
         const tabBtns = document.querySelectorAll('.tab-btn');
@@ -1058,16 +1000,12 @@
         const lessonContent = document.getElementById('lesson-content');
         const tabsList = document.querySelector('.tabs-list');
         const mobileToggle = document.querySelector('.mobile-tab-toggle');
-
-        // Mobile Menu Toggle
         function toggleMobileMenu() {
             if (tabsList && mobileToggle) {
                 tabsList.classList.toggle('open');
                 mobileToggle.classList.toggle('open');
             }
         }
-
-        // Update mobile toggle text when tab changes
         function updateMobileToggleText(btn) {
             if (!mobileToggle) return;
             const toggleText = mobileToggle.querySelector('.toggle-text');
@@ -1082,40 +1020,30 @@
                 `;
             }
         }
-
-        // Move indicator to active tab
         function moveIndicator(btn) {
             if (!tabIndicator || !btn) return;
             tabIndicator.style.width = btn.offsetWidth + 'px';
             tabIndicator.style.left = btn.offsetLeft + 'px';
         }
-
-        // Initialize indicator position
         window.addEventListener('load', () => {
             const activeBtn = document.querySelector('.tab-btn.active');
             if (activeBtn) {
                 setTimeout(() => moveIndicator(activeBtn), 100);
             }
         });
-
         window.addEventListener('resize', () => {
             const activeBtn = document.querySelector('.tab-btn.active');
             if (activeBtn) moveIndicator(activeBtn);
         });
-
-        // Close lesson accordion
         function closeAccordion(callback) {
             const isOpen = lessonContent.offsetHeight > 0 && lessonContent.style.display !== 'none';
-
             if (!isOpen) {
                 if (callback) callback();
                 return;
             }
-
             lessonContent.style.transition = 'max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease';
             lessonContent.style.maxHeight = '0';
             lessonContent.style.opacity = '0';
-
             setTimeout(() => {
                 lessonContent.style.display = 'none';
                 lessonContent.style.overflow = '';
@@ -1123,26 +1051,15 @@
                 if (callback) callback();
             }, 600);
         }
-
-        // Tab click handler
         tabBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const tabId = btn.dataset.tab;
-
-                // Close lesson if open, then switch tab
                 closeAccordion(() => {
-                    // Remove active class from all
                     tabBtns.forEach(b => b.classList.remove('active'));
                     tabContents.forEach(c => c.classList.remove('active'));
-
-                    // Add active to clicked
                     btn.classList.add('active');
                     document.getElementById(`tab-${tabId}`).classList.add('active');
-
-                    // Move indicator
                     moveIndicator(btn);
-
-                    // Close mobile dropdown and update text
                     if (tabsList && mobileToggle) {
                         tabsList.classList.remove('open');
                         mobileToggle.classList.remove('open');
@@ -1151,39 +1068,26 @@
                 });
             });
         });
-
-        // Show lesson with animation
         function showLesson(lessonId) {
-            // Hide active tab content
             tabContents.forEach(c => c.classList.remove('active'));
-
-            // Show lesson content area
             lessonContent.style.display = 'block';
             lessonContent.style.overflow = 'hidden';
             lessonContent.style.maxHeight = '0';
             lessonContent.style.opacity = '0';
-
-            // Hide all lessons, show selected
             document.querySelectorAll('.lesson-article').forEach(a => a.style.display = 'none');
             const targetLesson = document.getElementById(`lesson-${lessonId}`);
             if (targetLesson) {
                 targetLesson.style.display = 'block';
             }
-
-            // Animate open
             requestAnimationFrame(() => {
                 lessonContent.style.transition = 'max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease';
                 lessonContent.style.maxHeight = lessonContent.scrollHeight + 200 + 'px';
                 lessonContent.style.opacity = '1';
-
-                // Scroll to content after animation
                 setTimeout(() => {
                     lessonContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }, 800);
             });
         }
-
-        // Hide lesson and return to tabs
         function hideLesson() {
             closeAccordion(() => {
                 const activeTabBtn = document.querySelector('.tab-btn.active');
@@ -1196,5 +1100,4 @@
         }
     </script>
 </body>
-
 </html>
