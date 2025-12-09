@@ -1,4 +1,3 @@
-// Preloader Logic
 window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
     if (preloader) {
@@ -10,61 +9,38 @@ window.addEventListener('load', () => {
         }, 1200);
     }
 });
-
 document.addEventListener('DOMContentLoaded', () => {
-
-    /* --- 1. THEME TOGGLING (Toggle Switch) --- */
     const themeToggle = document.getElementById('theme-toggle');
-
-    // Check saved theme or default to light
     const currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
-
-    // Set initial checkbox state
     if (themeToggle) {
         themeToggle.checked = currentTheme === 'dark';
-
         themeToggle.addEventListener('change', () => {
             const newTheme = themeToggle.checked ? 'dark' : 'light';
-
-            // Add smooth transition class
             document.body.classList.add('theme-transitioning');
-
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
-
-            // Re-draw canvas if it exists
             if (typeof initCanvasBackground === 'function') {
                 setTimeout(() => initCanvasBackground(), 50);
             }
-
-            // Remove transition class after animation
             setTimeout(() => {
                 document.body.classList.remove('theme-transitioning');
             }, 600);
         });
     }
-
-    /* --- 2. LANGUAGE DROPDOWN --- */
     const langBtn = document.getElementById('lang-toggle');
     const langDropdown = document.querySelector('.lang-dropdown');
     const langMenu = document.getElementById('lang-menu');
     const langOptions = document.querySelectorAll('.lang-option');
     const currentFlag = document.getElementById('current-flag');
     const currentLang = localStorage.getItem('lang') || 'en';
-
-    // Initialize language
     setLanguage(currentLang);
-
-    // Toggle dropdown
     if (langBtn) {
         langBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             langDropdown.classList.toggle('open');
         });
     }
-
-    // Handle language selection
     langOptions.forEach(option => {
         option.addEventListener('click', () => {
             const lang = option.getAttribute('data-lang');
@@ -72,19 +48,14 @@ document.addEventListener('DOMContentLoaded', () => {
             langDropdown.classList.remove('open');
         });
     });
-
-    // Close dropdown when clicking outside
     document.addEventListener('click', (e) => {
         if (langDropdown && !langDropdown.contains(e.target)) {
             langDropdown.classList.remove('open');
         }
     });
-
     function setLanguage(lang) {
         document.documentElement.setAttribute('lang', lang);
         localStorage.setItem('lang', lang);
-
-        // Update current flag
         if (currentFlag) {
             if (lang === 'en') {
                 currentFlag.src = 'https://flagcdn.com/w40/us.png';
@@ -94,16 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentFlag.alt = 'AR';
             }
         }
-
-        // Update active state in dropdown
         langOptions.forEach(opt => {
             opt.classList.toggle('active', opt.getAttribute('data-lang') === lang);
         });
-
         document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
         updateUIText(lang);
     }
-
     function updateUIText(lang) {
         const elements = document.querySelectorAll('[data-i18n]');
         elements.forEach(el => {
@@ -113,17 +80,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    /* --- 3. MOBILE MENU --- */
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const navList = document.getElementById('nav-list');
-
     if (mobileBtn) {
         mobileBtn.addEventListener('click', () => {
             navList.classList.toggle('show');
             mobileBtn.classList.toggle('active');
         });
-
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', () => {
                 navList.classList.remove('show');
@@ -131,20 +94,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-
-    /* --- 4. CANVAS BACKGROUND --- */
     initCanvasBackground();
-
-    /* --- 5. SCROLL REVEAL ANIMATIONS --- */
     initScrollReveal();
-
-    /* --- 6. QUIZ LOGIC --- */
     if (document.getElementById('quiz-container')) {
         initQuiz();
     }
 });
-
-/* --- SCROLL REVEAL SYSTEM --- */
 function initScrollReveal() {
     const revealElements = [
         { selector: '.card', class: 'reveal' },
@@ -157,7 +112,6 @@ function initScrollReveal() {
         { selector: 'section > h2', class: 'reveal' },
         { selector: '.modules-container', class: 'reveal' }
     ];
-
     revealElements.forEach(item => {
         document.querySelectorAll(item.selector).forEach((el, index) => {
             if (!el.classList.contains('reveal') &&
@@ -171,13 +125,11 @@ function initScrollReveal() {
             }
         });
     });
-
     const observerOptions = {
         root: null,
         rootMargin: '0px 0px -80px 0px',
         threshold: 0.1
     };
-
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -185,18 +137,14 @@ function initScrollReveal() {
             }
         });
     }, observerOptions);
-
     document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
         revealObserver.observe(el);
     });
-
     setTimeout(() => {
         const heroElements = document.querySelectorAll('.hero-section .reveal, .hero-section .reveal-scale');
         heroElements.forEach(el => el.classList.add('active'));
     }, 300);
 }
-
-/* --- TRANSLATIONS --- */
 const translations = {
     en: {
         'nav-home': 'Home',
@@ -208,7 +156,7 @@ const translations = {
         'footer-contact': 'Contact Us',
         'footer-quick-links': 'Quick Links',
         'btn-start': 'Start Learning Now',
-        'welcome': 'Master Modern PHP Development',
+        'welcome': 'Master Modern PHP',
         'header-subtitle': 'The most comprehensive resource for learning server-side programming. Interactive lessons, real-world examples, and instant feedback quizzes.',
         'label-email': 'Email',
         'label-phone': 'Phone',
@@ -225,7 +173,7 @@ const translations = {
         'footer-contact': 'اتصل بنا',
         'footer-quick-links': 'روابط سريعة',
         'btn-start': 'ابدأ التعلم الآن',
-        'welcome': 'احترف برمجة PHP الحديثة',
+        'welcome': 'احترف PHP الحديثة',
         'header-subtitle': 'المصدر الشامل لتعلم برمجة جانب الخادم. دروس تفاعلية، أمثلة واقعية، واختبارات فورية.',
         'label-email': 'البريد الإلكتروني',
         'label-phone': 'الهاتف',
@@ -233,30 +181,23 @@ const translations = {
         'footer-copyright': '© 2025 أحمد عادل. جميع الحقوق محفوظة.'
     }
 };
-
-/* --- CANVAS ANIMATION --- */
 function initCanvasBackground() {
     const canvas = document.getElementById('bg-canvas');
     if (!canvas) return;
-
     const ctx = canvas.getContext('2d');
-
     function resize() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     }
     window.addEventListener('resize', resize);
     resize();
-
     const particles = [];
     const particleCount = 40;
     const symbols = ['<?php', '?>', '$', '{', '}', ';', 'echo', 'if', 'array'];
-
     class Particle {
         constructor() {
             this.reset();
         }
-
         reset() {
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
@@ -265,27 +206,22 @@ function initCanvasBackground() {
             this.size = Math.random() * 15 + 10;
             this.opacity = Math.random() * 0.3 + 0.1;
         }
-
         update() {
             this.y -= this.speed;
             if (this.y < -50) this.reset();
         }
-
         draw() {
             const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
             ctx.fillStyle = isDark
                 ? `rgba(139, 92, 246, ${this.opacity})`
                 : `rgba(59, 130, 246, ${this.opacity})`;
-
             ctx.font = `${this.size}px monospace`;
             ctx.fillText(this.text, this.x, this.y);
         }
     }
-
     for (let i = 0; i < particleCount; i++) {
         particles.push(new Particle());
     }
-
     function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         particles.forEach(p => {
@@ -296,10 +232,7 @@ function initCanvasBackground() {
     }
     animate();
 }
-
-/* --- QUIZ LOGIC --- */
 const quizData = [
-    // INPUT: $_GET
     {
         id: 'quiz-get',
         questions: [
@@ -345,7 +278,6 @@ const quizData = [
             }
         ]
     },
-    // INPUT: $_POST
     {
         id: 'quiz-post',
         questions: [
@@ -391,7 +323,6 @@ const quizData = [
             }
         ]
     },
-    // OPERATORS: Arithmetic
     {
         id: 'quiz-arithmetic',
         questions: [
@@ -437,7 +368,6 @@ const quizData = [
             }
         ]
     },
-    // OPERATORS: Comparison
     {
         id: 'quiz-comparison',
         questions: [
@@ -483,7 +413,6 @@ const quizData = [
             }
         ]
     },
-    // CONDITIONS: If
     {
         id: 'quiz-if',
         questions: [
@@ -529,7 +458,6 @@ const quizData = [
             }
         ]
     },
-    // CONDITIONS: Switch
     {
         id: 'quiz-switch',
         questions: [
@@ -575,7 +503,6 @@ const quizData = [
             }
         ]
     },
-    // LOOPS: For
     {
         id: 'quiz-for',
         questions: [
@@ -621,7 +548,6 @@ const quizData = [
             }
         ]
     },
-    // LOOPS: While
     {
         id: 'quiz-while',
         questions: [
@@ -667,7 +593,6 @@ const quizData = [
             }
         ]
     },
-    // OUTPUT: Echo/Print
     {
         id: 'quiz-echo',
         questions: [
@@ -714,30 +639,22 @@ const quizData = [
         ]
     }
 ];
-
-
-// Global function to be called from HTML
 window.loadQuizTopic = function (topicId) {
     const topicData = quizData.find(d => d.id === topicId);
     if (!topicData) {
         console.error("Topic not found:", topicId);
         return;
     }
-
     const form = document.getElementById('quiz-form');
     const resultDiv = document.getElementById('quiz-result');
     if (resultDiv) resultDiv.style.display = 'none';
-
     const titleEl = document.getElementById('quiz-topic-title');
     if (titleEl) titleEl.style.display = 'none';
-
     renderQuestions(topicData.questions, form);
 };
-
 function renderQuestions(questions, form) {
     const lang = document.documentElement.getAttribute('lang') || 'en';
     form.innerHTML = '';
-
     questions.forEach((qObj, index) => {
         const q = qObj[lang];
         const qDiv = document.createElement('div');
@@ -748,7 +665,6 @@ function renderQuestions(questions, form) {
         qDiv.style.borderRadius = '12px';
         qDiv.style.background = 'rgba(255, 255, 255, 0.05)';
         qDiv.style.transition = 'all 0.3s ease';
-
         let optionsHtml = '';
         q.options.forEach((opt, i) => {
             optionsHtml += `
@@ -760,7 +676,6 @@ function renderQuestions(questions, form) {
                 </div>
             `;
         });
-
         qDiv.innerHTML = `
             <p style="font-weight:bold; margin-bottom:1rem; font-size:1.1rem; color:var(--primary-blue);">${index + 1}. ${q.q}</p>
             ${optionsHtml}
@@ -768,7 +683,6 @@ function renderQuestions(questions, form) {
         `;
         form.appendChild(qDiv);
     });
-
     const submitBtn = document.createElement('button');
     submitBtn.type = 'button';
     submitBtn.id = 'quiz-submit-btn';
@@ -778,7 +692,6 @@ function renderQuestions(questions, form) {
     submitBtn.addEventListener('click', () => calculateScore(questions));
     form.appendChild(submitBtn);
 }
-
 function calculateScore(questions) {
     const lang = document.documentElement.getAttribute('lang') || 'en';
     const form = document.getElementById('quiz-form');
@@ -786,16 +699,13 @@ function calculateScore(questions) {
     const total = questions.length;
     let allAnswered = true;
     let firstUnansweredIndex = -1;
-
     questions.forEach((qObj, index) => {
         const selected = form.querySelector(`input[name="q${index}"]:checked`);
         const block = document.getElementById(`q-block-${index}`);
-
         if (!selected) {
             allAnswered = false;
             block.style.border = "1px solid #f87171";
             block.style.boxShadow = "0 0 10px rgba(248, 113, 113, 0.2)";
-
             if (firstUnansweredIndex === -1) {
                 firstUnansweredIndex = index;
             }
@@ -805,7 +715,6 @@ function calculateScore(questions) {
             block.style.background = 'rgba(255, 255, 255, 0.05)';
         }
     });
-
     if (!allAnswered) {
         if (firstUnansweredIndex !== -1) {
             const firstBlock = document.getElementById(`q-block-${firstUnansweredIndex}`);
@@ -813,10 +722,8 @@ function calculateScore(questions) {
         }
         return;
     }
-
     const btn = document.getElementById('quiz-submit-btn');
     if (btn) btn.disabled = true;
-
     questions.forEach((qObj, index) => {
         const q = qObj[lang];
         const selectedInput = form.querySelector(`input[name="q${index}"]:checked`);
@@ -824,9 +731,7 @@ function calculateScore(questions) {
         const feedbackDiv = block.querySelector('.feedback');
         const correctIndex = q.a;
         const selectedValue = parseInt(selectedInput.value);
-
         block.style.boxShadow = "none";
-
         if (selectedValue === correctIndex) {
             score++;
             block.style.background = 'rgba(74, 222, 128, 0.05)';
@@ -841,25 +746,21 @@ function calculateScore(questions) {
             feedbackDiv.style.display = 'block';
             feedbackDiv.style.background = 'rgba(248, 113, 113, 0.1)';
             feedbackDiv.style.color = '#ef4444';
-
             const correctText = q.options[correctIndex];
             feedbackDiv.innerHTML = lang === 'en'
                 ? `❌ Incorrect. The correct answer is: <strong>${correctText}</strong>`
                 : `❌ خطأ. الإجابة الصحيحة هي: <strong>${correctText}</strong>`;
         }
     });
-
     const resultDiv = document.getElementById('quiz-result');
     if (resultDiv) {
         resultDiv.style.display = 'block';
         const percent = Math.round((score / total) * 100);
-
         let comment = '';
         if (score === total) comment = lang === 'en' ? "Perfect Score! You're a PHP Master! 🏆" : "علامة كاملة! أنت خبير PHP! 🏆";
         else if (score >= total * 0.8) comment = lang === 'en' ? "Great Job! Almost there! 🚀" : "عمل رائع! اقتربت جداً! 🚀";
         else if (score >= total * 0.5) comment = lang === 'en' ? "Good effort. Keep practicing! 📚" : "مجهود جيد. استمر في التدريب! 📚";
         else comment = lang === 'en' ? "Don't give up! Review the lessons and try again. 💪" : "لا تستسلم! راجع الدروس وحاول مرة أخرى. 💪";
-
         resultDiv.innerHTML = `
             <div style="font-size:3rem; font-weight:bold; color:var(--primary-blue);">${percent}%</div>
             <h3 style="font-size:1.5rem; margin-bottom:0.5rem;">
@@ -871,12 +772,9 @@ function calculateScore(questions) {
                 <span class="lang-ar">اختبار آخر</span>
             </button>
         `;
-
-        // Add click event for the retry button
         const retryBtn = document.getElementById('quiz-retry-btn');
         if (retryBtn) {
             retryBtn.addEventListener('click', () => {
-                // Try hideQuiz first (new quiz.html), fallback to reload
                 if (typeof hideQuiz === 'function') {
                     hideQuiz();
                 } else {
@@ -884,7 +782,6 @@ function calculateScore(questions) {
                 }
             });
         }
-
         resultDiv.scrollIntoView({ behavior: 'smooth' });
     }
 }
